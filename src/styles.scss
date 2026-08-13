@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+:root {
+  --radius: 0.125rem;
+  --background: #f6e6cb;
+  --foreground: #032110;
+  --card: #fdf0dc;
+  --card-foreground: #032110;
+  --popover: #fdf0dc;
+  --popover-foreground: #032110;
+  --primary: #e49a00;
+  --primary-foreground: #032110;
+  --secondary: #c75100;
+  --secondary-foreground: #fcf4e6;
+  --muted: #e4d6ba;
+  --muted-foreground: #294b31;
+  --accent: #d71f75;
+  --accent-foreground: #fcf4e6;
+  --destructive: #d40c1a;
+  --destructive-foreground: #fcf8f1;
+  --border: #05381e33;
+  --input: #05381e2e;
+  --ring: #e49a0099;
+  --jungle: #032110;
+  --jungle-deep: #001206;
+  --leaf: #005e25;
+  --leaf-bright: #399e43;
+  --terracotta: #c75100;
+  --terracotta-deep: #882600;
+  --ochre: #e49a00;
+  --ochre-deep: #c26f00;
+  --ivory: #f6e6cb;
+  --ivory-warm: #fdf0dc;
+  --magenta: #d71f75;
+  --rose: #ff939c;
+  --brass: var(--ochre);
+  --brass-foreground: #032110;
+  --oxblood: var(--terracotta);
+  --cream: var(--ivory);
+  --ink: var(--jungle);
+  --gradient-hero: linear-gradient(
+    180deg,
+    #03211000 0%,
+    #03211040 40%,
+    #032110d9 100%
+  );
+  --gradient-jungle: linear-gradient(
+    160deg,
+    var(--jungle-deep) 0%,
+    var(--leaf) 100%
+  );
+  --gradient-sunset: linear-gradient(
+    135deg,
+    var(--ochre) 0%,
+    var(--terracotta) 60%,
+    var(--magenta) 100%
+  );
+  --gradient-paper: radial-gradient(
+    ellipse at top,
+    var(--ivory-warm) 0%,
+    var(--ivory) 70%,
+    #ebd3b4 100%
+  );
+  --shadow-deep: 0 30px 80px -20px #03211059;
+  --shadow-brass: 0 12px 32px -8px #e49a0073;
+  --shadow-paper: 0 2px 0 #03211014, 0 12px 28px -16px #03211040;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background-color: var(--background); /* #f6e6cb — matches reference site */
+  color: #0b2114;
+  overflow-x: hidden;
+}

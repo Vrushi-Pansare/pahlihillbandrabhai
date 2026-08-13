@@ -1,0 +1,541 @@
+<!-- Premium Header -->
+<header class="header">
+  <div class="header-container">
+    <div class="header-brand">
+      <div class="logo-container">
+        <img
+          [src]="logoUrl"
+          alt="Pahli Hill bird crest"
+          class="brand-logo"
+          loading="eager"
+          decoding="sync"
+        />
+      </div>
+      <span class="brand-name">Pahli Hill Bandra Bhai</span>
+    </div>
+
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item dropdown">
+          <a href="#about" class="nav-link"
+            >ABOUT
+            <svg
+              class="arrow-icon"
+              width="8"
+              height="5"
+              viewBox="0 0 8 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L4 4L7 1"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#about-us">ABOUT US</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#menu" class="nav-link"
+            >MENU
+            <svg
+              class="arrow-icon"
+              width="8"
+              height="5"
+              viewBox="0 0 8 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L4 4L7 1"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu"></ul>
+        </li>
+        <li class="nav-item">
+          <a href="#concierge" class="nav-link">AI CONCIERGE</a>
+        </li>
+        <li class="nav-item">
+          <a href="#private-hires" class="nav-link">PRIVATE HIRES</a>
+        </li>
+        <li class="nav-item">
+          <a href="#speakeasy" class="nav-link">SPEAKEASY</a>
+        </li>
+        <li class="nav-item">
+          <a href="#whats-on" class="nav-link">WHAT'S ON</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<section class="hero-section">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay loop muted playsinline preload="auto">
+    <source
+      src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:47:06.249Z/mix-landscape-fast.mp4"
+      type="video/mp4"
+    />
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="hero-bg-overlay"></div>
+
+  <!-- Left Green Leaf Decoration -->
+  <img
+    alt=""
+    aria-hidden="true"
+    class="decorative-leaf-left"
+    src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:22:41.936Z/banana-leaf-CgIYXsLF.jpg"
+  />
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="glass-card">
+      <!-- Badge Indicator -->
+      <div class="card-badge">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-sparkles"
+        >
+          <path
+            d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+          ></path>
+          <path d="M20 3v4"></path>
+          <path d="M22 5h-4"></path>
+          <path d="M4 17v2"></path>
+          <path d="M5 18H3"></path>
+        </svg>
+        <span class="badge-text">India · Fitzrovia · Est. 2022</span>
+      </div>
+
+      <!-- Heading Title -->
+      <h1 class="card-title">
+        <span class="block">A Taste</span>
+        <span class="block italic font-light gold-text">of India,</span>
+        <span class="block"
+          ><span class="in-word">in</span>
+          <span class="brushstroke">Fitzrovia.</span></span
+        >
+      </h1>
+
+      <!-- Separator Line -->
+      <div class="card-featured-line">
+        <div class="line"></div>
+        <span class="text">Two Rooms · One Kitchen</span>
+        <div class="line"></div>
+      </div>
+
+      <!-- Description Body -->
+      <p class="card-description">
+        Upstairs, Pahli Hill is bright, warm and built around the table.
+        Downstairs, Bandra Bhai is darker, cosier and more clandestine — a
+        low-lit cocktail den with the same soul. Two distinct moods, one
+        kitchen, and the same regional Indian food at the heart of both.
+      </p>
+
+      <!-- Featured In -->
+      <p class="card-featured-source">
+        As featured in <span class="gold-text not-italic">The Times</span>,
+        <span class="gold-text not-italic">GQ</span>,
+        <span class="gold-text not-italic">Vogue</span> and
+        <span class="gold-text not-italic">Condé Nast Traveller</span>.
+      </p>
+
+      <!-- Award Trophy -->
+      <p class="card-award">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-trophy"
+        >
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+          <path d="M4 22h16"></path>
+          <path
+            d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+          ></path>
+          <path
+            d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+          ></path>
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+        </svg>
+        Voted London's Best Indian Restaurant by FACT 2025
+      </p>
+
+      <!-- Actions -->
+      <div class="hero-actions">
+        <a
+          href="https://www.sevenrooms.com/explore/pahlihill/reservations/create/search"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          Reserve a Table
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="/cinema-menu" class="btn"> Watch the Menu </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side Vertical Indicator -->
+  <div class="right-vertical-indicator">
+    <div class="vertical-line"></div>
+    <span class="indicator-text">NOW PLAYING · TONIGHT'S KITCHEN</span>
+    <div class="vertical-line"></div>
+  </div>
+
+  <div class="scallop-divider">
+    <svg
+      class="scallop-svg"
+      width="100%"
+      height="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern
+          id="scallop-pattern"
+          x="0"
+          y="0"
+          width="24"
+          height="24"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 A 12 12 0 0 0 24 0 L24 24 L0 24 Z" fill="#ebdcb9" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="24" fill="url(#scallop-pattern)" />
+    </svg>
+  </div>
+</section>
+
+<!-- Recognition Section -->
+<section class="recognition-section">
+  <div class="recognition-header">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-award"
+    >
+      <circle cx="12" cy="8" r="7"></circle>
+      <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+    </svg>
+    <span class="header-text">As Recognised By</span>
+  </div>
+
+  <div class="recognition-grid">
+    <!-- Card 1: FACT Dining Awards London 2025 -->
+    <a
+      href="https://diningawards.factmagazines.com/portfolio/fact-dining-awards-london-2025-the-winners/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-fact"
+    >
+      <img
+        src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:25:20.830Z/fact-award-2025-cIcUktKr.jpg"
+        alt="FACT Dining Awards London 2025"
+      />
+    </a>
+
+    <!-- Card 2: Michelin Bib Gourmand -->
+    <a
+      href="https://guide.michelin.com/gb/en/greater-london/london/restaurant/pahli-hill"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-michelin"
+    >
+      <img
+        src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:25:53.223Z/michelin-bib-gourmand-DkFHuRN2.jpg"
+        alt="Michelin Bib Gourmand"
+      />
+    </a>
+
+    <!-- Card 3: The Times -->
+    <a
+      href="https://www.thetimes.com/uk/article/marina-oloughlin-reviews-pali-hill-londons-exciting-new-indian-6ffbkhbzc"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-times"
+    >
+      <img
+        src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:26:18.244Z/the-times-BfNRSEq3.jpg"
+        alt="The Times"
+      />
+    </a>
+
+    <!-- Card 4: Condé Nast Traveller -->
+    <a
+      href="https://www.cntraveler.com/gallery/best-indian-restaurants-london"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-conde"
+    >
+      <img
+        src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:26:40.274Z/conde-nast-traveller-C6D2UC7B.jpg"
+        alt="Condé Nast Traveller"
+      />
+    </a>
+
+    <!-- Card 5: Great British Chefs -->
+    <a
+      href="https://www.greatbritishchefs.com/restaurants/pali-hill"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-gbchefs"
+    >
+      <img
+        src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:27:07.359Z/great-british-chefs-BO1gQ4T3.jpg"
+        alt="Great British Chefs"
+      />
+    </a>
+
+    <!-- Card 6: The Handbook (Text element) -->
+    <a
+      href="https://www.thehandbook.com/indian-restaurants-london/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="award-card card-handbook"
+    >
+      <span class="handbook-text">The Handbook</span>
+    </a>
+  </div>
+</section>
+
+<!-- Latest News / Watermark Section -->
+<section class="latest-news-section">
+  <!-- Right Corner Banana Leaf Decoration -->
+  <img
+    src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T13:06:01.326Z/banana-leaf-CgIYXsLF111.jpg"
+    alt=""
+    class="decorative-leaf-right"
+    aria-hidden="true"
+  />
+
+  <div class="section-container">
+    <!-- Header Title Area -->
+    <div class="latest-header">
+      <span class="latest-badge">✦ THE LATEST ✦</span>
+      <h2 class="latest-title">
+        Things <em class="italic-highlight">you must know.</em>
+      </h2>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="latest-grid">
+      <!-- Card 1: New on the Menu (Carousel) -->
+      <a href="/menu?filter=new" class="latest-card card-menu">
+        <div class="card-media-wrapper">
+          @for (slide of slides; track slide.name; let idx = $index) {
+            <img
+              [src]="slide.img"
+              alt=""
+              loading="lazy"
+              class="card-carousel-img"
+              [style.opacity]="activeSlide === idx ? 1 : 0"
+            />
+            <video
+              [src]="slide.video"
+              [poster]="slide.img"
+              autoplay
+              muted
+              loop
+              playsinline
+              disablePictureInPicture
+              preload="metadata"
+              class="card-carousel-video"
+              [style.opacity]="activeSlide === idx ? 1 : 0"
+            ></video>
+          }
+          <!-- Indicator dots -->
+          <div class="carousel-dots">
+            @for (slide of slides; track slide.name; let idx = $index) {
+              <span
+                class="carousel-dot"
+                [class.active]="activeSlide === idx"
+              ></span>
+            }
+          </div>
+          <!-- Top badge -->
+          <div class="carousel-badge">
+            {{ slides[activeSlide].name }}
+          </div>
+        </div>
+
+        <div class="card-content">
+          <span class="card-tag">INNOVATION & AUTHENTICITY</span>
+          <h3 class="card-heading">New on the Menu</h3>
+          <p class="card-desc">Every month we aim to launch a new dish.</p>
+          <ul class="card-list">
+            <li><span class="bullet">✦</span> Chicory Chaat</li>
+            <li><span class="bullet">✦</span> Benne Dosa Tacos</li>
+            <li><span class="bullet">✦</span> Lamb Kothu Roti</li>
+            <li><span class="bullet">✦</span> Rabdi Tres Leches</li>
+            <li><span class="bullet">✦</span> Beetroot Seekh Kakori</li>
+            <li>
+              <span class="bullet">✦</span> Pahli Hill Coastal Harvest Salad
+            </li>
+          </ul>
+          <span class="card-link-text">
+            SEE WHAT'S NEW
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right arrow-icon"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 2: Bandra Bhai Downstairs -->
+      <a href="/speakeasy" class="latest-card card-speakeasy">
+        <div class="card-media-wrapper">
+          <video
+            src="/__l5e/assets-v1/226b217c-a761-4a77-8b24-8a1d82ca6500/interior-landscape.mp4"
+            poster="/images/optimized/bandra-bhai-downstairs-card.jpg"
+            autoplay
+            muted
+            loop
+            playsinline
+            disablePictureInPicture
+            preload="metadata"
+            class="card-video"
+          ></video>
+        </div>
+
+        <div class="card-content">
+          <span class="card-tag">BANDRA BHAI DOWNSTAIRS</span>
+          <h3 class="card-heading">Bandra Bhai Downstairs</h3>
+          <p class="card-desc">
+            Downstairs, Bandra Bhai is darker, cosier and more clandestine — a
+            low-lit cocktail den with the same soul. Two distinct moods, one
+            kitchen, and the same regional Indian food at the heart of both.
+          </p>
+          <span class="card-link-text">
+            STEP DOWNSTAIRS
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right arrow-icon"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 3: Cinema Menu -->
+      <a href="/about/world-first" class="latest-card card-cinema">
+        <div class="card-media-wrapper">
+          <video
+            src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T13:38:44.359Z/food-landscape-fast.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            disablePictureInPicture
+            preload="metadata"
+            class="card-video"
+          ></video>
+        </div>
+
+        <div class="card-content">
+          <span class="card-tag">A WORLD FIRST IN HOSPITALITY TECH</span>
+          <h3 class="card-heading">Cinema Menu, AI & Allergen Filters</h3>
+          <p class="card-desc">
+            Cinema Menu where you can see the menu like reels — check out all
+            three features on our website, a first in London hospitality tech.
+          </p>
+          <span class="card-link-text">
+            UNLIKE ANY OTHER WEBSITE IN THE WORLD
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right arrow-icon"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
