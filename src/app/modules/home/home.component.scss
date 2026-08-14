@@ -18,6 +18,7 @@
     z-index: 0;
     pointer-events: none;
     background-color: #0b2114; /* Prevents black flash on loading or loop restart */
+    filter: brightness(1.15) contrast(1.05);
 
     /* Force Hardware Acceleration for smooth HD quality rendering */
     transform: translate3d(0, 0, 0);
@@ -34,8 +35,8 @@
     bottom: 0;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.65) 100%
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.3) 100%
     );
     z-index: 1;
   }
@@ -159,8 +160,8 @@
       }
 
       .badge-text {
-        font-family: monospace;
-        font-size: 10px;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
+        font-size: 11px;
         letter-spacing: 0.32em;
         text-transform: uppercase;
         color: var(--ochre);
@@ -169,7 +170,7 @@
 
     /* Title */
     .card-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 9vw;
       color: var(--ivory);
       line-height: 0.95;
@@ -214,9 +215,9 @@
           content: "";
           position: absolute;
           left: -4px;
-          bottom: -10px; /* Moved down by another 5px to grow thickness downward */
+          bottom: 0px; /* Shifted up by 10px (was -10px) */
           width: calc(100% + 8px);
-          height: 35px; /* Increased thickness by another 5px (was 24px) */
+          height: 35px;
           background: linear-gradient(
             to right,
             var(--ochre),
@@ -225,13 +226,13 @@
           z-index: -1;
 
           @media (max-width: 1024px) {
-            height: 25px; /* Increased thickness by another 5px (was 20px) */
-            bottom: -2px; /* Moved down by another 5px */
+            height: 25px;
+            bottom: 8px; /* Shifted up by 10px (was -2px) */
           }
 
           @media (max-width: 768px) {
-            height: 21px; /* Increased thickness by another 5px (was 16px) */
-            bottom: -4px; /* Moved down by another 5px */
+            height: 21px;
+            bottom: 6px; /* Shifted up by 10px (was -4px) */
           }
         }
       }
@@ -252,9 +253,9 @@
       }
 
       .text {
-        font-family: monospace;
-        font-size: 10px;
-        letter-spacing: 0.4em;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
+        font-size: 11px;
+        letter-spacing: 0.35em;
         text-transform: uppercase;
         color: var(--ochre);
       }
@@ -262,7 +263,7 @@
 
     /* Description */
     .card-description {
-      font-family: "Inter", sans-serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 1rem;
       color: rgba(245, 236, 215, 0.9); /* text-[var(--ivory)]/90 */
       line-height: 1.625;
@@ -277,7 +278,7 @@
 
     /* Featured Source */
     .card-featured-source {
-      font-family: "Inter", sans-serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.875rem; /* text-sm */
       color: rgba(245, 236, 215, 0.8); /* text-[var(--ivory)]/80 */
       font-style: italic;
@@ -299,8 +300,8 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      font-family: monospace;
-      font-size: 10px;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
+      font-size: 11px;
       letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--ochre);
@@ -340,7 +341,7 @@
         padding: 0.625rem 1.5rem;
         background-color: var(--ochre);
         color: var(--jungle);
-        font-family: monospace;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-size: 11px;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -363,6 +364,37 @@
           transition: transform 0.3s ease;
         }
       }
+    }
+  }
+
+  .right-vertical-indicator {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 3;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    .vertical-line {
+      width: 1px;
+      height: 60px;
+      background-color: var(--ochre);
+    }
+
+    .indicator-text {
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--ochre);
     }
   }
 
