@@ -1,0 +1,106 @@
+<!-- Premium Header -->
+<header class="header">
+  <div class="header-container">
+    <a routerLink="/" class="header-brand">
+      <div class="logo-container">
+        <img
+          [src]="logoUrl"
+          alt="Pahli Hill bird crest"
+          class="brand-logo"
+          loading="eager"
+          decoding="sync"
+        />
+      </div>
+      <span class="brand-name">Pahli Hill Bandra Bhai</span>
+    </a>
+
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item dropdown">
+          <a routerLink="/about-us" class="nav-link">
+            ABOUT
+            <svg
+              class="arrow-icon"
+              width="8"
+              height="5"
+              viewBox="0 0 8 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L4 4L7 1"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/about">ABOUT US</a></li>
+            <li><a routerLink="/private-hires">PRIVATE HIRES</a></li>
+            <li>
+              <a [routerLink]="['/speakeasy']">SPEAKEASY</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a fragment="menu" class="nav-link">MENU</a>
+        </li>
+        <li class="nav-item">
+          <a fragment="concierge" class="nav-link">AI CONCIERGE</a>
+        </li>
+        <li class="nav-item">
+          <a
+            [routerLink]="['/private-hires']"
+            fragment="private-hires"
+            class="nav-link"
+            >PRIVATE HIRES</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/speakeasy']" class="nav-link">SPEAKEASY</a>
+        </li>
+        <li class="nav-item">
+          <a fragment="whats-on" class="nav-link">WHAT'S ON</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <ul class="mobile-nav-list">
+    <li>
+      <a routerLink="/about" (click)="isMobileMenuOpen = false">ABOUT US</a>
+    </li>
+    <!-- <li>
+      <a fragment="menu" (click)="isMobileMenuOpen = false">MENU</a>
+    </li> -->
+    <!-- <li>
+      <a fragment="concierge" (click)="isMobileMenuOpen = false"
+        >AI CONCIERGE</a
+      >
+    </li> -->
+    <li>
+      <a [routerLink]="['/private-hires']" (click)="isMobileMenuOpen = false"
+        >PRIVATE HIRES</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="['/speakeasy']" (click)="isMobileMenuOpen = false"
+        >SPEAKEASY</a
+      >
+    </li>
+    <!-- <li>
+      <a fragment="whats-on" (click)="isMobileMenuOpen = false">WHAT'S ON</a>
+    </li> -->
+  </ul>
+</div>

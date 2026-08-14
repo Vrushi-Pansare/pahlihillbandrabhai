@@ -1,0 +1,1222 @@
+.about-container {
+  background-color: #efe0c2;
+  color: #0b2114;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+}
+
+.about-hero-section {
+  position: relative;
+  height: 76vh;
+  min-height: 630px;
+  margin-top: -150px; /* Slide under the sticky header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--jungle-deep);
+  z-index: 1;
+
+  .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 33%;
+    transform: scale(1.05);
+    filter: saturate(1.12) contrast(1.06);
+    z-index: 0;
+  }
+
+  .hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(3, 33, 16, 0.02) 0%,
+      rgba(3, 33, 16, 0.22) 55%,
+      rgba(0, 18, 6, 0.78) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-leaf-graphic {
+    position: absolute;
+    top: -4rem;
+    left: -5rem;
+    width: 420px;
+    opacity: 0.18;
+    transform: rotate(-12deg);
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      width: 320px;
+      top: -2rem;
+      left: -3rem;
+    }
+  }
+
+  .hero-card-container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .hero-glass-card {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 18, 6, 0.45);
+    border: 1px solid rgba(228, 154, 0, 0.15);
+    border-radius: 1rem;
+    box-shadow: 0 30px 80px -20px rgba(0, 18, 6, 0.7);
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    @media (max-width: 576px) {
+      padding: 1.5rem 1.5rem;
+    }
+
+    .card-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+
+      .tagline-line {
+        height: 1px;
+        width: 40px;
+        background-color: var(--ochre);
+      }
+
+      .tagline-text {
+        font-family: monospace;
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: var(--ochre);
+      }
+    }
+
+    .card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.875rem; // Reduced by 2px
+      color: var(--ivory);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+
+      @media (min-width: 768px) {
+        font-size: 3.875rem; // Reduced by 2px
+      }
+
+      @media (min-width: 1280px) {
+        font-size: 4.675rem; // Reduced by 2px
+      }
+
+      .italic-ochre {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ochre);
+      }
+    }
+
+    .card-description {
+      font-family: "Inter", sans-serif;
+      font-size: 0.875rem; // Reduced by 2px
+      line-height: 1.6;
+      color: rgba(248, 235, 211, 0.8);
+      max-width: 600px;
+      margin: 0;
+
+      @media (min-width: 768px) {
+        font-size: 1.025rem; // Reduced by 2px
+      }
+    }
+  }
+}
+
+/* Our Story Section Styling */
+.our-story-section {
+  position: relative;
+  background-color: #efe0c2; /* matching home background */
+  padding: 6rem 2rem; /* Restored standard padding for safe mobile gutters */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 8rem 2rem; /* Restored standard padding for desktop gutters */
+  }
+
+  .story-leaf-graphic {
+    position: absolute;
+    left: -6rem;
+    bottom: -8rem;
+    width: 460px;
+    opacity: 0.2;
+    transform: rotate(-12deg);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+
+    @media (max-width: 768px) {
+      width: 320px;
+      left: -4rem;
+      bottom: -6rem;
+    }
+  }
+
+  .story-content-container {
+    position: relative;
+    max-width: 896px; /* Matched to Tailwind's max-w-4xl (896px) from live site */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+    font-family: "Displace", Georgia, serif;
+    color: rgba(11, 33, 20, 0.85); /* var(--jungle) equivalent */
+    line-height: 1.65; /* Mobile line spacing */
+    font-size: 1.05rem; /* Clean readable font size on mobile */
+    font-weight: 350;
+    letter-spacing: 0.8px; /* Increased letter spacing */
+
+    @media (min-width: 768px) {
+      font-size: 1.1rem; /* Desktop font size */
+      line-height: 1.7; /* Desktop line spacing */
+    }
+  }
+
+  .story-header {
+    text-align: center;
+    margin-bottom: 1rem;
+
+    .story-tagline {
+      font-family: monospace;
+      font-size: 0.6rem; /* 10px equivalent */
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .story-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: #0b2114;
+      line-height: 50px; /* Exact line-height from screenshot */
+
+      @media (min-width: 768px) {
+        font-size: 48px; /* Exact font-size from screenshot */
+      }
+
+      .italic-terracotta {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 300; /* Exact font-weight from screenshot */
+        color: var(--terracotta);
+      }
+    }
+  }
+
+  .story-paragraph {
+    margin: 0;
+    font-weight: 450;
+
+    .story-link {
+      color: var(--terracotta);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.2s ease;
+
+      &:hover {
+        border-color: var(--terracotta);
+      }
+    }
+  }
+
+  .story-footer {
+    text-align: center;
+    padding-top: 1rem;
+
+    .story-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border: 2px solid rgba(11, 33, 20, 0.3);
+      color: #0b2114;
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #0b2114;
+        color: #efe0c2;
+        border-color: #0b2114;
+      }
+    }
+  }
+}
+
+/* Meet the Team Section Styling */
+.meet-team-section {
+  position: relative;
+  background-color: var(--jungle);
+  padding: 6rem 2rem;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 8rem 4rem;
+  }
+
+  .team-grid {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1.1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  /* Left Column: Slideshow Frame */
+  .team-photo-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Exact aspect ratio from markup styling */
+    border: 4px solid rgba(228, 154, 0, 0.4); /* var(--ochre) equivalent */
+    box-shadow: 0 30px 80px -20px rgba(0, 18, 6, 0.8);
+    overflow: hidden;
+  }
+
+  .team-image-stack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .team-image-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
+
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  .team-member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Text Info Overlay inside Image bottom */
+  .team-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.75rem;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 2;
+
+    .overlay-name {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1.75rem;
+      color: var(--ivory);
+      line-height: 1.2;
+    }
+
+    .overlay-role {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      margin-top: 0.35rem;
+    }
+  }
+
+  /* Progress Dash Buttons top-right */
+  .team-indicators {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+
+    .indicator-btn {
+      height: 6px;
+      width: 22px;
+      padding: 0;
+      border: none;
+      background-color: rgba(248, 235, 211, 0.3);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background-color: var(--ochre);
+      }
+    }
+  }
+
+  /* Right Column: Info details styling */
+  .team-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--ivory);
+
+    .team-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ochre);
+    }
+
+    .team-active-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .team-heading {
+      font-family: "Playfair Display", serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--ivory);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .team-heading-role {
+        display: block;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.5rem;
+        color: var(--ochre);
+        margin-top: 0.5rem;
+
+        @media (min-width: 768px) {
+          font-size: 1.85rem;
+        }
+      }
+    }
+
+    .team-description {
+      font-family: "Displace", Georgia, serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: rgba(248, 235, 211, 0.8);
+      margin: 0;
+      letter-spacing: 0.8px;
+
+      @media (min-width: 768px) {
+        font-size: 1.15rem;
+      }
+    }
+
+    .team-action {
+      margin-top: 1rem;
+
+      .team-link-btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.9rem 1.8rem;
+        background-color: var(--ochre);
+        color: var(--jungle-deep);
+        font-family: monospace;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: var(--ivory);
+          color: var(--jungle-deep);
+        }
+      }
+    }
+  }
+}
+
+/* Recognition Section Styling */
+.recognition-section {
+  position: relative;
+  background-color: var(--ivory-warm);
+  padding: 6rem 2rem;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 8rem 4rem;
+  }
+
+  .rec-grid {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+  }
+
+  /* Left Column: Collage Frame */
+  .rec-collage-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+
+  .rec-offset-card {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    background-color: var(--terracotta);
+    transform: rotate(-2deg);
+    border-radius: 0.125rem;
+    z-index: 0;
+  }
+
+  .rec-photo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 4px solid var(--ivory);
+    box-shadow: 0 30px 60px -15px rgba(3, 33, 16, 0.25);
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .rec-team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Right Column: Info Details & Awards */
+  .rec-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+
+    .rec-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+    }
+
+    .rec-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--jungle);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-terracotta {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--terracotta);
+      }
+    }
+
+    .rec-award-container {
+      margin-top: 1rem;
+    }
+
+    .rec-award-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border: 2px solid rgba(3, 33, 16, 0.15); /* var(--jungle) equivalent at 0.15 opacity */
+      background-color: var(--ivory);
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--terracotta);
+      }
+
+      @media (min-width: 768px) {
+        padding: 2rem;
+        gap: 2rem;
+      }
+    }
+
+    .rec-award-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: left;
+    }
+
+    .rec-award-title {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: var(--jungle);
+      margin: 0;
+
+      @media (min-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    .rec-award-description {
+      font-family: "Displace", Georgia, serif;
+      font-size: 0.875rem;
+      color: rgba(3, 33, 16, 0.8);
+      line-height: 1.5;
+      margin: 0;
+      letter-spacing: 0.6px;
+
+      @media (min-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+
+    .rec-award-badge {
+      height: 6rem;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+
+      @media (min-width: 768px) {
+        height: 7rem;
+      }
+    }
+  }
+}
+
+/* How We're Different Section Styling */
+.different-section {
+  position: relative;
+  background-color: var(--ivory);
+  padding: 6rem 2rem 6.625rem 2rem; /* Increased bottom padding by 20px to restore button gap */
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 8rem 4rem 8.625rem 4rem; /* Increased bottom padding by 20px to restore button gap */
+  }
+
+  .diff-container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .diff-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+
+    .diff-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .diff-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--jungle);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-terracotta {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--terracotta);
+      }
+    }
+
+    .diff-mobile-helper {
+      display: block;
+      font-family: monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(3, 33, 16, 0.5);
+      margin-top: 1.5rem;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+  /* Horizontal swipe behavior on mobile, grid layout on desktop */
+  .diff-cards-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.25rem;
+    padding-bottom: 2rem;
+    margin-left: -2rem; /* Bleed to screen edges for swiping */
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      overflow: visible;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .diff-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 85%;
+    background-color: var(--ivory-warm);
+    border: 1px solid rgba(3, 33, 16, 0.15);
+    padding: 2.25rem 20px;
+    box-shadow: var(--shadow-paper);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: border-color 0.3s ease;
+
+    @media (min-width: 480px) {
+      width: 60%;
+    }
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
+
+    .diff-card-icon {
+      color: var(--terracotta);
+      margin-bottom: 1.25rem;
+    }
+
+    .diff-card-title {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 1.3rem; /* Reduced card title font size */
+      color: var(--jungle);
+      margin: 0 0 0.75rem 0;
+    }
+
+    .diff-card-description {
+      font-family: "Displace", Georgia, serif;
+      font-size: 0.85rem; /* Reduced mobile font size */
+      color: rgba(3, 33, 16, 0.75);
+      line-height: 1.6;
+      margin: 0;
+      letter-spacing: 0.6px;
+
+      @media (min-width: 768px) {
+        font-size: 0.925rem; /* Reduced desktop font size */
+      }
+    }
+  }
+
+  .diff-footer {
+    text-align: center;
+    margin-top: 3rem;
+
+    .diff-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border: 2px solid rgba(3, 33, 16, 0.6);
+      color: var(--jungle);
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--jungle);
+        color: var(--ivory);
+        border-color: var(--jungle);
+      }
+    }
+  }
+}
+
+/* Warm Spacer Section Styling */
+.warm-spacer-section {
+  position: relative;
+  background-color: var(--ivory-warm); /* #fdf2e1 warm ivory */
+  padding: 5rem 1.5rem; /* py-20 equivalent */
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding: 6rem 2.5rem; /* py-24 equivalent */
+  }
+}
+
+/* Speakeasy Vibe Section Styling */
+.speakeasy-section {
+  position: relative;
+  background-color: var(--jungle-deep); /* #001206 deep jungle */
+  border-top: 2px solid rgba(228, 154, 0, 0.3); /* border-y border-[var(--ochre)]/30 */
+  border-bottom: 2px solid rgba(228, 154, 0, 0.3);
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 7rem 2.5rem; /* py-28 equivalent */
+  }
+
+  .speak-container {
+    max-width: 860px; /* Increased width to keep title on a single line */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .speak-header {
+    .speak-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      margin-bottom: 0.75rem;
+    }
+
+    .speak-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--ivory);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-ochre {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 200;
+        color: var(--ochre);
+      }
+    }
+  }
+
+  .speak-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 768px; /* Restored original width for paragraph content */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .speak-paragraph {
+    font-family: "Displace", Georgia, serif;
+    font-size: 0.95rem; /* Reduced by ~1 point */
+    color: rgba(248, 235, 211, 0.85); /* var(--ivory) at 0.85 opacity */
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.8px;
+    text-align: left; /* Aligned paragraphs to the left */
+
+    @media (min-width: 768px) {
+      font-size: 1.05rem; /* Reduced by ~1 point */
+    }
+  }
+}
+
+/* Signature Moves Section Styling */
+.signature-moves-section {
+  position: relative;
+  background-color: var(--ivory-warm); /* #fdf2e1 warm ivory */
+  padding: 4.4rem 10px; /* Reduced vertical padding to decrease height by another 15px */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 5.4rem 35px; /* Reduced vertical padding to decrease height by another 15px */
+  }
+
+  .sig-container {
+    max-width: 768px; /* max-w-3xl equivalent */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .sig-header {
+    .sig-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .sig-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--jungle);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-terracotta {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--terracotta);
+      }
+    }
+  }
+
+  .sig-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sig-paragraph {
+    font-family: "Displace", Georgia, serif;
+    font-size: 1.05rem;
+    color: rgba(3, 33, 16, 0.75); /* var(--jungle) equivalent at 0.75 opacity */
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.8px;
+
+    @media (min-width: 768px) {
+      font-size: 1.15rem;
+    }
+  }
+
+  .sig-footer {
+    margin-top: 1rem;
+
+    .sig-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      background-color: var(--terracotta);
+      color: var(--ivory);
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--jungle);
+        color: var(--ivory);
+      }
+    }
+  }
+}
+
+/* Amenities Beyond Section Styling */
+.amenities-section {
+  position: relative;
+  background-color: var(--jungle-deep); /* #001206 deep jungle */
+  padding: 4.4rem 10px; /* Symmetrical compact height (matches Signature Moves) */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 5.4rem 35px; /* Symmetrical compact height (matches Signature Moves) */
+  }
+
+  .amen-container {
+    max-width: 768px; /* max-w-3xl equivalent */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .amen-header {
+    .amen-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      margin-bottom: 0.75rem;
+    }
+
+    .amen-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--ivory);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-ochre {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ochre);
+      }
+    }
+  }
+
+  .amen-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .amen-paragraph {
+    font-family: "Displace", Georgia, serif;
+    font-size: 1.05rem;
+    color: rgba(
+      248,
+      235,
+      211,
+      0.75
+    ); /* var(--ivory) equivalent at 0.75 opacity */
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.8px;
+
+    @media (min-width: 768px) {
+      font-size: 1.15rem;
+    }
+  }
+
+  .amen-footer {
+    margin-top: 1rem;
+
+    .amen-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      background-color: var(--ochre);
+      color: var(--jungle-deep);
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--ivory);
+        color: var(--jungle-deep);
+      }
+    }
+  }
+}
+
+/* Digital Dining Tools Section Styling */
+.digital-tools-section {
+  position: relative;
+  background-color: var(
+    --ivory
+  ); /* Matches the beige of "Three things you must know." */
+  padding: 5rem 10px 11.85rem 10px; /* Shifted text top-wise by 40px by adjusting padding values */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 6rem 35px 12.85rem 35px; /* Shifted text top-wise by 40px by adjusting padding values */
+  }
+
+  .digi-container {
+    max-width: 768px; /* max-w-3xl equivalent */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .digi-header {
+    .digi-tagline {
+      font-family: monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .digi-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 500;
+      color: var(--jungle);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 3rem;
+      }
+
+      .italic-terracotta {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--terracotta);
+      }
+    }
+  }
+
+  .digi-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .digi-paragraph {
+    font-family: "Displace", Georgia, serif;
+    font-size: 0.95rem; /* Reduced font size by 0.1rem (1 point) */
+    color: rgba(3, 33, 16, 0.75); /* var(--jungle) equivalent at 0.75 opacity */
+    line-height: 1.7;
+    margin: 0;
+    letter-spacing: 0.8px;
+
+    @media (min-width: 768px) {
+      font-size: 1.05rem; /* Reduced font size by 0.1rem (1 point) */
+    }
+  }
+
+  .digi-footer {
+    margin-top: 1rem;
+
+    .digi-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      background-color: var(--terracotta);
+      color: var(--ivory);
+      font-family: monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--jungle);
+        color: var(--ivory);
+      }
+    }
+  }
+}

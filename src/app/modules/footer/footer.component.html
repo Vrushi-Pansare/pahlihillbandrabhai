@@ -1,83 +1,198 @@
 <footer class="footer">
+  <!-- Top Scallop Divider -->
+  <div class="h-6 bg-[var(--terracotta)] scallop-top" aria-hidden="true"></div>
+
+  <!-- Decorative Leaves -->
+  <img
+    [src]="bananaLeafUrl"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+    class="leaf-left"
+  />
+  <img
+    [src]="bananaLeafUrl"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+    decoding="async"
+    class="leaf-right"
+  />
+
   <div class="footer-container">
-    <!-- Brand / Logo Section -->
-    <div class="footer-brand">
-      <div class="logo-wrapper">
-        <img [src]="logoUrl" alt="Pahli Hill Logo" class="footer-logo">
-      </div>
-      <h3 class="brand-title">Pahli Hill<br><span class="brand-sub">Bandra Bhai</span></h3>
-      <p class="brand-desc">
-        A celebration of India's diverse regional home cooking, paired with a clandestine 1970s smuggling den speakeasy downstairs. Two distinct moods, one shared soul.
-      </p>
-      <div class="social-links">
-        <a href="#" class="social-link" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social-link" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Quick Links Section -->
-    <div class="footer-links">
-      <h4 class="section-title">Explore</h4>
-      <ul class="link-list">
-        <li><a href="#about" class="footer-link">About Us</a></li>
-        <li><a href="#menu" class="footer-link">Menus</a></li>
-        <li><a href="#concierge" class="footer-link">AI Concierge</a></li>
-        <li><a href="#private-hires" class="footer-link">Private Hires</a></li>
-        <li><a href="#speakeasy" class="footer-link">Bandra Bhai Speakeasy</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact & Location Section -->
-    <div class="footer-info">
-      <h4 class="section-title">Visit Us</h4>
-      <address class="contact-address">
-        <p class="address-line">
-          <span class="icon-span">📍</span>
-          79 Newman Street, Fitzrovia,<br>London W1T 3DP
-        </p>
-        <p class="contact-line">
-          <span class="icon-span">📞</span>
-          <a href="tel:+442071234567" class="footer-link">+44 (0) 20 7123 4567</a>
-        </p>
-        <p class="contact-line">
-          <span class="icon-span">✉️</span>
-          <a href="mailto:info@pahlihillbandrabhai.com" class="footer-link">info&#64;pahlihillbandrabhai.com</a>
-        </p>
-      </address>
-    </div>
-
-    <!-- Newsletter Section -->
-    <div class="footer-newsletter">
-      <h4 class="section-title">Join The Club</h4>
-      <p class="newsletter-desc">Subscribe to unlock secret tasting menus, speakeasy passwords, and curated events.</p>
-      <form class="newsletter-form" (submit)="$event.preventDefault()">
-        <div class="input-group">
-          <input type="email" placeholder="Enter your email address" class="newsletter-input" required>
-          <button type="submit" class="newsletter-btn" aria-label="Subscribe">
-            <span>SUBSCRIBE</span>
-            <span class="arrow">→</span>
-          </button>
+    <div class="footer-main-column">
+      <div class="footer-brand">
+        <div class="logo-wrapper">
+          <img
+            [src]="logoUrl"
+            alt="Pahli Hill bird crest"
+            class="footer-logo"
+            loading="lazy"
+            decoding="sync"
+          />
         </div>
-      </form>
+        <div class="brand-text">
+          <div class="brand-name">Pahli Hill</div>
+          <div class="brand-sub">Bandra Bhai · Fitzrovia</div>
+        </div>
+      </div>
+
+      <p class="brand-desc">
+        A taste of India in the heart of Fitzrovia. Bold flavours, brass-lit
+        interiors, and the warm, mischievous spirit of the Bandra Bhai
+        speakeasy flow.
+      </p>
+
+      <p class="brand-features">
+        As featured in <em class="source-highlight">The Times</em>,
+        <em class="source-highlight">GQ</em>,
+        <em class="source-highlight">Vogue</em> and
+        <em class="source-highlight">Condé Nast Traveller</em>.<br />
+        Voted London's Best Indian Restaurant by FACT 2025.
+      </p>
+
+      <a
+        href="https://www.instagram.com/pahlihillbandrabhaiuk"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-btn instagram-btn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-instagram"
+        >
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        </svg>
+        <span>&#64;pahlihillbandrabhaiuk</span>
+      </a>
+
+      <div class="gift-cards-section">
+        <h4 class="gift-title">Gift Cards</h4>
+        <p class="gift-desc">
+          Give the gift of Mumbai — digital and printed vouchers from £25,
+          valid for 12 months.
+        </p>
+        <a href="/gifts" class="gift-btn"
+          >View gift cards <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </div>
+
+    <div class="footer-links-column">
+      <h4 class="links-title">Wander</h4>
+      <ul class="links-grid">
+        <li>
+          <a href="/about"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> About</a>
+        </li>
+        <li>
+          <a href="/cinema-menu"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Cinema Menu</a>
+        </li>
+        <li>
+          <a href="/ai-concierge"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> AI Concierge</a>
+        </li>
+        <li>
+          <a href="/ai-concierge?followup=true"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Message the team</a>
+        </li>
+        <li>
+          <a href="/private-hires"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Private Hires</a>
+        </li>
+        <li>
+          <a href="/speakeasy"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Speakeasy</a>
+        </li>
+        <li>
+          <a href="/whats-on"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> What's On</a>
+        </li>
+        <li>
+          <a href="/gifts"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Gifts</a>
+        </li>
+        <li>
+          <a href="/careers"><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Careers</a>
+        </li>
+      </ul>
     </div>
   </div>
 
-  <!-- Footer Bottom Bar -->
-  <div class="footer-bottom">
-    <div class="bottom-container">
-      <p class="copyright">&copy; {{ currentYear }} Pahli Hill Bandra Bhai. All rights reserved.</p>
-      <div class="bottom-links">
-        <a href="#" class="bottom-link">Privacy Policy</a>
-        <a href="#" class="bottom-link">Terms of Service</a>
-        <a href="#" class="bottom-link">Accessibility</a>
+  <div class="opening-hours-section">
+    <div class="hours-container">
+      <span class="hours-label">Opening Hours</span>
+      <span class="separator">·</span>
+      <span>Monday – Saturday · 12 – 10</span>
+      <span class="separator">·</span>
+      <span>Sunday · 12 – 5</span>
+      <span class="separator">·</span>
+      <span
+        class="status-indicator-wrapper"
+        [class.is-open]="isOpen"
+        [title]="isOpen ? 'Open now' : 'Closed now'"
+        [attr.aria-label]="isOpen ? 'Open now' : 'Closed now'"
+      >
+        <span class="status-dot">
+          <span class="status-dot-ping"></span>
+        </span>
+        <span class="status-text">{{ isOpen ? 'Open now' : 'Closed now' }}</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="find-us-section">
+    <h4 class="find-us-title">Find us</h4>
+    <div class="find-us-grid">
+      <div class="map-wrapper">
+        <iframe
+          title="Pahli Hill Bandra Bhai location — 79-81 Mortimer Street, Fitzrovia, London"
+          src="https://www.google.com/maps?q=79-81+Mortimer+Street,+London+W1W+7SJ&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
+      <div class="sketch-wrapper">
+        <img
+          [src]="restaurantSketchUrl"
+          alt="Hand-drawn sketch of the Pahli Hill Bandra Bhai shopfront"
+          loading="lazy"
+          width="1024"
+          height="1024"
+          class="sketch-img"
+        />
+        <div class="sketch-caption">The shopfront, sketched</div>
+      </div>
+    </div>
+    <p class="address-text">
+      79–81 Mortimer Street · Fitzrovia · London W1W 7SJ ·
+      <a href="tel:+442081300101" class="tel-link">+44 20 8130 0101</a>
+    </p>
+  </div>
+
+  <div class="footer-meta-section">
+    <div class="copyright">© {{ currentYear }} Pahli Hill Bandra Bhai</div>
+    <div class="credits">
+      Designed &amp; built by
+      <a
+        href="https://www.synacraft.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="credits-link"
+        >Synacraft</a
+      >
+    </div>
+    <div class="admin-login-wrapper">
+      <a
+        aria-label="Staff · Admin login"
+        title="Staff"
+        href="/login"
+        class="admin-login-dot"
+      ></a>
     </div>
   </div>
 </footer>

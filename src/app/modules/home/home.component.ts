@@ -1,19 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
-import { APP_CONFIG } from '../../configs/constants';
+import { HeaderComponent } from '../header/header.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FooterComponent],
+  imports: [CommonModule, FooterComponent, HeaderComponent, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  logoUrl = APP_CONFIG.logoUrl;
-  isMobileMenuOpen = false;
-
   // Carousel data
   activeSlide = 0;
   slides = [
@@ -76,7 +74,5 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
+
 }

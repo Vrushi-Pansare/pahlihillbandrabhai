@@ -1,0 +1,764 @@
+.speakeasy-main {
+  background-color: var(--jungle-deep);
+  color: var(--ivory);
+  font-family: "Inter", sans-serif;
+}
+
+.speakeasy-hero-section {
+  position: relative;
+  height: 585px;
+  min-height: 525px;
+  width: 100%;
+  margin-top: -100px; /* Slide under header comfortably */
+  overflow: hidden;
+  background-color: var(--jungle-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+
+  @media (min-width: 768px) {
+    height: 595px;
+  }
+
+  .hero-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: translateZ(0);
+    will-change: transform;
+    filter: brightness(1.55);
+    background-color: #1a2e1c;
+
+    &::-webkit-media-controls,
+    &::-webkit-media-controls-overlay-play-button,
+    &::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
+  }
+
+  .hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 18, 6, 0.85) 0%,
+      rgba(0, 18, 6, 0.35) 50%,
+      rgba(0, 18, 6, 0.55) 100%
+    );
+    z-index: 2;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 10;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+      padding: 3.5rem 2.5rem 2rem 2.5rem;
+    }
+  }
+
+  .hero-glass-card {
+    max-width: 900px;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: rgba(0, 18, 6, 0.35);
+    border: 1px solid rgba(228, 154, 0, 0.15);
+    box-shadow: 0 30px 80px -20px rgba(0, 18, 6, 0.7);
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    box-sizing: border-box;
+
+    @media (min-width: 640px) {
+      padding: 1.75rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 2rem 2.5rem;
+    }
+
+    .card-tagline {
+      font-family: monospace;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--ochre);
+      margin-bottom: 1.25rem;
+    }
+
+    .card-title {
+      font-family: "Displace", Georgia, serif;
+      font-size: 2.75rem;
+      color: var(--ivory-warm, #efe0c2);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      margin: 0;
+      font-weight: 400;
+
+      @media (min-width: 640px) {
+        font-size: 3.75rem;
+      }
+
+      @media (min-width: 768px) {
+        font-size: 4.75rem;
+      }
+
+      @media (min-width: 1024px) {
+        font-size: 5.5rem;
+      }
+
+      .italic-ochre {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ochre);
+      }
+    }
+
+    .card-description {
+      font-family: "Displace", Georgia, serif;
+      font-size: 1rem;
+      color: rgba(248, 235, 211, 0.85);
+      line-height: 1.6;
+      margin: 1.25rem auto 0 auto;
+      max-width: 32rem;
+      box-sizing: border-box;
+
+      @media (min-width: 768px) {
+        font-size: 1.15rem;
+      }
+    }
+  }
+
+  /* Scallop Divider Bottom border matching home section */
+  .scallop-divider {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 20;
+
+    .scallop-svg {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 29px;
+    }
+  }
+}
+
+/* Speakeasy Details & Whiskey Flights Section */
+.speakeasy-details-section {
+  background-color: var(--ivory-warm, #efe0c2);
+  color: var(--jungle-deep, #001206);
+  padding: 5rem 1.5rem 6rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 7rem 2.5rem 8rem 2.5rem;
+  }
+
+  .details-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .details-title {
+    font-family: "Displace", Georgia, serif;
+    font-size: 2.25rem;
+    color: var(--jungle-deep, #001206);
+    line-height: 1.05;
+    text-align: center;
+    margin: 0 0 2.5rem 0;
+
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .italic-terracotta {
+      font-style: italic;
+      color: var(--terracotta, #c85a28);
+      font-weight: 300;
+    }
+  }
+
+  .story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-family: "Displace", Georgia, serif;
+    font-size: 1rem;
+    color: rgba(0, 18, 6, 0.8);
+    line-height: 1.7;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+      gap: 1.75rem;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  /* Whiskey Flights Wrapper & Card */
+  .whiskey-flights-wrapper {
+    margin-top: 2.75rem;
+
+    .flights-card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .flights-card-container {
+      background-color: var(--ivory-warm, #efe0c2);
+      border: 2px solid rgba(200, 90, 40, 0.3);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(0, 18, 6, 0.08);
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px -15px rgba(0, 18, 6, 0.14);
+      }
+    }
+
+    .flights-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.25rem 1.25rem;
+
+      @media (min-width: 768px) {
+        padding: 1.5rem 1.75rem;
+      }
+
+      .icon-circle {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 9999px;
+        background-color: rgba(200, 90, 40, 0.12);
+        color: var(--terracotta, #c85a28);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .header-info {
+        flex: 1;
+        min-width: 0;
+
+        .tagline {
+          font-family: monospace;
+          font-size: 0.62rem;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          color: var(--terracotta, #c85a28);
+          margin-bottom: 0.25rem;
+        }
+
+        .title {
+          font-family: "Displace", Georgia, serif;
+          font-style: italic;
+          font-size: 1.5rem;
+          color: var(--jungle-deep, #001206);
+          margin: 0;
+          line-height: 1.2;
+
+          @media (min-width: 768px) {
+            font-size: 1.85rem;
+          }
+        }
+
+        .subtitle {
+          font-family: "Inter", sans-serif;
+          font-size: 0.85rem;
+          color: rgba(0, 18, 6, 0.7);
+          margin: 0.25rem 0 0 0;
+
+          @media (min-width: 768px) {
+            font-size: 0.92rem;
+          }
+        }
+      }
+
+      .badge-25ml {
+        font-family: monospace;
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--terracotta, #c85a28);
+        flex-shrink: 0;
+      }
+    }
+
+    /* Horizontal Cards Carousel */
+    .menu-card-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 0 1.25rem 1.5rem 1.25rem;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        padding: 0 1.75rem 1.75rem 1.75rem;
+        gap: 1.25rem;
+      }
+    }
+
+    .whiskey-item-card {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+      width: 220px;
+      background-color: var(--ivory-warm, #efe0c2);
+      border: 1px solid rgba(0, 18, 6, 0.12);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 768px) {
+        width: 240px;
+      }
+
+      .card-logo-box {
+        aspect-ratio: 4 / 3;
+        width: 100%;
+        background-color: #0b1a44;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        box-sizing: border-box;
+
+        .bird-logo {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .card-body {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .item-title {
+          font-family: "Displace", Georgia, serif;
+          font-size: 1.05rem;
+          color: var(--jungle-deep, #001206);
+          line-height: 1.25;
+        }
+
+        .item-desc {
+          font-family: "Inter", sans-serif;
+          font-size: 0.8rem;
+          color: rgba(0, 18, 6, 0.65);
+          line-height: 1.35;
+          margin: 0.35rem 0 0 0;
+        }
+
+        .item-price {
+          font-family: monospace;
+          font-size: 0.88rem;
+          color: var(--terracotta, #c85a28);
+          margin-top: auto;
+          padding-top: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+/* The Bar Menu Section */
+.bar-menu-section {
+  position: relative;
+  background-color: var(--jungle-deep, #001206);
+  color: var(--ivory, #f6e6cb);
+  padding: 3rem 1rem 3.5rem 1rem;
+  overflow: hidden;
+  border-top: 130px solid var(--ivory);
+  border-bottom: 130px solid var(--ivory);
+
+  @media (min-width: 768px) {
+    padding: 6rem 4.5rem 7.3rem 4.5rem;
+  }
+
+  .cocktail-bg-art {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 420px;
+    opacity: 0.18;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .bar-menu-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .bar-menu-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .tagline {
+      font-family: monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--ochre, #e49a00);
+      margin-bottom: 0.75rem;
+    }
+
+    .title {
+      font-family: "Displace", Georgia, serif;
+      font-style: italic;
+      font-size: 2.75rem;
+      color: var(--ivory, #f6e6cb);
+      margin: 0;
+
+      @media (min-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  /* Filter Buttons Row */
+  .filter-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.35rem;
+      border-radius: 9999px;
+      border: 2px solid rgba(246, 230, 203, 0.25);
+      background-color: transparent;
+      color: var(--ivory, #f6e6cb);
+      font-family: "Displace", Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: rgba(246, 230, 203, 0.1);
+        border-color: var(--ochre, #e49a00);
+      }
+
+      &.active {
+        background-color: var(--ochre, #e49a00);
+        color: var(--jungle-deep, #001206);
+        border-color: var(--ochre, #e49a00);
+        box-shadow: 0 8px 22px -10px rgba(0, 18, 6, 0.6);
+      }
+    }
+  }
+
+  /* Outer Box Container */
+  .menu-outer-box {
+    border: 2px solid rgba(228, 154, 0, 0.25);
+    border-radius: 1.25rem;
+    background-color: rgba(246, 230, 203, 0.04);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem;
+      gap: 2.5rem;
+    }
+  }
+
+  .sub-header-banner {
+    text-align: center;
+    border-top: 2px solid rgba(228, 154, 0, 0.3);
+    border-bottom: 2px solid rgba(228, 154, 0, 0.3);
+    padding: 1.5rem 1rem;
+    background-color: rgba(0, 30, 10, 0.4);
+
+    .banner-title {
+      font-family: "Displace", Georgia, serif;
+      font-style: italic;
+      font-size: 1.85rem;
+      color: var(--ivory, #f6e6cb);
+      margin: 0;
+
+      @media (min-width: 768px) {
+        font-size: 2.75rem;
+      }
+    }
+
+    .banner-sub {
+      font-family: monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ochre, #e49a00);
+      margin: 0.75rem 0 0 0;
+    }
+  }
+
+  /* Category Block */
+  .category-block {
+    border: 2px solid rgba(228, 154, 0, 0.2);
+    border-radius: 1rem;
+    background-color: rgba(0, 24, 8, 0.35);
+    overflow: hidden;
+    padding: 1.25rem;
+
+    @media (min-width: 768px) {
+      padding: 1.5rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 0 0.75rem 0;
+
+      .cat-title {
+        font-family: "Displace", Georgia, serif;
+        font-style: italic;
+        font-size: 1.75rem;
+        color: var(--ivory, #f6e6cb);
+        margin: 0;
+
+        @media (min-width: 768px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      .cat-desc {
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: rgba(246, 230, 203, 0.7);
+        margin: 0.5rem 0 0 0;
+      }
+
+      .swipe-indicator {
+        font-family: monospace;
+        font-size: 0.62rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--ochre, #e49a00);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        flex-shrink: 0;
+      }
+    }
+
+    .menu-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .bar-item-card {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: calc(100% - 2.5rem);
+      max-width: 320px;
+      background-color: var(--ivory-warm, #efe0c2);
+      color: var(--jungle-deep, #001206);
+      border: 1px solid rgba(0, 18, 6, 0.12);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 992px) {
+        width: calc((100% - 2rem) / 3);
+      }
+
+      .img-frame {
+        height: 170px;
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--ivory-warm, #efe0c2);
+
+        @media (min-width: 768px) {
+          height: 185px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+
+      .card-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .name {
+          font-family: "Displace", Georgia, serif;
+          font-size: 1.1rem;
+          color: var(--jungle-deep, #001206);
+          margin: 0;
+          line-height: 1.25;
+        }
+
+        .allergen-badges-row {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+          margin: 10px 0 20px 0;
+
+          .badge-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 9999px;
+            background-color: rgba(200, 90, 40, 0.1);
+            border: 1px solid rgba(200, 90, 40, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 1.1rem;
+              height: 1.1rem;
+              object-fit: contain;
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+
+        .bird-logo-center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0.75rem 0 0.25rem 0;
+
+          img {
+            height: 1.5rem;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.85;
+          }
+        }
+
+        .card-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.5rem;
+          margin-top: auto;
+          padding-top: 0.75rem;
+
+          .allergen-btn {
+            font-family: monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--terracotta, #c85a28);
+            border: 1px solid rgba(200, 90, 40, 0.4);
+            border-radius: 9999px;
+            padding: 0.25rem 0.55rem;
+            background-color: rgba(200, 90, 40, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            animation: allergen-nudge 2s infinite ease-in-out !important;
+            cursor: pointer;
+
+            .alert-icon {
+              flex-shrink: 0;
+            }
+
+            &:hover {
+              background-color: var(--terracotta, #c85a28);
+              color: var(--ivory, #f6e6cb);
+            }
+          }
+
+          .price {
+            font-family: monospace;
+            font-size: 0.88rem;
+            color: var(--terracotta, #c85a28);
+            white-space: nowrap;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes allergen-nudge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

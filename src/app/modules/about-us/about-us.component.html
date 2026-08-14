@@ -1,0 +1,412 @@
+<app-header></app-header>
+
+<main class="about-container">
+  <section class="about-hero-section">
+    <!-- Background image -->
+    <div
+      class="hero-bg-image"
+      style="
+        background-image: url(&quot;https://pahlihillbandrabhai.com/assets/team-photo-fact-BvfP6Axl.jpeg&quot;);
+      "
+    ></div>
+    <!-- Gradient overlay -->
+    <div class="hero-bg-overlay"></div>
+    <!-- Leaf graphic -->
+    <img
+      [src]="bananaLeafUrl"
+      alt=""
+      aria-hidden="true"
+      class="hero-leaf-graphic"
+    />
+
+    <!-- Centered Card Container -->
+    <div class="hero-card-container">
+      <div class="hero-glass-card">
+        <div class="card-tagline">
+          <span class="tagline-line"></span>
+          <span class="tagline-text">The House</span>
+          <span class="tagline-line"></span>
+        </div>
+        <h1 class="card-title">
+          From Bandra <br />
+          to <em class="italic-ochre">Fitzrovia,</em> <br />
+          with love.
+        </h1>
+        <p class="card-description">
+          Pahli Hill Bandra Bhai brings the warmth, flavour and spirit of
+          home-style Indian cooking to Mortimer Street.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="our-story-section">
+    <!-- Leaf graphic -->
+    <img
+      [src]="bananaLeafUrl"
+      alt=""
+      aria-hidden="true"
+      class="story-leaf-graphic"
+    />
+
+    <div class="story-content-container">
+      <div class="story-header">
+        <div class="story-tagline">✦ Our Story ✦</div>
+        <h2 class="story-title">
+          Born in Bandra. <em class="italic-terracotta">Made for London.</em>
+        </h2>
+      </div>
+
+      <p class="story-paragraph">
+        Pahli Hill takes its name from the leafy lanes of Bandra, where great
+        cooking is instinctive, generous and full of character. On Mortimer
+        Street, we bring that same spirit to the table through regional Indian
+        dishes rooted in memory, tradition and flavour.
+      </p>
+
+      <p class="story-paragraph">
+        Bandra Bhai is the friend who pulls you into the right bar, orders for
+        the table and makes the night feel effortless. That energy lives here
+        too — a candlelit dining room upstairs, a hidden
+        <a routerLink="/speakeasy" class="story-link">cocktail bar</a> below,
+        and bold food served with heart.
+      </p>
+
+      <p class="story-paragraph">
+        We don't do clichés. We serve regional Indian food with depth, warmth
+        and punch — made to be shared and remembered.
+      </p>
+
+      <div class="story-footer">
+        <a routerLink="/why-unique" class="story-btn">Why we're unique →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet the Team Section -->
+  <section class="meet-team-section">
+    <div class="team-grid">
+      <!-- Left Column: Photo Slideshow Box -->
+      <div class="team-photo-box">
+        <!-- Stack of Portrait Images -->
+        <div class="team-image-stack">
+          <div
+            *ngFor="let member of teamMembers; let i = index"
+            [class.active]="i === activeMemberIndex"
+            class="team-image-slide"
+          >
+            <img
+              [src]="member.image"
+              [alt]="member.name"
+              class="team-member-img"
+            />
+          </div>
+        </div>
+
+        <!-- Name/Role Bottom Overlay Inside Photo Box -->
+        <div class="team-photo-overlay">
+          <div class="overlay-name">
+            {{ teamMembers[activeMemberIndex].name }}
+          </div>
+          <div class="overlay-role">
+            {{ teamMembers[activeMemberIndex].role }}
+          </div>
+        </div>
+
+        <!-- Slide Indicators (Top Right of Photo Box) -->
+        <div class="team-indicators">
+          <button
+            *ngFor="let member of teamMembers; let i = index"
+            [class.active]="i === activeMemberIndex"
+            (click)="selectMember(i)"
+            [attr.aria-label]="'Slide ' + (i + 1)"
+            class="indicator-btn"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Right Column: Info Details -->
+      <div class="team-info-box">
+        <div class="team-tagline">✦ Meet the team ✦</div>
+
+        <div class="team-active-details">
+          <h2 class="team-heading">
+            {{ teamMembers[activeMemberIndex].name }}
+            <em class="team-heading-role">{{
+              teamMembers[activeMemberIndex].role
+            }}</em>
+          </h2>
+
+          <p class="team-description">
+            {{ teamMembers[activeMemberIndex].description }}
+          </p>
+        </div>
+
+        <div class="team-action">
+          <a routerLink="/about/team" class="team-link-btn">Meet the team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition Section -->
+  <section class="recognition-section">
+    <div class="rec-grid">
+      <!-- Left Column: Collage Frame -->
+      <div class="rec-collage-box">
+        <!-- Offset background sheet -->
+        <div class="rec-offset-card"></div>
+        <!-- Main Image Container -->
+        <div class="rec-photo-container">
+          <img
+            [src]="teamPhotoUrl"
+            alt="Pahli Hill Bandra Bhai team"
+            class="rec-team-img"
+          />
+        </div>
+      </div>
+
+      <!-- Right Column: Text and Award Details -->
+      <div class="rec-info-box">
+        <div class="rec-tagline">✦ The Recognition ✦</div>
+
+        <h2 class="rec-title">
+          Awarded by the people
+          <em class="italic-terracotta">who eat out for a living.</em>
+        </h2>
+
+        <div class="rec-award-container">
+          <a
+            href="https://diningawards.factmagazines.com/portfolio/fact-dining-awards-london-2025-the-winners/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rec-award-card"
+          >
+            <div class="rec-award-text">
+              <h3 class="rec-award-title">FACT Dining Awards 2025</h3>
+              <p class="rec-award-description">
+                Voted London's Favourite Indian Restaurant by FACT in 2025.
+              </p>
+            </div>
+
+            <img
+              [src]="factAwardLogoUrl"
+              alt="FACT Dining Awards London 2025 winner"
+              class="rec-award-badge"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we're different Section -->
+  <section class="different-section">
+    <div class="diff-container">
+      <div class="diff-header">
+        <div class="diff-tagline">✦ How we're different ✦</div>
+        <h2 class="diff-title">
+          Three things you must <em class="italic-terracotta">know.</em>
+        </h2>
+        <p class="diff-mobile-helper">← Swipe to explore →</p>
+      </div>
+
+      <div class="diff-cards-wrapper">
+        <!-- Card 1 -->
+        <div class="diff-card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="diff-card-icon"
+          >
+            <path
+              d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+            ></path>
+          </svg>
+          <h3 class="diff-card-title">Regional, not generic</h3>
+          <p class="diff-card-description">
+            Coastal Maharashtrian, Goan-Portuguese, Lucknowi Mughal, Parsi,
+            Iyer-Tamil. Dishes that don't usually leave the family kitchen.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="diff-card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="diff-card-icon"
+          >
+            <path
+              d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"
+            ></path>
+            <circle cx="12" cy="8" r="6"></circle>
+          </svg>
+          <h3 class="diff-card-title">Innovation & Authenticity</h3>
+          <p class="diff-card-description">
+            Regional Indian cooking with authenticity at its core — rooted in
+            tradition, led by flavour, and continually evolving.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="diff-card">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="diff-card-icon"
+          >
+            <path d="M8 22h8"></path>
+            <path d="M7 10h10"></path>
+            <path d="M12 15v7"></path>
+            <path
+              d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"
+            ></path>
+          </svg>
+          <h3 class="diff-card-title">A speakeasy below stairs</h3>
+          <p class="diff-card-description">
+            Down the back staircase, behind an unmarked door, a Mumbai-1970s
+            cocktail den. Curry-leaf gin, jaggery sours, Indian single malts.
+            Knock twice.
+          </p>
+        </div>
+      </div>
+
+      <div class="diff-footer">
+        <a routerLink="/why-unique" class="diff-btn">The full story →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speakeasy Vibe Section -->
+  <section class="speakeasy-section">
+    <div class="speak-container">
+      <div class="speak-header">
+        <div class="speak-tagline">✦ Below Stairs ✦</div>
+        <h2 class="speak-title">
+          The Speakeasy. <em class="italic-ochre">Dinner Floor Vibe.</em>
+        </h2>
+      </div>
+
+      <div class="speak-content">
+        <p class="speak-paragraph">
+          Upstairs, Pahli Hill is bright, warm and built around the table.
+          Downstairs, Bandra Bhai is darker, cosier and more clandestine — a
+          low-lit cocktail den with the same soul. Two distinct moods, one
+          kitchen, and the same regional Indian food at the heart of both.
+        </p>
+
+        <p class="speak-paragraph">
+          Down the back staircase, behind an unmarked door, there's a
+          Mumbai-1970s cocktail den. Curry-leaf gin, jaggery sours, Indian
+          single malts. Walk-ins, low light, late hours. Knock twice.
+        </p>
+
+        <p class="speak-paragraph">
+          Bandra, once a quiet Catholic fishing village, evolved into a vibrant
+          Bombay neighbourhood. In the early '90s, India's closed economy led to
+          underground smugglers providing rare luxuries like whiskies and gold
+          watches. Our bar and cocktails celebrate this spirit of secret hustle,
+          forbidden indulgence and timeless charm.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Moves Section -->
+  <section class="signature-moves-section">
+    <div class="sig-container">
+      <div class="sig-header">
+        <div class="sig-tagline">✦ Our Signature Moves ✦</div>
+        <h2 class="sig-title">
+          The little things <em class="italic-terracotta">nobody else does.</em>
+        </h2>
+      </div>
+
+      <div class="sig-content">
+        <p class="sig-paragraph">
+          Polaroid memories, "guest gets what guest wants", a speakeasy below
+          stairs — the moves that make us, us.
+        </p>
+      </div>
+
+      <div class="sig-footer">
+        <a routerLink="/why-unique" class="sig-btn"
+          >See our signature moves →</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Beyond Section -->
+  <section class="amenities-section">
+    <div class="amen-container">
+      <div class="amen-header">
+        <div class="amen-tagline">✦ Amenities Beyond ✦</div>
+        <h2 class="amen-title">
+          Thoughtful touches, <em class="italic-ochre">rarely offered.</em>
+        </h2>
+      </div>
+
+      <div class="amen-content">
+        <p class="amen-paragraph">
+          Power-bank tables, unlimited event refills, late hours for private
+          hires.
+        </p>
+      </div>
+
+      <div class="amen-footer">
+        <a routerLink="/why-unique" class="amen-btn">See amenities beyond →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Digital Dining Tools Section -->
+  <section class="digital-tools-section">
+    <div class="digi-container">
+      <div class="digi-header">
+        <div class="digi-tagline">✦ Digital Dining Tools ✦</div>
+        <h2 class="digi-title">
+          Digital dining tools for
+          <em class="italic-terracotta">Pahli Hill.</em>
+        </h2>
+      </div>
+
+      <div class="digi-content">
+        <p class="digi-paragraph">
+          Menu AI, an Allergen Filter & Table Assistant, and a Cinema Menu for
+          guests at Pahli Hill.
+        </p>
+      </div>
+
+      <div class="digi-footer">
+        <a routerLink="/why-unique" class="digi-btn">See the world firsts →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<app-footer></app-footer>
