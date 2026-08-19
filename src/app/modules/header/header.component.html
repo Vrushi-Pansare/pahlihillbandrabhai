@@ -17,7 +17,7 @@
     <nav class="nav-menu">
       <ul class="nav-list">
         <li class="nav-item dropdown">
-          <a routerLink="/about-us" class="nav-link">
+          <a routerLink="/about" routerLinkActive="active" class="nav-link">
             ABOUT
             <svg
               class="arrow-icon"
@@ -37,37 +37,111 @@
             </svg>
           </a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/about">ABOUT US</a></li>
-            <li><a routerLink="/private-hires">PRIVATE HIRES</a></li>
             <li>
-              <a [routerLink]="['/speakeasy']">SPEAKEASY</a>
+              <a routerLink="/about" routerLinkActive="active">ABOUT US</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a routerLink="/menu" routerLinkActive="active" class="nav-link">
+            MENU
+            <svg
+              class="arrow-icon"
+              width="8"
+              height="5"
+              viewBox="0 0 8 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 1L4 4L7 1"
+                stroke="currentColor"
+                stroke-width="1.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                href="assets/Manu/Present A La Carte.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >A la Carte</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Lunch Menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Set Lunch</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/PRESENT FILE ALL A 5 Set Lunch + SELECT Menus + Dessert + G&G (6).pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Select Menu</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Allergens 28th July 2026 .pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Allergen Matrix</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Wine and Spirit.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Wine List</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Grab & Go 2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Grab & Go</a
+              >
+            </li>
+            <li>
+              <a
+                href="assets/Manu/EVENTS & GROUP PACKAGES 14_04.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Events & Group Menus</a
+              >
             </li>
           </ul>
         </li>
         <li class="nav-item">
-          <a fragment="menu" class="nav-link">MENU</a>
-        </li>
-        <li class="nav-item">
-          <a fragment="concierge" class="nav-link">AI CONCIERGE</a>
-        </li>
-        <li class="nav-item">
           <a
-            [routerLink]="['/private-hires']"
-            fragment="private-hires"
+            routerLink="/private-hires"
+            routerLinkActive="active"
             class="nav-link"
             >PRIVATE HIRES</a
           >
         </li>
         <li class="nav-item">
-          <a [routerLink]="['/speakeasy']" class="nav-link">SPEAKEASY</a>
-        </li>
-        <li class="nav-item">
-          <a fragment="whats-on" class="nav-link">WHAT'S ON</a>
+          <a routerLink="/speakeasy" routerLinkActive="active" class="nav-link"
+            >SPEAKEASY</a
+          >
         </li>
       </ul>
     </nav>
 
-    <div class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+    <div
+      class="mobile-menu-toggle"
+      [class.open]="isMobileMenuOpen"
+      (click)="toggleMobileMenu()"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -77,30 +151,202 @@
 
 <!-- Mobile Menu Overlay -->
 <div class="mobile-menu" [class.open]="isMobileMenuOpen">
-  <ul class="mobile-nav-list">
-    <li>
-      <a routerLink="/about" (click)="isMobileMenuOpen = false">ABOUT US</a>
-    </li>
-    <!-- <li>
-      <a fragment="menu" (click)="isMobileMenuOpen = false">MENU</a>
-    </li> -->
-    <!-- <li>
-      <a fragment="concierge" (click)="isMobileMenuOpen = false"
-        >AI CONCIERGE</a
-      >
-    </li> -->
-    <li>
-      <a [routerLink]="['/private-hires']" (click)="isMobileMenuOpen = false"
-        >PRIVATE HIRES</a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/speakeasy']" (click)="isMobileMenuOpen = false"
-        >SPEAKEASY</a
-      >
-    </li>
-    <!-- <li>
-      <a fragment="whats-on" (click)="isMobileMenuOpen = false">WHAT'S ON</a>
-    </li> -->
-  </ul>
+  <div class="mobile-menu-content">
+    <ul class="mobile-accordion-list">
+      <!-- About Accordion -->
+      <li class="accordion-item" [class.open]="isAboutSubOpen">
+        <div class="accordion-header" (click)="toggleAboutSub()">
+          <span class="accordion-title">About</span>
+          <svg
+            class="chevron-icon"
+            [class.active]="isAboutSubOpen"
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1L7 7L13 1"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        @if (isAboutSubOpen) {
+          <ul class="mobile-sub-menu">
+            <li>
+              <a routerLink="/about" (click)="isMobileMenuOpen = false">
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>ABOUT US</span>
+              </a>
+            </li>
+          </ul>
+        }
+      </li>
+
+      <!-- Menu Accordion -->
+      <li class="accordion-item" [class.open]="isMenuSubOpen">
+        <div class="accordion-header" (click)="toggleMenuSub()">
+          <span class="accordion-title">Menu</span>
+          <svg
+            class="chevron-icon"
+            [class.active]="isMenuSubOpen"
+            width="14"
+            height="8"
+            viewBox="0 0 14 8"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1 1L7 7L13 1"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        @if (isMenuSubOpen) {
+          <ul class="mobile-sub-menu">
+            <li>
+              <a
+                href="assets/Manu/Present A La Carte.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>A LA CARTE</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Lunch Menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>SET LUNCH</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/PRESENT FILE ALL A 5 Set Lunch + SELECT Menus + Dessert + G&G (6).pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>SELECT MENU</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Allergens 28th July 2026 .pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>ALLERGEN MATRIX</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Wine and Spirit.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>WINE LIST</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/Grab & Go 2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>GRAB & GO</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="assets/Manu/EVENTS & GROUP PACKAGES 14_04.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                (click)="isMobileMenuOpen = false"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>EVENTS & GROUP MENUS</span>
+              </a>
+            </li>
+          </ul>
+        }
+      </li>
+
+      <!-- Private Hires -->
+      <li class="accordion-item">
+        <div class="accordion-header">
+          <a
+            routerLink="/private-hires"
+            class="accordion-title link-only"
+            (click)="isMobileMenuOpen = false"
+            >Private Hires</a
+          >
+        </div>
+      </li>
+
+      <!-- Speakeasy -->
+      <li class="accordion-item">
+        <div class="accordion-header">
+          <a
+            routerLink="/speakeasy"
+            class="accordion-title link-only"
+            (click)="isMobileMenuOpen = false"
+            >Speakeasy</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

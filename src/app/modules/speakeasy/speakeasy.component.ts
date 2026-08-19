@@ -14,6 +14,6 @@ import { APP_CONFIG } from '../../configs/constants';
 export class SpeakeasyComponent {
   config = APP_CONFIG;
   posterUrl = APP_CONFIG.speakeasyPosterUrl;
-  mobileVideoUrl = APP_CONFIG.speakeasyMobileVideoUrl;
-  desktopVideoUrl = APP_CONFIG.speakeasyDesktopVideoUrl;
+  mobileVideoUrl = 'assets/Home/Drinks - Final (1).mp4';
+  desktopVideoUrl = 'assets/Home/Drinks-Landscape (1).mp4';
 }

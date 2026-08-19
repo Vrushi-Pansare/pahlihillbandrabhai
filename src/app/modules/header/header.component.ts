@@ -13,8 +13,18 @@ import { APP_CONFIG } from '../../configs/constants';
 export class HeaderComponent {
   logoUrl = APP_CONFIG.logoUrl;
   isMobileMenuOpen = false;
+  isAboutSubOpen = false;
+  isMenuSubOpen = false;
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  toggleAboutSub() {
+    this.isAboutSubOpen = !this.isAboutSubOpen;
+  }
+
+  toggleMenuSub() {
+    this.isMenuSubOpen = !this.isMenuSubOpen;
   }
 }

@@ -2,11 +2,23 @@
 
 <section class="hero-section">
   <!-- Background Video -->
-  <video class="hero-video" autoplay loop muted playsinline preload="auto">
+  <video
+    class="hero-video"
+    autoplay
+    loop
+    muted
+    [muted]="true"
+    playsinline
+    preload="auto"
+  >
+    <!-- Desktop / PC Video -->
     <source
-      src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:47:06.249Z/mix-landscape-fast.mp4"
+      src="assets/Home/Mix-Landscape (1).mp4"
       type="video/mp4"
+      media="(min-width: 768px)"
     />
+    <!-- Mobile / Phone Video -->
+    <source src="assets/Home/Mix - Final.mp4" type="video/mp4" />
   </video>
 
   <!-- Dark Overlay -->
@@ -45,7 +57,10 @@
           <path d="M4 17v2"></path>
           <path d="M5 18H3"></path>
         </svg>
-        <span class="badge-text">India · Fitzrovia · Est. 2022</span>
+        <span class="badge-text">
+          <span class="badge-part-1">India · Fitzrovia ·</span>
+          <span class="badge-part-2">Est. 2022</span>
+        </span>
       </div>
 
       <!-- Heading Title -->
@@ -61,7 +76,10 @@
       <!-- Separator Line -->
       <div class="card-featured-line">
         <div class="line"></div>
-        <span class="text">Two Rooms · One Kitchen</span>
+        <span class="text">
+          <span class="line-1">Two Rooms ·</span>
+          <span class="line-2">One Kitchen</span>
+        </span>
         <div class="line"></div>
       </div>
 
@@ -134,7 +152,7 @@
             <path d="m12 5 7 7-7 7"></path>
           </svg>
         </a>
-        <a href="/cinema-menu" class="btn"> Watch the Menu </a>
+        <a href="/cinema-menu" class="btn"> See the Menu </a>
       </div>
     </div>
   </div>
@@ -150,7 +168,7 @@
     <svg
       class="scallop-svg"
       width="100%"
-      height="24"
+      height="31"
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
@@ -159,13 +177,13 @@
           x="0"
           y="0"
           width="24"
-          height="24"
+          height="31"
           patternUnits="userSpaceOnUse"
         >
-          <path d="M0 0 A 12 12 0 0 0 24 0 L24 24 L0 24 Z" fill="#efe0c2" />
+          <path d="M0 0 A 12 12 0 0 0 24 0 L24 31 L0 31 Z" fill="#efe0c2" />
         </pattern>
       </defs>
-      <rect width="100%" height="24" fill="url(#scallop-pattern)" />
+      <rect width="100%" height="31" fill="url(#scallop-pattern)" />
     </svg>
   </div>
 </section>
@@ -284,8 +302,22 @@
     <div class="latest-header">
       <span class="latest-badge">✦ THE LATEST ✦</span>
       <h2 class="latest-title">
-        Things <em class="italic-highlight">you must know.</em>
+        Things <em class="italic-highlight">you</em><br class="mobile-break" />
+        <em class="italic-highlight">must know.</em>
       </h2>
+      <div class="swipe-hint">
+        <div class="custom-arrow left-arrow">
+          <span class="arrow-body"></span>
+          <span class="arrow-cross"></span>
+          <span class="arrow-wing"></span>
+        </div>
+        <span>SWIPE TO EXPLORE</span>
+        <div class="custom-arrow right-arrow">
+          <span class="arrow-body"></span>
+          <span class="arrow-cross"></span>
+          <span class="arrow-wing"></span>
+        </div>
+      </div>
     </div>
 
     <!-- Cards Grid -->
@@ -297,7 +329,8 @@
             <img
               [src]="slide.img"
               alt=""
-              loading="lazy"
+              loading="eager"
+              decoding="async"
               class="card-carousel-img"
               [style.opacity]="activeSlide === idx ? 1 : 0"
             />
@@ -307,10 +340,11 @@
                 [poster]="slide.img"
                 autoplay
                 muted
+                [muted]="true"
                 loop
                 playsinline
                 disablePictureInPicture
-                preload="metadata"
+                preload="auto"
                 class="card-carousel-video"
                 [style.opacity]="activeSlide === idx ? 1 : 0"
               ></video>
@@ -374,6 +408,7 @@
             poster="https://pahlihillbandrabhai.com/images/optimized/bandra-bhai-downstairs-card.jpg"
             autoplay
             muted
+            [muted]="true"
             loop
             playsinline
             disablePictureInPicture
@@ -415,15 +450,27 @@
       <a href="/about/world-first" class="latest-card card-cinema">
         <div class="card-media-wrapper">
           <video
-            src="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T15:02:04.972Z/food-landscape-fast.mp4"
             autoplay
             muted
+            [muted]="true"
             loop
             playsinline
             disablePictureInPicture
-            preload="metadata"
+            preload="auto"
             class="card-video"
-          ></video>
+          >
+            <!-- Desktop / PC Video -->
+            <source
+              src="assets/Home/Food-Landscape.mp4"
+              type="video/mp4"
+              media="(min-width: 768px)"
+            />
+            <!-- Mobile / Phone Video -->
+            <source
+              src="assets/Home/Food -Final FIle (1).mp4"
+              type="video/mp4"
+            />
+          </video>
         </div>
 
         <div class="card-content">

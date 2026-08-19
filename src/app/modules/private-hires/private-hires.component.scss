@@ -1,7 +1,7 @@
 .private-hires-main {
   background-color: var(--ivory); /* #efe0c2 */
   color: var(--jungle); /* #0b2114 */
-  font-family: "Inter", sans-serif;
+  font-family: "Displace", "Playfair Display", Georgia, serif !important;
 }
 
 /* Video Hero Section */
@@ -36,9 +36,13 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     will-change: transform;
-    filter: brightness(1.4); /* Increased brightness */
+    filter: brightness(1.05) contrast(1.06) saturate(1.05);
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background-color: #1a2e1c; /* Dark fallback so no black flash on loop */
 
     &::-webkit-media-controls,
@@ -106,7 +110,7 @@
     }
 
     .card-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -116,7 +120,7 @@
     }
 
     .card-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 3.5rem; /* ~56px mobile */
       color: var(--ivory);
       line-height: 0.92;
@@ -138,7 +142,7 @@
       }
 
       .italic-ochre {
-        font-family: "Playfair Display", serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-style: italic;
         font-weight: 300;
         color: var(--ochre);
@@ -146,7 +150,7 @@
     }
 
     .card-description {
-      font-family: "Inter", sans-serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.95rem;
       color: rgba(248, 235, 211, 0.85);
       line-height: 1.6;
@@ -186,7 +190,7 @@
     margin: 0 auto;
 
     .section-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -196,7 +200,7 @@
     }
 
     .intro-text {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 1.05rem;
       line-height: 1.65;
       color: rgba(11, 33, 20, 0.85);
@@ -258,6 +262,13 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      will-change: transform;
+      filter: brightness(1.04) contrast(1.05) saturate(1.04);
+      image-rendering: -webkit-optimize-contrast;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
     }
 
     .hire-card-body {
@@ -265,7 +276,7 @@
     }
 
     .hire-card-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 1.75rem;
       color: var(--jungle-deep);
@@ -273,7 +284,7 @@
     }
 
     .hire-card-capacity {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -290,7 +301,7 @@
       gap: 0.5rem;
 
       li {
-        font-family: "Inter", sans-serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-size: 0.9rem;
         color: var(--jungle-deep);
         display: flex;
@@ -374,7 +385,7 @@
     }
 
     .info-box-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 1.5rem;
       color: var(--jungle-deep);
@@ -386,7 +397,7 @@
     }
 
     .info-box-capacity {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -395,7 +406,7 @@
     }
 
     .info-box-text {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 1.175rem;
       color: rgba(11, 33, 20, 0.85);
       line-height: 1.6;
@@ -416,7 +427,7 @@
     padding-top: 1rem;
 
     .section-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -425,7 +436,7 @@
     }
 
     .glimpse-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 1.5rem;
       color: var(--jungle-deep);
@@ -445,7 +456,7 @@
       padding: 1rem 2rem;
       background-color: var(--jungle-deep);
       color: var(--ivory);
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.68rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -480,7 +491,7 @@
     margin-bottom: 3rem;
 
     .section-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -490,7 +501,7 @@
     }
 
     .value-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 2.25rem;
       color: var(--jungle-deep);
       line-height: 1.05;
@@ -502,7 +513,7 @@
     }
 
     .value-desc {
-      font-family: "Inter", sans-serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 1rem;
       color: rgba(11, 33, 20, 0.7);
       margin-top: 1.25rem;
@@ -592,7 +603,7 @@
   }
 
   .service-text {
-    font-family: "Displace", Georgia, serif;
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
     font-size: 1.05rem;
     color: var(--jungle-deep);
     line-height: 1.4;
@@ -601,7 +612,7 @@
   .swipe-hint {
     display: block;
     text-align: center;
-    font-family: monospace;
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
     font-size: 0.56rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
@@ -634,7 +645,7 @@
     margin-bottom: 2.5rem;
 
     .section-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -644,7 +655,7 @@
     }
 
     .enquire-title {
-      font-family: "Playfair Display", serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 2.25rem;
       color: var(--ivory);
       line-height: 1.05;
@@ -655,7 +666,7 @@
       }
 
       .italic-ochre {
-        font-family: "Playfair Display", serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-style: italic;
         font-weight: 300;
         color: var(--ochre);
@@ -699,7 +710,7 @@
   }
 
   .form-label {
-    font-family: monospace;
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
     font-size: 0.62rem;
     font-weight: 500;
     letter-spacing: 0.3em;
@@ -719,7 +730,7 @@
     background-color: var(--ivory-warm);
     border: 1px solid rgba(0, 18, 6, 0.25);
     padding: 0.75rem 1rem;
-    font-family: "Displace", Georgia, serif;
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
     font-size: 1rem;
     color: var(--jungle-deep);
     border-radius: 0.125rem;
@@ -755,7 +766,7 @@
     padding: 1rem 2rem;
     background-color: var(--terracotta);
     color: var(--ivory);
-    font-family: monospace;
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
     font-size: 0.68rem;
     font-weight: 600;
     letter-spacing: 0.3em;

@@ -1,7 +1,7 @@
 .speakeasy-main {
   background-color: var(--jungle-deep);
   color: var(--ivory);
-  font-family: "Inter", sans-serif;
+  font-family: "Displace", "Playfair Display", Georgia, serif !important;
 }
 
 .speakeasy-hero-section {
@@ -18,7 +18,13 @@
   z-index: 1;
 
   @media (min-width: 768px) {
-    height: 595px;
+    height: 625px;
+    min-height: 625px;
+  }
+
+  @media (min-width: 1024px) {
+    height: 655px;
+    min-height: 655px;
   }
 
   .hero-poster {
@@ -39,9 +45,14 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transform: translateZ(0);
-    will-change: transform;
-    filter: brightness(1.55);
+    transform: translate3d(0, 0, 0) scale(1.001);
+    -webkit-transform: translate3d(0, 0, 0) scale(1.001);
+    will-change: transform, filter;
+    filter: brightness(1.04) contrast(1.1) saturate(1.08);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background-color: #1a2e1c;
 
     &::-webkit-media-controls,
@@ -104,7 +115,7 @@
     }
 
     .card-tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.4em;
@@ -114,7 +125,7 @@
     }
 
     .card-title {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 2.75rem;
       color: var(--ivory-warm, #efe0c2);
       line-height: 1.05;
@@ -136,7 +147,7 @@
       }
 
       .italic-ochre {
-        font-family: "Displace", Georgia, serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-style: italic;
         font-weight: 300;
         color: var(--ochre);
@@ -144,7 +155,7 @@
     }
 
     .card-description {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 1rem;
       color: rgba(248, 235, 211, 0.85);
       line-height: 1.6;
@@ -283,7 +294,7 @@
         min-width: 0;
 
         .tagline {
-          font-family: monospace;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 0.62rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
@@ -292,7 +303,7 @@
         }
 
         .title {
-          font-family: "Displace", Georgia, serif;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
           font-style: italic;
           font-size: 1.5rem;
           color: var(--jungle-deep, #001206);
@@ -305,7 +316,7 @@
         }
 
         .subtitle {
-          font-family: "Inter", sans-serif;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 0.85rem;
           color: rgba(0, 18, 6, 0.7);
           margin: 0.25rem 0 0 0;
@@ -317,7 +328,7 @@
       }
 
       .badge-25ml {
-        font-family: monospace;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-size: 0.65rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -384,23 +395,23 @@
         flex: 1;
 
         .item-title {
-          font-family: "Displace", Georgia, serif;
-          font-size: 1.05rem;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-size: 1.35rem;
           color: var(--jungle-deep, #001206);
           line-height: 1.25;
         }
 
         .item-desc {
-          font-family: "Inter", sans-serif;
-          font-size: 0.8rem;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-size: 1.1rem;
           color: rgba(0, 18, 6, 0.65);
           line-height: 1.35;
           margin: 0.35rem 0 0 0;
         }
 
         .item-price {
-          font-family: monospace;
-          font-size: 0.88rem;
+          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-size: 1.2rem;
           color: var(--terracotta, #c85a28);
           margin-top: auto;
           padding-top: 0.85rem;
@@ -421,7 +432,9 @@
   border-bottom: 130px solid var(--ivory);
 
   @media (min-width: 768px) {
-    padding: 6rem 4.5rem 7.3rem 4.5rem;
+    padding: 9.5rem 4.5rem 11rem 4.5rem;
+    border-top: 220px solid var(--ivory);
+    border-bottom: 220px solid var(--ivory);
   }
 
   .cocktail-bg-art {
@@ -446,7 +459,7 @@
     margin-bottom: 2.5rem;
 
     .tagline {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.68rem;
       letter-spacing: 0.32em;
       text-transform: uppercase;
@@ -455,7 +468,7 @@
     }
 
     .title {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 2.75rem;
       color: var(--ivory, #f6e6cb);
@@ -483,7 +496,7 @@
       border: 2px solid rgba(246, 230, 203, 0.25);
       background-color: transparent;
       color: var(--ivory, #f6e6cb);
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 1rem;
       cursor: pointer;
@@ -527,7 +540,7 @@
     background-color: rgba(0, 30, 10, 0.4);
 
     .banner-title {
-      font-family: "Displace", Georgia, serif;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-style: italic;
       font-size: 1.85rem;
       color: var(--ivory, #f6e6cb);
@@ -539,7 +552,7 @@
     }
 
     .banner-sub {
-      font-family: monospace;
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
       font-size: 0.62rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
@@ -568,7 +581,7 @@
       padding: 0 0 0.75rem 0;
 
       .cat-title {
-        font-family: "Displace", Georgia, serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-style: italic;
         font-size: 1.75rem;
         color: var(--ivory, #f6e6cb);
@@ -580,14 +593,14 @@
       }
 
       .cat-desc {
-        font-family: "Inter", sans-serif;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-size: 0.85rem;
         color: rgba(246, 230, 203, 0.7);
         margin: 0.5rem 0 0 0;
       }
 
       .swipe-indicator {
-        font-family: monospace;
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
         font-size: 0.62rem;
         letter-spacing: 0.28em;
         text-transform: uppercase;
@@ -612,144 +625,150 @@
       }
     }
 
-    .bar-item-card {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: calc(100% - 2.5rem);
-      max-width: 320px;
-      background-color: var(--ivory-warm, #efe0c2);
-      color: var(--jungle-deep, #001206);
-      border: 1px solid rgba(0, 18, 6, 0.12);
-      border-radius: 1rem;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-
-      @media (min-width: 992px) {
-        width: calc((100% - 2rem) / 3);
-      }
-
-      .img-frame {
-        height: 170px;
-        width: 100%;
-        overflow: hidden;
+      .bar-item-card {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: calc(100% - 2.5rem);
+        max-width: 350px;
         background-color: var(--ivory-warm, #efe0c2);
-
-        @media (min-width: 768px) {
-          height: 185px;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-
-          &:hover {
-            transform: scale(1.05);
-          }
-        }
-      }
-
-      .card-info {
-        padding: 1rem;
+        color: var(--jungle-deep, #001206);
+        border: 1px solid rgba(0, 18, 6, 0.12);
+        border-radius: 1rem;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
-        flex: 1;
 
-        .name {
-          font-family: "Displace", Georgia, serif;
-          font-size: 1.1rem;
-          color: var(--jungle-deep, #001206);
-          margin: 0;
-          line-height: 1.25;
+        @media (min-width: 992px) {
+          width: calc((100% - 2rem) / 3);
         }
 
-        .allergen-badges-row {
-          display: flex;
-          align-items: center;
-          gap: 0.35rem;
-          margin: 10px 0 20px 0;
+        .img-frame {
+          height: 170px;
+          width: 100%;
+          overflow: hidden;
+          background-color: var(--ivory-warm, #efe0c2);
 
-          .badge-icon {
-            width: 1.75rem;
-            height: 1.75rem;
-            border-radius: 9999px;
-            background-color: rgba(200, 90, 40, 0.1);
-            border: 1px solid rgba(200, 90, 40, 0.3);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            img {
-              width: 1.1rem;
-              height: 1.1rem;
-              object-fit: contain;
-              mix-blend-mode: multiply;
-            }
+          @media (min-width: 768px) {
+            height: 185px;
           }
-        }
-
-        .bird-logo-center {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0.75rem 0 0.25rem 0;
 
           img {
-            height: 1.5rem;
-            width: auto;
-            object-fit: contain;
-            opacity: 0.85;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+
+            &:hover {
+              transform: scale(1.05);
+            }
           }
         }
 
-        .card-footer {
+        .card-info {
+          padding: 1rem;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 0.5rem;
-          margin-top: auto;
-          padding-top: 0.75rem;
+          flex-direction: column;
+          flex: 1;
 
-          .allergen-btn {
-            font-family: monospace;
-            font-size: 0.55rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--terracotta, #c85a28);
-            border: 1px solid rgba(200, 90, 40, 0.4);
-            border-radius: 9999px;
-            padding: 0.25rem 0.55rem;
-            background-color: rgba(200, 90, 40, 0.08);
-            display: inline-flex;
+          .name {
+            font-family: "Displace", "Playfair Display", Georgia, serif !important;
+            font-size: 1.4rem;
+            color: var(--jungle-deep, #001206);
+            margin: 0;
+            line-height: 1.25;
+          }
+
+          .desc {
+            font-size: 1.12rem;
+            line-height: 1.4;
+            margin-top: 0.4rem;
+          }
+
+          .allergen-badges-row {
+            display: flex;
             align-items: center;
-            gap: 0.2rem;
-            white-space: nowrap;
-            flex-shrink: 0;
-            animation: allergen-nudge 2s infinite ease-in-out !important;
-            cursor: pointer;
+            gap: 0.35rem;
+            margin: 10px 0 20px 0;
 
-            .alert-icon {
-              flex-shrink: 0;
-            }
+            .badge-icon {
+              width: 1.75rem;
+              height: 1.75rem;
+              border-radius: 9999px;
+              background-color: rgba(200, 90, 40, 0.1);
+              border: 1px solid rgba(200, 90, 40, 0.3);
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
 
-            &:hover {
-              background-color: var(--terracotta, #c85a28);
-              color: var(--ivory, #f6e6cb);
+              img {
+                width: 1.1rem;
+                height: 1.1rem;
+                object-fit: contain;
+                mix-blend-mode: multiply;
+              }
             }
           }
 
-          .price {
-            font-family: monospace;
-            font-size: 0.88rem;
-            color: var(--terracotta, #c85a28);
-            white-space: nowrap;
-            flex-shrink: 0;
+          .bird-logo-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.75rem 0 0.25rem 0;
+
+            img {
+              height: 1.5rem;
+              width: auto;
+              object-fit: contain;
+              opacity: 0.85;
+            }
+          }
+
+          .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-top: auto;
+            padding-top: 0.75rem;
+
+            .allergen-btn {
+              font-family: "Displace", "Playfair Display", Georgia, serif !important;
+              font-size: 0.85rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              color: var(--terracotta, #c85a28);
+              border: 1px solid rgba(200, 90, 40, 0.4);
+              border-radius: 9999px;
+              padding: 0.25rem 0.55rem;
+              background-color: rgba(200, 90, 40, 0.08);
+              display: inline-flex;
+              align-items: center;
+              gap: 0.2rem;
+              white-space: nowrap;
+              flex-shrink: 0;
+              animation: allergen-nudge 2s infinite ease-in-out !important;
+              cursor: pointer;
+
+              .alert-icon {
+                flex-shrink: 0;
+              }
+
+              &:hover {
+                background-color: var(--terracotta, #c85a28);
+                color: var(--ivory, #f6e6cb);
+              }
+            }
+
+            .price {
+              font-family: "Displace", "Playfair Display", Georgia, serif !important;
+              font-size: 1.2rem;
+              color: var(--terracotta, #c85a28);
+              white-space: nowrap;
+              flex-shrink: 0;
+            }
           }
         }
       }
-    }
   }
 }
 

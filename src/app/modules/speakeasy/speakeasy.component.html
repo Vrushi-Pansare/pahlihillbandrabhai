@@ -8,19 +8,23 @@
 
     <!-- Background Video -->
     <video
-      [src]="desktopVideoUrl"
       autoplay
       loop
       muted
+      [muted]="true"
       playsinline
       webkit-playsinline="true"
       x5-playsinline="true"
       disablepictureinpicture=""
       preload="auto"
+      decoding="async"
       aria-hidden="true"
       class="hero-video"
       [poster]="posterUrl"
-    ></video>
+    >
+      <source [src]="mobileVideoUrl" type="video/mp4" media="(max-width: 767px)" />
+      <source [src]="desktopVideoUrl" type="video/mp4" />
+    </video>
 
     <!-- Gradient Overlay -->
     <div class="hero-gradient-overlay"></div>

@@ -1,21 +1,38 @@
 <app-header></app-header>
 
 <main class="private-hires-main">
-  
   <!-- Video Hero Section -->
   <section class="hires-hero-section">
     <!-- Fallback Poster Image -->
-    <img [src]="interiorLandscapeUrl" alt="" aria-hidden="true" class="hero-poster">
-    
+    <img
+      [src]="interiorLandscapeUrl"
+      alt=""
+      aria-hidden="true"
+      class="hero-poster"
+    />
+
     <!-- Background Video -->
-    <video autoplay loop playsinline webkit-playsinline="true" x5-playsinline="true" disablepictureinpicture="" preload="auto" decoding="async" aria-hidden="true" class="hero-video" muted [poster]="interiorLandscapeUrl">
-      <source [src]="privateHireVideoUrl" type="video/mp4">
-      <source [src]="privateHireDesktopVideoUrl" type="video/mp4">
+    <video
+      autoplay
+      loop
+      playsinline
+      webkit-playsinline="true"
+      x5-playsinline="true"
+      disablepictureinpicture=""
+      preload="auto"
+      decoding="async"
+      aria-hidden="true"
+      class="hero-video"
+      muted
+      [muted]="true"
+      [poster]="interiorLandscapeUrl"
+    >
+      <source [src]="heroVideoUrl" type="video/mp4" />
     </video>
-    
+
     <!-- Gradient Overlay -->
     <div class="hero-gradient-overlay"></div>
-    
+
     <!-- Hero Content Container -->
     <div class="hero-container">
       <div class="hero-glass-card">
@@ -24,7 +41,8 @@
           YOUR PARTY. <em class="italic-ochre">YOUR HOUSE</em>
         </h1>
         <p class="card-description">
-          From service opinion of "Guests Gets what the Guest" wants to Indian Feasts &amp; Drinks done right
+          From service opinion of "Guests Gets what the Guest" wants to Indian
+          Feasts &amp; Drinks done right
         </p>
       </div>
     </div>
@@ -33,37 +51,86 @@
   <!-- The House Yours Section -->
   <section class="house-yours-section">
     <div class="house-container">
-
       <!-- Section Intro -->
       <div class="house-intro">
         <div class="section-tagline">✦ The House, Yours ✦</div>
         <p class="intro-text">
-          From intimate celebrations to full-scale takeovers, Pahli Hill Bandra Bhai offers a distinctive setting for private and semi-private events, corporate gatherings and special occasions. With a candlelit dining room upstairs and a swanky speakeasy bar below, the house can be tailored to suit everything from birthday parties and anniversary dinners to product launches, DJ nights, magic shows and bespoke office or home catering.
+          From intimate celebrations to full-scale takeovers, Pahli Hill Bandra
+          Bhai offers a distinctive setting for private and semi-private events,
+          corporate gatherings and special occasions. With a candlelit dining
+          room upstairs and a swanky speakeasy bar below, the house can be
+          tailored to suit everything from birthday parties and anniversary
+          dinners to product launches, DJ nights, magic shows and bespoke office
+          or home catering.
         </p>
       </div>
 
       <!-- 3 Hire Cards -->
       <div class="hire-cards-row">
-
         <!-- Card 1: Hire the Restaurant -->
         <div class="hire-card">
           <div class="hire-card-media">
-            <video src="https://pahlihillbandrabhai.com/video/optimized/hire-restaurant-card-fast.mp4"
-                   poster="https://pahlihillbandrabhai.com/video/optimized/hire-restaurant-card-fast.jpg"
-                   autoplay loop playsinline preload="auto"
-                   aria-label="Hire the Restaurant"
-                   class="hire-card-video">
-            </video>
+            <video
+              [src]="hireRestaurantVideoUrl"
+              autoplay
+              loop
+              playsinline
+              webkit-playsinline="true"
+              x5-playsinline="true"
+              disablepictureinpicture=""
+              preload="auto"
+              decoding="async"
+              muted
+              [muted]="true"
+              aria-label="Hire the Restaurant"
+              class="hire-card-video"
+            ></video>
           </div>
           <div class="hire-card-body">
             <h3 class="hire-card-title">Hire the Restaurant</h3>
             <div class="hire-card-capacity">Up to 60 seated · 70 standing</div>
             <ul class="hire-card-list">
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Private use of the candlelit dining room</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Bespoke set menus from our head chef, with a live chef's counter view</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Dedicated Bar &amp; service manager</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Available lunch, dinner or all-day takeover</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Dinner Table Service also Available on Request</li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Private use of the candlelit dining room
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Bespoke set menus from our head chef, with a live chef's counter
+                view
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Dedicated Bar &amp; service manager
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Available lunch, dinner or all-day takeover
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Dinner Table Service also Available on Request
+              </li>
             </ul>
           </div>
         </div>
@@ -71,20 +138,58 @@
         <!-- Card 2: Semi-Private Hire -->
         <div class="hire-card">
           <div class="hire-card-media">
-            <img src="https://pahlihillbandrabhai.com/images/optimized/semi-private-hire-card.jpg"
-                 alt="Semi-Private Hire"
-                 loading="eager"
-                 class="hire-card-img">
+            <img
+              [src]="semiPrivateHireImgUrl"
+              alt="Semi-Private Hire"
+              loading="eager"
+              decoding="async"
+              class="hire-card-img"
+            />
           </div>
           <div class="hire-card-body">
             <h3 class="hire-card-title">Semi-Private Hire</h3>
             <div class="hire-card-capacity">Up to 35 seated · 45 standing</div>
             <ul class="hire-card-list">
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> An entire section of the room reserved for you</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> A discreet curtained window between your party and other guests</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Available for Business Launches with projection screens</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Ideal for intimate dinners and milestone celebrations</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Bespoke menus and dedicated service throughout</li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                An entire section of the room reserved for you
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                A discreet curtained window between your party and other guests
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Available for Business Launches with projection screens
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Ideal for intimate dinners and milestone celebrations
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Bespoke menus and dedicated service throughout
+              </li>
             </ul>
           </div>
         </div>
@@ -92,26 +197,69 @@
         <!-- Card 3: Hire the Bar -->
         <div class="hire-card">
           <div class="hire-card-media">
-            <video src="https://pahlihillbandrabhai.com/video/optimized/hire-bar-card-fast.mp4"
-                   poster="https://pahlihillbandrabhai.com/video/optimized/hire-bar-card-fast.jpg"
-                   autoplay loop playsinline preload="auto"
-                   aria-label="Hire the Bar"
-                   class="hire-card-video">
-            </video>
+            <video
+              [src]="hireBarVideoUrl"
+              autoplay
+              loop
+              playsinline
+              webkit-playsinline="true"
+              x5-playsinline="true"
+              disablepictureinpicture=""
+              preload="auto"
+              decoding="async"
+              muted
+              [muted]="true"
+              aria-label="Hire the Bar"
+              class="hire-card-video"
+            ></video>
           </div>
           <div class="hire-card-body">
             <h3 class="hire-card-title">Hire the Bar</h3>
             <div class="hire-card-capacity">Up to 40 standing · 20 seated</div>
             <ul class="hire-card-list">
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> The Bandra Bhai Speakeasy bar to yourselves</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Bespoke cocktail menu and tableside flair</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Dedicated Bar &amp; Service Manager</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Bar snacks and tandoori canapes on rotation</li>
-              <li><div class="custom-arrow"><span class="arrow-body"></span><span class="arrow-cross"></span><span class="arrow-wing"></span></div> Late licence available on request</li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                The Bandra Bhai Speakeasy bar to yourselves
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Bespoke cocktail menu and tableside flair
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Dedicated Bar &amp; Service Manager
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Bar snacks and tandoori canapes on rotation
+              </li>
+              <li>
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span
+                  ><span class="arrow-cross"></span
+                  ><span class="arrow-wing"></span>
+                </div>
+                Late licence available on request
+              </li>
             </ul>
           </div>
         </div>
-
       </div>
 
       <!-- Mobile swipe hint -->
@@ -127,18 +275,31 @@
       <!-- Flexible Events -->
       <div class="info-box">
         <h3 class="info-box-title">Flexible, Tailored Events</h3>
-        <p class="info-box-text">Our floor plans can be adapted to suit the style of your event, whether you want a fully seated dinner, a standing reception, or a mix of both with space for dancing. We can also tailor lighting, menus and service style to create an event that feels personal from start to finish.</p>
+        <p class="info-box-text">
+          Our floor plans can be adapted to suit the style of your event,
+          whether you want a fully seated dinner, a standing reception, or a mix
+          of both with space for dancing. We can also tailor lighting, menus and
+          service style to create an event that feels personal from start to
+          finish.
+        </p>
       </div>
 
       <!-- A Glimpse Inside -->
       <div class="glimpse-section">
         <div class="section-tagline">✦ A Glimpse Inside ✦</div>
-        <p class="glimpse-title">Check out a video of what your next party could look like at the speakeasy bar.</p>
-        <a href="https://www.instagram.com/p/DUvXS-wkyoW/" target="_blank" rel="noopener noreferrer" class="glimpse-btn">
+        <p class="glimpse-title">
+          Check out a video of what your next party could look like at the
+          speakeasy bar.
+        </p>
+        <a
+          href="https://www.instagram.com/p/DUvXS-wkyoW/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="glimpse-btn"
+        >
           <span aria-hidden="true">◉</span> Click here
         </a>
       </div>
-
     </div>
   </section>
 
@@ -149,7 +310,10 @@
         <div class="section-tagline">✦ VALUE ADDED SERVICES ✦</div>
         <h2 class="value-title">Value Added Services</h2>
         <p class="value-desc">
-          Whether upstairs or downstairs, every event is centred around the same spirit of generous hospitality. Expect bespoke food and drink menus, regional Indian dishes designed for sharing, and cocktails created specifically for your occasion.
+          Whether upstairs or downstairs, every event is centred around the same
+          spirit of generous hospitality. Expect bespoke food and drink menus,
+          regional Indian dishes designed for sharing, and cocktails created
+          specifically for your occasion.
         </p>
       </div>
 
@@ -159,55 +323,73 @@
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Birthday dinners and milestone celebrations</span>
+              <span class="service-text"
+                >Birthday dinners and milestone celebrations</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Wedding rehearsal dinners and intimate receptions</span>
+              <span class="service-text"
+                >Wedding rehearsal dinners and intimate receptions</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Corporate dinners, projection screens available</span>
+              <span class="service-text"
+                >Corporate dinners, projection screens available</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Wine, whisky and tequila tastings with our bar team</span>
+              <span class="service-text"
+                >Wine, whisky and tequila tastings with our bar team</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Best Magicians &amp; DJ's collaborations</span>
+              <span class="service-text"
+                >Best Magicians &amp; DJ's collaborations</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Chef's table experiences and curated tasting menus</span>
+              <span class="service-text"
+                >Chef's table experiences and curated tasting menus</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Press launches, brand activations and pop-ups</span>
+              <span class="service-text"
+                >Press launches, brand activations and pop-ups</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Festive bookings — Diwali, Christmas, New Year's Eve</span>
+              <span class="service-text"
+                >Festive bookings — Diwali, Christmas, New Year's Eve</span
+              >
             </div>
           </li>
           <li class="service-item">
             <div class="service-content">
               <span class="star-icon">✦</span>
-              <span class="service-text">Filming, photoshoots and editorial hire</span>
+              <span class="service-text"
+                >Filming, photoshoots and editorial hire</span
+              >
             </div>
           </li>
           <li class="service-item">
@@ -232,21 +414,34 @@
         </h2>
       </div>
 
-      <form class="enquire-form">
+      <!-- Enquiry Form: Submits directly via AJAX to vrushalicshare@gmail.com (Switch to reservations@pahlihillbandrabhai.com for production) -->
+      <form (submit)="submitEnquiry($event)" class="enquire-form">
+        @if (submitSuccess) {
+          <div class="form-success-banner" style="background-color: rgba(200, 90, 40, 0.2); border: 1px solid var(--ochre); color: var(--ivory); padding: 1rem 1.25rem; border-radius: 0.25rem; text-align: center; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem;">
+            ✦ <strong>Enquiry Received!</strong> Thank you for reaching out. We will get back to you shortly.
+          </div>
+        }
+
+        @if (submitError) {
+          <div class="form-error-banner" style="background-color: rgba(220, 38, 38, 0.2); border: 1px solid #ef4444; color: #fca5a5; padding: 0.85rem 1rem; border-radius: 0.25rem; text-align: center; font-size: 0.9rem; margin-bottom: 1rem;">
+            ⚠️ Something went wrong submitting your enquiry. Please try again or email us directly.
+          </div>
+        }
+
         <div class="form-group">
           <label class="form-label">Full name *</label>
-          <input required type="text" name="name" class="form-input" />
+          <input required type="text" name="name" class="form-input" placeholder="Your Full Name" />
         </div>
 
         <div class="form-group">
           <label class="form-label">Email *</label>
-          <input required type="email" name="email" class="form-input" />
+          <input required type="email" name="email" class="form-input" placeholder="your.email@example.com" />
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Phone</label>
-            <input type="text" name="phone" class="form-input" />
+            <input type="text" name="phone" class="form-input" placeholder="+44 ..." />
           </div>
           <div class="form-group">
             <label class="form-label">Date</label>
@@ -257,7 +452,7 @@
         <div class="form-row">
           <div class="form-group">
             <label class="form-label">Party size</label>
-            <input type="number" name="party_size" class="form-input" />
+            <input type="number" name="party_size" class="form-input" placeholder="Number of guests" />
           </div>
           <div class="form-group">
             <label class="form-label">Space</label>
@@ -273,17 +468,18 @@
 
         <div class="form-group">
           <label class="form-label">Tell us more</label>
-          <textarea name="message" rows="5" class="form-textarea"></textarea>
+          <textarea name="message" rows="5" class="form-textarea" placeholder="Tell us details about your event, preferred times, or special requirements..."></textarea>
         </div>
 
-        <button type="submit" class="submit-btn">Send enquiry</button>
+        <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Sending Enquiry…' : 'Send enquiry' }}
+        </button>
       </form>
     </div>
   </section>
 
   <!-- Ivory Transition Strip between Enquire section & Footer -->
   <div class="footer-transition-strip"></div>
-
 </main>
 
 <app-footer></app-footer>
