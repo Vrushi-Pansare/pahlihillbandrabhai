@@ -19,7 +19,8 @@ export class PrivateHiresComponent {
     'assets/Home/Transform_this_restaurant_interior_into_a_landscap-1779458775636.png';
   hireRestaurantVideoUrl =
     'assets/Home/Pahli Hill Bandra Bhai Private Hire Upto 60 Guests.mp4';
-  hireBarVideoUrl = 'assets/Home/BB Private Hire.mp4';
+  hireBarVideoUrl =
+    'https://pahlihillbandrabhai.com/video/optimized/hire-bar-card-fast.mp4';
   heroVideoUrl = 'assets/Home/Interior-Landscape (1).mp4';
   // Event enquiry recipient email (Currently set to vrushalicshare@gmail.com; switch to reservations@pahlihillbandrabhai.com for production)
   enquiryEmail = 'reservations@pahlihillbandrabhai.com';
