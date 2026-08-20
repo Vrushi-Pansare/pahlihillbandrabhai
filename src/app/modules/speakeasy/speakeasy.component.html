@@ -22,7 +22,11 @@
       class="hero-video"
       [poster]="posterUrl"
     >
-      <source [src]="mobileVideoUrl" type="video/mp4" media="(max-width: 767px)" />
+      <source
+        [src]="mobileVideoUrl"
+        type="video/mp4"
+        media="(max-width: 767px)"
+      />
       <source [src]="desktopVideoUrl" type="video/mp4" />
     </video>
 
@@ -99,10 +103,10 @@
       </div>
 
       <!-- Whiskey Flights Outer Card -->
-      <div class="whiskey-flights-wrapper">
+      <!-- <div class="whiskey-flights-wrapper">
         <a href="/menu#whiskey-flights" class="flights-card-link">
           <div class="flights-card-container">
-            <!-- Header Row -->
+         
             <div class="flights-header">
               <div class="icon-circle">
                 <svg
@@ -136,7 +140,7 @@
               <div class="badge-25ml">25ML</div>
             </div>
 
-            <!-- Horizontal Swipe Menu Cards Carousel -->
+        
             <div class="menu-card-carousel">
               <article class="whiskey-item-card">
                 <div class="card-logo-box">
@@ -230,7 +234,7 @@
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -309,10 +313,7 @@
             <!-- Card 1: Barley -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.whiskeyGlenfiddichUrl"
-                  alt="Barley"
-                />
+                <img [src]="config.whiskeyGlenfiddichUrl" alt="Barley" />
               </div>
               <div class="card-info">
                 <h4 class="name">Barley</h4>
@@ -321,12 +322,39 @@
                   orange blossom.
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenMilkUrl" alt="Milk" title="Milk / Dairy"></span>
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenMilkUrl"
+                      alt="Milk"
+                      title="Milk / Dairy"
+                  /></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£8.50</span>
@@ -349,11 +377,33 @@
                   biscuit warmth.
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£9.00</span>
@@ -377,7 +427,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£10.50</span>
@@ -388,22 +455,42 @@
             <!-- Card 4: Fielden Rye -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.whiskeyAmrutUrl"
-                  alt="Fielden Rye"
-                />
+                <img [src]="config.whiskeyAmrutUrl" alt="Fielden Rye" />
               </div>
               <div class="card-info">
                 <h4 class="name">Fielden Rye</h4>
                 <p class="desc">
-                  Salted caramel, toasted walnuts and a sophisticated warming spice.
+                  Salted caramel, toasted walnuts and a sophisticated warming
+                  spice.
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenNutsUrl" alt="Tree Nuts" title="Tree Nuts"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenNutsUrl"
+                      alt="Tree Nuts"
+                      title="Tree Nuts"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£11.25</span>
@@ -422,11 +509,29 @@
               <div class="card-info">
                 <h4 class="name">The Complete Flight Experience</h4>
                 <p class="desc">
-                  All four 25ml measures — the full curated whisky tasting journey.
+                  All four 25ml measures — the full curated whisky tasting
+                  journey.
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£34</span>
@@ -476,11 +581,33 @@
                   clarified mango lassi
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenMilkUrl" alt="Milk" title="Milk / Dairy"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenMilkUrl"
+                      alt="Milk"
+                      title="Milk / Dairy"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -491,10 +618,7 @@
             <!-- Card 2: Phantom -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailPhantomUrl"
-                  alt="Phantom"
-                />
+                <img [src]="config.cocktailPhantomUrl" alt="Phantom" />
               </div>
               <div class="card-info">
                 <h4 class="name">Phantom</h4>
@@ -503,7 +627,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -514,10 +655,7 @@
             <!-- Card 3: Delhi Mule -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailDelhiMuleUrl"
-                  alt="Delhi Mule"
-                />
+                <img [src]="config.cocktailDelhiMuleUrl" alt="Delhi Mule" />
               </div>
               <div class="card-info">
                 <h4 class="name">Delhi Mule</h4>
@@ -525,11 +663,33 @@
                   Hapusa Gin, khoosh bitters, ginger, tonic, lime
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenSulphitesUrl" alt="Sulphites" title="Sulphites"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenSulphitesUrl"
+                      alt="Sulphites"
+                      title="Sulphites"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -540,19 +700,34 @@
             <!-- Card 4: Dancho Don -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailDanchoDonUrl"
-                  alt="Dancho Don"
-                />
+                <img [src]="config.cocktailDanchoDonUrl" alt="Dancho Don" />
               </div>
               <div class="card-info">
                 <h4 class="name">Dancho Don</h4>
                 <p class="desc">
-                  Woodford Reserve, jade perique tabac, demerara, Dr. Hostetter's, angostura, oak wood
+                  Woodford Reserve, jade perique tabac, demerara, Dr.
+                  Hostetter's, angostura, oak wood
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -563,10 +738,7 @@
             <!-- Card 5: Veerapan -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailVeerapanUrl"
-                  alt="Veerapan"
-                />
+                <img [src]="config.cocktailVeerapanUrl" alt="Veerapan" />
               </div>
               <div class="card-info">
                 <h4 class="name">Veerapan</h4>
@@ -575,7 +747,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -586,19 +775,34 @@
             <!-- Card 6: Malabar Run -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailMalabarRunUrl"
-                  alt="Malabar Run"
-                />
+                <img [src]="config.cocktailMalabarRunUrl" alt="Malabar Run" />
               </div>
               <div class="card-info">
                 <h4 class="name">Malabar Run</h4>
                 <p class="desc">
-                  Mijenta Reposado, pepper-infused mezcal, cinnamon, jaggery, coke, lime
+                  Mijenta Reposado, pepper-infused mezcal, cinnamon, jaggery,
+                  coke, lime
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -609,19 +813,31 @@
             <!-- Card 7: Basanti -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailBasantiUrl"
-                  alt="Basanti"
-                />
+                <img [src]="config.cocktailBasantiUrl" alt="Basanti" />
               </div>
               <div class="card-info">
                 <h4 class="name">Basanti</h4>
-                <p class="desc">
-                  Edwards Rhubarb Vodka, lychee puree, rose
-                </p>
+                <p class="desc">Edwards Rhubarb Vodka, lychee puree, rose</p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -632,10 +848,7 @@
             <!-- Card 8: Baba Budan -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailBabaBudanUrl"
-                  alt="Baba Budan"
-                />
+                <img [src]="config.cocktailBabaBudanUrl" alt="Baba Budan" />
               </div>
               <div class="card-info">
                 <h4 class="name">Baba Budan</h4>
@@ -643,11 +856,33 @@
                   Desi Daru Original Vodka, cafe solo, hazelnut syrup, coffee
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenNutsUrl" alt="Tree Nuts" title="Tree Nuts"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenNutsUrl"
+                      alt="Tree Nuts"
+                      title="Tree Nuts"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -658,22 +893,42 @@
             <!-- Card 9: Natwarlal -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.cocktailNatwarlalUrl"
-                  alt="Natwarlal"
-                />
+                <img [src]="config.cocktailNatwarlalUrl" alt="Natwarlal" />
               </div>
               <div class="card-info">
                 <h4 class="name">Natwarlal</h4>
                 <p class="desc">
-                  Salcombe Gin, Cointreau, butterfly-pea, sugar, lime — morphs blue to pink
+                  Salcombe Gin, Cointreau, butterfly-pea, sugar, lime — morphs
+                  blue to pink
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenMilkUrl" alt="Milk" title="Milk / Dairy"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenMilkUrl"
+                      alt="Milk"
+                      title="Milk / Dairy"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£14</span>
@@ -711,10 +966,7 @@
             <!-- Card 1: Nimbu Soda -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.drinkNimbuSodaUrl"
-                  alt="Nimbu Soda"
-                />
+                <img [src]="config.drinkNimbuSodaUrl" alt="Nimbu Soda" />
               </div>
               <div class="card-info">
                 <h4 class="name">Nimbu Soda</h4>
@@ -724,7 +976,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -747,7 +1016,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -758,10 +1044,7 @@
             <!-- Card 3: Pomegranate -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.drinkPomegranateUrl"
-                  alt="Pomegranate"
-                />
+                <img [src]="config.drinkPomegranateUrl" alt="Pomegranate" />
               </div>
               <div class="card-info">
                 <h4 class="name">Pomegranate</h4>
@@ -769,11 +1052,30 @@
                   Pomegranate molasses, foamer, NLL First Light, lime
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenEggUrl" alt="Egg" title="Egg"></span>
+                  <span class="badge-icon"
+                    ><img [src]="config.allergenEggUrl" alt="Egg" title="Egg"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£8</span>
@@ -791,15 +1093,35 @@
               </div>
               <div class="card-info">
                 <h4 class="name">Original Mango Lassi</h4>
-                <p class="desc">
-                  Yogurt, mango pulp, milk, saffron, lime
-                </p>
+                <p class="desc">Yogurt, mango pulp, milk, saffron, lime</p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenMilkUrl" alt="Milk" title="Milk / Dairy"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenMilkUrl"
+                      alt="Milk"
+                      title="Milk / Dairy"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£8</span>
@@ -810,10 +1132,7 @@
             <!-- Card 5: Ruby Spritz -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.drinkRubySpritzUrl"
-                  alt="Ruby Spritz"
-                />
+                <img [src]="config.drinkRubySpritzUrl" alt="Ruby Spritz" />
               </div>
               <div class="card-info">
                 <h4 class="name">Ruby Spritz</h4>
@@ -822,7 +1141,24 @@
                 </p>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£8</span>
@@ -871,11 +1207,33 @@
                   Crisp, refreshing German-style helles lager brewed locally.
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -898,11 +1256,33 @@
                   balance.
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -948,11 +1328,33 @@
               <div class="card-info">
                 <h4 class="name">Kati Patang Saffron Lager 4.6%</h4>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -971,11 +1373,33 @@
               <div class="card-info">
                 <h4 class="name">Lucky Saint Lager 0.5%</h4>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£6</span>
@@ -991,7 +1415,8 @@
             <div class="header-text">
               <h2 class="cat-title">Date-Based Mead</h2>
               <p class="cat-desc">
-                The world's first date-based mead — a modern alternative to beer, cider and wine, exclusively here in Central London
+                The world's first date-based mead — a modern alternative to
+                beer, cider and wine, exclusively here in Central London
               </p>
             </div>
             <span class="swipe-indicator">
@@ -1016,22 +1441,39 @@
             <!-- Card 1: BARHI Original Mead 6% -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.meadBarhiUrl"
-                  alt="BARHI Original Mead 6%"
-                />
+                <img [src]="config.meadBarhiUrl" alt="BARHI Original Mead 6%" />
               </div>
               <div class="card-info">
                 <h4 class="name">BARHI Original Mead 6%</h4>
-                <p class="desc">
-                  Dates, honey, just 1.5g sugar (gluten-free)
-                </p>
+                <p class="desc">Dates, honey, just 1.5g sugar (gluten-free)</p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>
@@ -1042,22 +1484,42 @@
             <!-- Card 2: BARHI Spiced Mead 6% -->
             <article class="bar-item-card">
               <div class="img-frame">
-                <img
-                  [src]="config.meadBarhiUrl"
-                  alt="BARHI Spiced Mead 6%"
-                />
+                <img [src]="config.meadBarhiUrl" alt="BARHI Spiced Mead 6%" />
               </div>
               <div class="card-info">
                 <h4 class="name">BARHI Spiced Mead 6%</h4>
                 <p class="desc">
-                  Dates, honey, star anise, orange peel, just 1.5g sugar (gluten-free)
+                  Dates, honey, star anise, orange peel, just 1.5g sugar
+                  (gluten-free)
                 </p>
                 <div class="allergen-badges-row">
-                  <span class="badge-icon"><img [src]="config.allergenGlutenUrl" alt="Gluten" title="Gluten"></span>
+                  <span class="badge-icon"
+                    ><img
+                      [src]="config.allergenGlutenUrl"
+                      alt="Gluten"
+                      title="Gluten"
+                  /></span>
                 </div>
                 <div class="card-footer">
                   <span class="allergen-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="alert-icon"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="alert-icon"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
                     Allergen Info
                   </span>
                   <span class="price">£7</span>

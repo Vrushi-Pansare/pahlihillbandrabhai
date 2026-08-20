@@ -22,7 +22,7 @@ export class PrivateHiresComponent {
   hireBarVideoUrl =
     'https://pahlihillbandrabhai.com/video/optimized/hire-bar-card-fast.mp4';
   heroVideoUrl = 'assets/Home/Interior-Landscape (1).mp4';
-  // Event enquiry recipient email (Currently set to vrushalicshare@gmail.com; switch to reservations@pahlihillbandrabhai.com for production)
+  // Event enquiry recipient email (Currently set to reservations@pahlihillbandrabhai.com; switch to reservations@pahlihillbandrabhai.com for production)
   enquiryEmail = 'reservations@pahlihillbandrabhai.com';
 
   isSubmitting = false;
@@ -38,6 +38,24 @@ export class PrivateHiresComponent {
     this.submitSuccess = false;
     this.submitError = false;
 
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const phone = formData.get('phone') || '';
+    const eventDate = formData.get('event_date') || '';
+    const partySize = formData.get('party_size') || '';
+    const space = formData.get('space') || '';
+    const message = formData.get('message') || '';
+
+    const fullEnquiryDetails = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Event Date: ${eventDate}
+Party Size: ${partySize}
+Space: ${space}
+Message: ${message}
+    `.trim();
+
     try {
       const response = await fetch(
         `https://formsubmit.co/ajax/${this.enquiryEmail}`,
@@ -48,14 +66,12 @@ export class PrivateHiresComponent {
             Accept: 'application/json',
           },
           body: JSON.stringify({
-            _subject: 'New Private Hire Enquiry — Pahli Hill Bandra Bhai',
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            event_date: formData.get('event_date'),
-            party_size: formData.get('party_size'),
-            space: formData.get('space'),
-            message: formData.get('message'),
+            _subject: `Private hire enquiry — ${name} (${eventDate})`,
+            _captcha: 'false',
+            _template: 'box',
+            _autoresponse:
+              'Thank you for reaching out to Pahli Hill Bandra Bhai! We have received your private hire enquiry and our team will get back to you shortly.',
+            'Private Hire Enquiry Details': fullEnquiryDetails,
           }),
         },
       );

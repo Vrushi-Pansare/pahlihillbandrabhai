@@ -191,10 +191,10 @@
 .speakeasy-details-section {
   background-color: var(--ivory-warm, #efe0c2);
   color: var(--jungle-deep, #001206);
-  padding: 5rem 1.5rem 6rem 1.5rem;
+  padding: 4rem 1.5rem 3.5rem 1.5rem;
 
   @media (min-width: 768px) {
-    padding: 7rem 2.5rem 8rem 2.5rem;
+    padding: 5rem 2.5rem 4.5rem 2.5rem;
   }
 
   .details-container {
@@ -294,7 +294,8 @@
         min-width: 0;
 
         .tagline {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 0.62rem;
           letter-spacing: 0.32em;
           text-transform: uppercase;
@@ -303,7 +304,8 @@
         }
 
         .title {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-style: italic;
           font-size: 1.5rem;
           color: var(--jungle-deep, #001206);
@@ -316,7 +318,8 @@
         }
 
         .subtitle {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 0.85rem;
           color: rgba(0, 18, 6, 0.7);
           margin: 0.25rem 0 0 0;
@@ -395,14 +398,16 @@
         flex: 1;
 
         .item-title {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 1.35rem;
           color: var(--jungle-deep, #001206);
           line-height: 1.25;
         }
 
         .item-desc {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 1.1rem;
           color: rgba(0, 18, 6, 0.65);
           line-height: 1.35;
@@ -410,7 +415,8 @@
         }
 
         .item-price {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 1.2rem;
           color: var(--terracotta, #c85a28);
           margin-top: auto;
@@ -428,13 +434,14 @@
   color: var(--ivory, #f6e6cb);
   padding: 3rem 1rem 3.5rem 1rem;
   overflow: hidden;
-  border-top: 130px solid var(--ivory);
-  border-bottom: 130px solid var(--ivory);
+  // border-top: 130px solid var(--ivory);
+  // border-bottom: 130px solid var(--ivory);
 
   @media (min-width: 768px) {
-    padding: 9.5rem 4.5rem 11rem 4.5rem;
-    border-top: 220px solid var(--ivory);
-    border-bottom: 220px solid var(--ivory);
+    // padding: 9.5rem 4.5rem 11rem 4.5rem;
+    // border-top: 220px solid var(--ivory);
+    // border-bottom: 220px solid var(--ivory);
+    padding: 5rem 4.5rem 6rem 4.5rem;
   }
 
   .cocktail-bg-art {
@@ -625,150 +632,153 @@
       }
     }
 
-      .bar-item-card {
-        scroll-snap-align: start;
-        flex-shrink: 0;
-        width: calc(100% - 2.5rem);
-        max-width: 350px;
-        background-color: var(--ivory-warm, #efe0c2);
-        color: var(--jungle-deep, #001206);
-        border: 1px solid rgba(0, 18, 6, 0.12);
-        border-radius: 1rem;
+    .bar-item-card {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: calc(100% - 2.5rem);
+      max-width: 350px;
+      background-color: var(--ivory-warm, #efe0c2);
+      color: var(--jungle-deep, #001206);
+      border: 1px solid rgba(0, 18, 6, 0.12);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 992px) {
+        width: calc((100% - 2rem) / 3);
+      }
+
+      .img-frame {
+        height: 170px;
+        width: 100%;
         overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        background-color: var(--ivory-warm, #efe0c2);
 
-        @media (min-width: 992px) {
-          width: calc((100% - 2rem) / 3);
+        @media (min-width: 768px) {
+          height: 185px;
         }
 
-        .img-frame {
-          height: 170px;
+        img {
           width: 100%;
-          overflow: hidden;
-          background-color: var(--ivory-warm, #efe0c2);
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.6s ease;
 
-          @media (min-width: 768px) {
-            height: 185px;
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-
-            &:hover {
-              transform: scale(1.05);
-            }
-          }
-        }
-
-        .card-info {
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          flex: 1;
-
-          .name {
-            font-family: "Displace", "Playfair Display", Georgia, serif !important;
-            font-size: 1.4rem;
-            color: var(--jungle-deep, #001206);
-            margin: 0;
-            line-height: 1.25;
-          }
-
-          .desc {
-            font-size: 1.12rem;
-            line-height: 1.4;
-            margin-top: 0.4rem;
-          }
-
-          .allergen-badges-row {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            margin: 10px 0 20px 0;
-
-            .badge-icon {
-              width: 1.75rem;
-              height: 1.75rem;
-              border-radius: 9999px;
-              background-color: rgba(200, 90, 40, 0.1);
-              border: 1px solid rgba(200, 90, 40, 0.3);
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-
-              img {
-                width: 1.1rem;
-                height: 1.1rem;
-                object-fit: contain;
-                mix-blend-mode: multiply;
-              }
-            }
-          }
-
-          .bird-logo-center {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0.75rem 0 0.25rem 0;
-
-            img {
-              height: 1.5rem;
-              width: auto;
-              object-fit: contain;
-              opacity: 0.85;
-            }
-          }
-
-          .card-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.5rem;
-            margin-top: auto;
-            padding-top: 0.75rem;
-
-            .allergen-btn {
-              font-family: "Displace", "Playfair Display", Georgia, serif !important;
-              font-size: 0.85rem;
-              letter-spacing: 0.12em;
-              text-transform: uppercase;
-              color: var(--terracotta, #c85a28);
-              border: 1px solid rgba(200, 90, 40, 0.4);
-              border-radius: 9999px;
-              padding: 0.25rem 0.55rem;
-              background-color: rgba(200, 90, 40, 0.08);
-              display: inline-flex;
-              align-items: center;
-              gap: 0.2rem;
-              white-space: nowrap;
-              flex-shrink: 0;
-              animation: allergen-nudge 2s infinite ease-in-out !important;
-              cursor: pointer;
-
-              .alert-icon {
-                flex-shrink: 0;
-              }
-
-              &:hover {
-                background-color: var(--terracotta, #c85a28);
-                color: var(--ivory, #f6e6cb);
-              }
-            }
-
-            .price {
-              font-family: "Displace", "Playfair Display", Georgia, serif !important;
-              font-size: 1.2rem;
-              color: var(--terracotta, #c85a28);
-              white-space: nowrap;
-              flex-shrink: 0;
-            }
+          &:hover {
+            transform: scale(1.05);
           }
         }
       }
+
+      .card-info {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .name {
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
+          font-size: 1.4rem;
+          color: var(--jungle-deep, #001206);
+          margin: 0;
+          line-height: 1.25;
+        }
+
+        .desc {
+          font-size: 1.12rem;
+          line-height: 1.4;
+          margin-top: 0.4rem;
+        }
+
+        .allergen-badges-row {
+          display: flex;
+          align-items: center;
+          gap: 0.35rem;
+          margin: 10px 0 20px 0;
+
+          .badge-icon {
+            width: 1.75rem;
+            height: 1.75rem;
+            border-radius: 9999px;
+            background-color: rgba(200, 90, 40, 0.1);
+            border: 1px solid rgba(200, 90, 40, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 1.1rem;
+              height: 1.1rem;
+              object-fit: contain;
+              mix-blend-mode: multiply;
+            }
+          }
+        }
+
+        .bird-logo-center {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0.75rem 0 0.25rem 0;
+
+          img {
+            height: 1.5rem;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.85;
+          }
+        }
+
+        .card-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 0.5rem;
+          margin-top: auto;
+          padding-top: 0.75rem;
+
+          .allergen-btn {
+            font-family:
+              "Displace", "Playfair Display", Georgia, serif !important;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--terracotta, #c85a28);
+            border: 1px solid rgba(200, 90, 40, 0.4);
+            border-radius: 9999px;
+            padding: 0.25rem 0.55rem;
+            background-color: rgba(200, 90, 40, 0.08);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+            animation: allergen-nudge 2s infinite ease-in-out !important;
+            cursor: pointer;
+
+            .alert-icon {
+              flex-shrink: 0;
+            }
+
+            &:hover {
+              background-color: var(--terracotta, #c85a28);
+              color: var(--ivory, #f6e6cb);
+            }
+          }
+
+          .price {
+            font-family:
+              "Displace", "Playfair Display", Georgia, serif !important;
+            font-size: 1.2rem;
+            color: var(--terracotta, #c85a28);
+            white-space: nowrap;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
   }
 }
 

@@ -302,7 +302,7 @@
     <div class="latest-header">
       <span class="latest-badge">✦ THE LATEST ✦</span>
       <h2 class="latest-title">
-        Things <em class="italic-highlight">you</em><br class="mobile-break" />
+        Things <em class="italic-highlight">you</em> <br class="mobile-break" />
         <em class="italic-highlight">must know.</em>
       </h2>
       <div class="swipe-hint">
@@ -323,7 +323,12 @@
     <!-- Cards Grid -->
     <div class="latest-grid">
       <!-- Card 1: New on the Menu (Carousel) -->
-      <a href="/menu?filter=new" class="latest-card card-menu">
+      <a
+        href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="latest-card card-menu"
+      >
         <div class="card-media-wrapper">
           @for (slide of slides; track slide.name; let idx = $index) {
             <img
@@ -401,7 +406,7 @@
       </a>
 
       <!-- Card 2: Bandra Bhai Downstairs -->
-      <a href="/speakeasy" class="latest-card card-speakeasy">
+      <a routerLink="/speakeasy" class="latest-card card-speakeasy">
         <div class="card-media-wrapper">
           <video
             src="https://pahlihillbandrabhai.com/__l5e/assets-v1/226b217c-a761-4a77-8b24-8a1d82ca6500/interior-landscape.mp4"
@@ -447,7 +452,7 @@
       </a>
 
       <!-- Card 3: Cinema Menu -->
-      <a href="/about/world-first" class="latest-card card-cinema">
+      <div class="latest-card card-cinema" style="cursor: default;">
         <div class="card-media-wrapper">
           <video
             autoplay
@@ -481,7 +486,7 @@
             three features on our website, a first in London hospitality tech.
           </p>
           <span class="card-link-text">
-            UNLIKE ANY OTHER WEBSITE IN THE WORLD
+            COMING SOON
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -499,7 +504,7 @@
             </svg>
           </span>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>

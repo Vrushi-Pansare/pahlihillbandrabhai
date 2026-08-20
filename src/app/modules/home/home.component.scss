@@ -488,7 +488,7 @@
 .recognition-section {
   position: relative;
   background-color: #050e09; /* 1% blacker, rich dark jungle background */
-  padding: calc(4rem - 10px) 2rem 55px 2rem;
+  padding: calc(4rem - 10px) 2rem 75px 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -525,22 +525,28 @@
 
   .recognition-grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
-    max-width: 1100px;
+    gap: 1rem;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 1150px) {
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
 
     .award-card {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 170px;
-      height: 85px;
+      width: 160px;
+      height: 80px;
+      flex-shrink: 0;
       border-radius: 9999px; /* Pill shape */
-      padding: 0.5rem 1.25rem;
+      padding: 0.5rem 1rem;
       overflow: hidden;
       border: 1px solid rgba(223, 161, 22, 0.45); /* Clearly visible gold/orange border by default */
       transition: all 0.3s ease;
@@ -735,6 +741,7 @@
         font-style: italic;
         color: var(--terracotta);
         font-weight: 400;
+        margin-right: 0.35em;
       }
     }
 
