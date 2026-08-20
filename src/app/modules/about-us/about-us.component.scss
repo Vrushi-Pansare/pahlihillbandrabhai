@@ -266,16 +266,16 @@
       padding: 0.9rem 1.8rem;
       border: 2px solid rgba(11, 33, 20, 0.3);
       color: #0b2114;
-      font-family: monospace;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
+      font-family: 'Displace', 'Playfair Display', Georgia, serif !important;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       transition: all 0.3s ease;
 
       &:hover {
         background-color: #0b2114;
-        color: #efe0c2;
+        color: var(--ochre, #e49a00);
         border-color: #0b2114;
       }
     }
@@ -473,18 +473,19 @@
         display: inline-block;
         text-decoration: none;
         padding: 0.9rem 1.8rem;
-        background-color: var(--ochre);
-        color: var(--jungle-deep);
-        font-family: monospace;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.28em;
+        border: 2px solid rgba(228, 154, 0, 0.5);
+        color: var(--ochre);
+        font-family: 'Displace', 'Playfair Display', Georgia, serif !important;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.3em;
         text-transform: uppercase;
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: var(--ivory);
+          background-color: var(--ochre);
           color: var(--jungle-deep);
+          border-color: var(--ochre);
         }
       }
     }

@@ -1,0 +1,169 @@
+.team-page-container {
+  background-color: #efe0c2;
+  color: #0b2114;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding-top: 1.75rem; /* Neat gap below sticky header */
+  padding-bottom: 6rem;
+}
+
+/* Header Section */
+.team-header-wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  .back-link-container {
+    margin-bottom: 1.5rem;
+
+    .back-link {
+      font-family: 'Displace', 'Playfair Display', Georgia, serif !important;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      color: #a08c6c;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #c85a32; /* Terracotta orange hover */
+      }
+    }
+  }
+
+  .header-content {
+    text-align: center;
+    margin-bottom: calc(var(--spacing, 0.25rem) * 14);
+
+    .sub-heading {
+      display: block;
+      margin-top: 40px;
+      font-family: "Displace", ui-monospace, monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--terracotta, #c75100);
+      margin-bottom: 0.75rem;
+    }
+
+    .main-heading {
+      font-family: "Displace", "Playfair Display", Georgia, serif !important;
+      font-size: 1.85rem;
+      font-weight: 400;
+      color: var(--jungle, #032110);
+      line-height: 1.15;
+
+      @media (min-width: 768px) {
+        font-size: 2.75rem;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 3.25rem;
+      }
+
+      .italic-highlight {
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--terracotta, #c75100);
+      }
+    }
+  }
+}
+
+/* Grid Container */
+.team-grid-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.25rem;
+    }
+  }
+
+  /* Card Styling */
+  .team-card {
+    background-color: #f7eedb;
+    border-radius: 1.2rem;
+    border: 1.5px solid transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(11, 33, 20, 0.03);
+    transition:
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+
+    &:hover {
+      border-color: var(--terracotta, #c75100);
+      box-shadow: 0 14px 30px -4px rgba(212, 128, 57, 0.35);
+
+      .card-photo {
+        transform: scale(1.06);
+      }
+    }
+
+    .card-photo-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 4.8;
+      overflow: hidden;
+      background-color: #e8dcb8;
+
+      .card-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+    }
+
+    .card-info {
+      padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      text-align: left;
+
+      .member-name {
+        font-family: "Displace", "Playfair Display", Georgia, serif !important;
+        font-style: italic;
+        font-size: 1.65rem;
+        font-weight: 500;
+        color: #0b2114;
+        margin: 0;
+        line-height: 1.2;
+      }
+
+      .member-role {
+        font-family: monospace;
+        font-size: 0.625rem;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--terracotta, #c75100);
+        margin-top: 0.15rem;
+      }
+    }
+  }
+}

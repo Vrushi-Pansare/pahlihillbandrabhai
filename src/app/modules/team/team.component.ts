@@ -1,22 +1,20 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-
 import { APP_CONFIG } from '../../configs/constants';
 
 @Component({
-  selector: 'app-about-us',
+  selector: 'app-team',
   standalone: true,
   imports: [CommonModule, RouterLink, FooterComponent, HeaderComponent],
-  templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.scss',
+  templateUrl: './team.component.html',
+  styleUrl: './team.component.scss',
 })
-export class AboutUsComponent implements OnInit, OnDestroy {
+export class TeamComponent {
   teamPhotoUrl = APP_CONFIG.teamPhotoUrl;
   bananaLeafUrl = APP_CONFIG.bananaLeafUrl;
-  factAwardLogoUrl = APP_CONFIG.factAwardLogoUrl;
 
   teamMembers = [
     {
@@ -24,7 +22,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
       role: 'General Manager',
       image: 'https://pahlihillbandrabhai.com/assets/shourrya-DVfkFvrx.jpg',
       description:
-        '"The Guest gets what the guest wants" - Entrepreneurial general manager blending strategy, operations, leadership and guest-focused hospitality.',
+        'The Guest gets what the guest wants" - Entrepreneurial general manager blending strategy, operations, leadership and guest-focused hospitality.',
     },
     {
       name: 'Mahesh',
@@ -96,21 +94,21 @@ export class AboutUsComponent implements OnInit, OnDestroy {
       description:
         'Passionate helper learning the secrets of traditional kitchen craft.',
     },
-    // {
-    //   name: 'Will',
-    //   role: 'Porter',
-    //   image:
-    //     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:01.862Z/WillPorter.jpg',
-    //   description:
-    //     'Dedicated team member bringing energy and support to operations.',
-    // },
-    // {
-    //   name: 'Vamos',
-    //   role: 'Porter',
-    //   image:
-    //     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
-    //   description: 'Enthusiastic team member ensuring smooth kitchen workflow.',
-    // },
+    {
+      name: 'Will',
+      role: 'Porter',
+      image:
+        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:01.862Z/WillPorter.jpg',
+      description:
+        'Dedicated team member bringing energy and support to operations.',
+    },
+    {
+      name: 'Vamos',
+      role: 'Porter',
+      image:
+        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
+      description: 'Enthusiastic team member ensuring smooth kitchen workflow.',
+    },
     {
       name: 'Sameer',
       role: 'Director',
@@ -120,38 +118,4 @@ export class AboutUsComponent implements OnInit, OnDestroy {
         'Visionary strategist driving the spirit of hospitality and character.',
     },
   ];
-
-  activeMemberIndex = 0;
-  slideIntervalId: any;
-
-  ngOnInit() {
-    this.startAutoSlide();
-  }
-
-  ngOnDestroy() {
-    this.stopAutoSlide();
-  }
-
-  startAutoSlide() {
-    this.slideIntervalId = setInterval(() => {
-      this.nextSlide();
-    }, 5000);
-  }
-
-  stopAutoSlide() {
-    if (this.slideIntervalId) {
-      clearInterval(this.slideIntervalId);
-    }
-  }
-
-  selectMember(index: number) {
-    this.activeMemberIndex = index;
-    this.stopAutoSlide();
-    this.startAutoSlide();
-  }
-
-  nextSlide() {
-    this.activeMemberIndex =
-      (this.activeMemberIndex + 1) % this.teamMembers.length;
-  }
 }

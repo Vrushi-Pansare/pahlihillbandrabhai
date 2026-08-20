@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<main class="team-page-container">
+  <!-- Top Header Section -->
+  <div class="team-header-wrapper">
+    <div class="back-link-container">
+      <a routerLink="/about" class="back-link">← BACK TO ABOUT</a>
+    </div>
+
+    <div class="header-content">
+      <span class="sub-heading">✦ MEET THE TEAM ✦</span>
+      <h1 class="main-heading">
+        The people behind <span class="italic-highlight">every plate.</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Team Members Grid -->
+  <div class="team-grid-container">
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of teamMembers">
+        <div class="card-photo-wrapper">
+          <img
+            [src]="member.image"
+            [alt]="member.name"
+            class="card-photo"
+            loading="lazy"
+          />
+        </div>
+        <div class="card-info">
+          <h3 class="member-name">{{ member.name }}</h3>
+          <span class="member-role">{{ member.role }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>
