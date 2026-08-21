@@ -15,6 +15,7 @@ export class HeaderComponent {
   isMobileMenuOpen = false;
   isAboutSubOpen = false;
   isMenuSubOpen = false;
+  activeClickedUrl = '';
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
@@ -26,5 +27,18 @@ export class HeaderComponent {
 
   toggleMenuSub() {
     this.isMenuSubOpen = !this.isMenuSubOpen;
+  }
+
+  setActiveLink(id: string) {
+    this.activeClickedUrl = id;
+  }
+
+  closeMobileMenuDeferred(id?: string) {
+    if (id) {
+      this.activeClickedUrl = id;
+    }
+    setTimeout(() => {
+      this.isMobileMenuOpen = false;
+    }, 400);
   }
 }

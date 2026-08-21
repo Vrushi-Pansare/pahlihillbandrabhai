@@ -4,7 +4,23 @@
   <!-- Top Header Section -->
   <div class="team-header-wrapper">
     <div class="back-link-container">
-      <a routerLink="/about" class="back-link">← BACK TO ABOUT</a>
+      <a routerLink="/about" class="back-link">
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="back-arrow-icon"
+        >
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        <span>BACK TO ABOUT</span>
+      </a>
     </div>
 
     <div class="header-content">
@@ -18,7 +34,11 @@
   <!-- Team Members Grid -->
   <div class="team-grid-container">
     <div class="team-grid">
-      <div class="team-card" *ngFor="let member of teamMembers">
+      <div
+        class="team-card"
+        *ngFor="let member of teamMembers"
+        (click)="openMemberModal(member)"
+      >
         <div class="card-photo-wrapper">
           <img
             [src]="member.image"
@@ -30,6 +50,114 @@
         <div class="card-info">
           <h3 class="member-name">{{ member.name }}</h3>
           <span class="member-role">{{ member.role }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Member Detail Modal -->
+  <div
+    class="member-modal-overlay"
+    *ngIf="selectedMember"
+    (click)="closeMemberModal()"
+  >
+    <div class="member-modal-content" (click)="$event.stopPropagation()">
+      <!-- Left Column: Image & Back Pill -->
+      <div class="modal-image-col">
+        <button class="pill-back-btn" (click)="closeMemberModal()">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="arrow-icon"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>BACK</span>
+        </button>
+        <img
+          [src]="selectedMember.image"
+          [alt]="selectedMember.name"
+          class="modal-member-img"
+        />
+      </div>
+
+      <!-- Right Column: Info & Details -->
+      <div class="modal-info-col">
+        <button
+          class="close-btn"
+          (click)="closeMemberModal()"
+          aria-label="Close modal"
+        >
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <h2 class="modal-member-name">{{ selectedMember.name }}</h2>
+        <span class="modal-member-role">{{ selectedMember.role }}</span>
+
+        <div class="modal-details-scroll">
+          <div
+            class="detail-block"
+            *ngIf="selectedMember.bio || selectedMember.description"
+          >
+            <span class="detail-label">BIO</span>
+            <p class="detail-text">
+              {{ selectedMember.bio || selectedMember.description }}
+            </p>
+          </div>
+
+          <div class="detail-block" *ngIf="selectedMember.experience">
+            <span class="detail-label">EXPERIENCE</span>
+            <p class="detail-text">{{ selectedMember.experience }}</p>
+          </div>
+
+          <div class="detail-block" *ngIf="selectedMember.whatGotThemIn">
+            <span class="detail-label">WHAT GOT THEM IN</span>
+            <p class="detail-text">{{ selectedMember.whatGotThemIn }}</p>
+          </div>
+
+          <div class="detail-block" *ngIf="selectedMember.funFact">
+            <span class="detail-label">FUN FACT</span>
+            <p class="detail-text">{{ selectedMember.funFact }}</p>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="back-to-team-btn" (click)="closeMemberModal()">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="arrow-icon"
+            >
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>BACK TO TEAM</span>
+          </button>
         </div>
       </div>
     </div>

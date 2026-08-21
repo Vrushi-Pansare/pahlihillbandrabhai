@@ -16,22 +16,34 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
 
   /**
-   * Check if restaurant is currently OPEN based on UK time
+   * Check if restaurant is currently OPEN based on London (UK) time
    * Mon - Sat: 12:00 - 22:00
    * Sun: 12:00 - 17:00
    */
   get isOpen(): boolean {
     const now = new Date();
-    // Convert to London time
-    const londonTimeStr = now.toLocaleString('en-US', { timeZone: 'Europe/London' });
-    const londonDate = new Date(londonTimeStr);
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/London',
+      weekday: 'short',
+      hour: 'numeric',
+      minute: 'numeric',
+      hourCycle: 'h23',
+    });
 
-    const day = londonDate.getDay(); // 0 = Sun, 1 = Mon, ... 6 = Sat
-    const hours = londonDate.getHours();
-    const minutes = londonDate.getMinutes();
+    const parts = formatter.formatToParts(now);
+    let weekday = '';
+    let hours = 0;
+    let minutes = 0;
+
+    for (const part of parts) {
+      if (part.type === 'weekday') weekday = part.value;
+      if (part.type === 'hour') hours = parseInt(part.value, 10);
+      if (part.type === 'minute') minutes = parseInt(part.value, 10);
+    }
+
     const currentDecimalTime = hours + minutes / 60;
 
-    if (day === 0) {
+    if (weekday === 'Sun') {
       // Sunday: 12:00 to 17:00
       return currentDecimalTime >= 12 && currentDecimalTime < 17;
     } else {

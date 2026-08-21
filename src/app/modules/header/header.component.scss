@@ -234,6 +234,7 @@
           &:hover {
             background-color: #c85a17 !important;
             color: #ffffff !important;
+            padding-left: 1.5rem;
           }
         }
       }
@@ -345,12 +346,26 @@
         padding: 1.1rem 0;
         cursor: pointer;
 
+        &:hover {
+          .accordion-title,
+          .chevron-icon {
+            color: #c85a17 !important;
+          }
+        }
+
         .accordion-title {
           font-family: "Displace", Georgia, serif !important;
           font-style: italic !important;
           font-size: 1.85rem;
           color: #0b2114;
           transition: color 0.3s ease;
+
+          &.active,
+          &:active,
+          &:focus,
+          &:hover {
+            color: #c85a17 !important;
+          }
 
           &.link-only {
             text-decoration: none;
@@ -389,16 +404,24 @@
           font-weight: 500;
           letter-spacing: 0.25em;
           text-transform: uppercase;
-          transition: color 0.2s ease;
+          transition: color 0.25s ease, transform 0.25s ease;
+          cursor: pointer;
 
           &:hover,
+          &:focus,
+          &:active,
           &.active {
             color: #c85a17 !important;
+            transform: translateX(6px);
+
+            span {
+              color: #c85a17 !important;
+            }
 
             .custom-arrow .arrow-body,
             .custom-arrow .arrow-cross,
             .custom-arrow .arrow-wing {
-              background: #c85a17;
+              background: #c85a17 !important;
             }
           }
 

@@ -40,6 +40,11 @@
             <li>
               <a routerLink="/about" routerLinkActive="active">ABOUT US</a>
             </li>
+            <li>
+              <a routerLink="/about/team" routerLinkActive="active"
+                >MEET THE TEAM</a
+              >
+            </li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -178,13 +183,33 @@
         @if (isAboutSubOpen) {
           <ul class="mobile-sub-menu">
             <li>
-              <a routerLink="/about" (click)="isMobileMenuOpen = false">
+              <a
+                routerLink="/about"
+                [class.active]="activeClickedUrl === 'about-us'"
+                (click)="setActiveLink('about-us'); isMobileMenuOpen = false"
+              >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
                   <span class="arrow-cross"></span>
                   <span class="arrow-wing"></span>
                 </div>
                 <span>ABOUT US</span>
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/about/team"
+                [class.active]="activeClickedUrl === 'meet-the-team'"
+                (click)="
+                  setActiveLink('meet-the-team'); isMobileMenuOpen = false
+                "
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>MEET THE TEAM</span>
               </a>
             </li>
           </ul>
@@ -220,7 +245,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'alacarte'"
+                (click)="closeMobileMenuDeferred('alacarte')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -235,7 +261,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'setlunch'"
+                (click)="closeMobileMenuDeferred('setlunch')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -247,10 +274,11 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:55:16.424Z/PRESENTFILEALLA5SetLunch+SELECTMenus+Dessert+G&G(6).pdf"
+                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'selectmenu'"
+                (click)="closeMobileMenuDeferred('selectmenu')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -265,7 +293,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:37:34.449Z/Allergens28thJuly2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'allergen'"
+                (click)="closeMobileMenuDeferred('allergen')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -280,7 +309,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'winelist'"
+                (click)="closeMobileMenuDeferred('winelist')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -295,7 +325,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:46:56.418Z/Grab&Go2026.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'grabgo'"
+                (click)="closeMobileMenuDeferred('grabgo')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
@@ -310,7 +341,8 @@
                 href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:44:53.790Z/EVENTS&GROUPPACKAGES14_04.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                (click)="isMobileMenuOpen = false"
+                [class.active]="activeClickedUrl === 'events'"
+                (click)="closeMobileMenuDeferred('events')"
               >
                 <div class="custom-arrow">
                   <span class="arrow-body"></span>
