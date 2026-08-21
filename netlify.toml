@@ -1,2 +1,6 @@
 [build]
   publish = "dist/pahlihillbandrabhai/browser"
+
+[build.environment]
+  NODE_VERSION = "22.22.0"
+
