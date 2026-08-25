@@ -1,21 +1,117 @@
 <app-header></app-header>
 
 <main class="why-unique-container">
+  <!-- Hero Section -->
   <section class="hero-section">
+    <div
+      class="hero-bg-image"
+      [style.background-image]="'url(' + heroBgUrl + ')'"
+    ></div>
+    <div class="hero-bg-overlay"></div>
+
     <div class="hero-content">
-      <span class="sub-title">• WHY WE'RE UNIQUE •</span>
+      <span class="sub-title">✦ WHY WE'RE UNIQUE ✦</span>
       <h1 class="main-title">
-        The Guest Gets <span class="highlight">what</span><br />
-        <span class="highlight">the Guest Wants</span>
+        The Guest Gets <em class="italic-ochre">what the Guest Wants</em>
       </h1>
       <p class="description">
-        We didn't open another curry house. We opened a regional Indian supper-<br />
-        house on Mortimer Street — with the cooking, the room and the tech to back<br />
-        it up.
+        We didn't open another curry house. We opened a regional Indian supper-house
+        on Mortimer Street — with the cooking, the room and the tech to back it up.
       </p>
-      <span class="explore-tag">• SWIPE TO EXPLORE •</span>
+      <span class="explore-tag">&gt; SWIPE TO EXPLORE &gt;</span>
     </div>
   </section>
-</main>
 
+  <!-- Pillars Section — Horizontal Swipe Deck -->
+  <section class="pillars-section">
+    <div class="pillars-header">
+      <div class="counter-text">
+        {{ (active + 1 < 10 ? '0' : '') + (active + 1) }} / {{ (pillars.length < 10 ? '0' : '') + pillars.length }}
+      </div>
+      <div class="nav-arrow-btns">
+        <button
+          (click)="scrollToCard(active - 1)"
+          [disabled]="active === 0"
+          aria-label="Previous card"
+          class="nav-btn"
+        >
+          &lt;
+        </button>
+        <button
+          (click)="scrollToCard(active + 1)"
+          [disabled]="active === pillars.length - 1"
+          aria-label="Next card"
+          class="nav-btn"
+        >
+          &gt;
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrollable Cards Deck -->
+    <div #scroller (scroll)="onScroll()" class="pillars-deck">
+      <div
+        *ngFor="let pillar of pillars; let i = index"
+        class="pillar-card"
+        [class.active-card]="i === active"
+      >
+        <div class="card-top">
+          <!-- SVG Icons -->
+          <div class="card-icon">
+            <svg *ngIf="pillar.iconType === 'camera'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            <svg *ngIf="pillar.iconType === 'heart'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <svg *ngIf="pillar.iconType === 'battery'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2"/><line x1="22" x2="22" y1="11" y2="13"/><polyline points="11 9 9 12 12 12 10 15"/></svg>
+            <svg *ngIf="pillar.iconType === 'refill'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h14v4H5z"/><path d="M4 6h16v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z"/><line x1="9" x2="15" y1="12" y2="12"/></svg>
+            <svg *ngIf="pillar.iconType === 'clock'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg *ngIf="pillar.iconType === 'flame'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"/></svg>
+            <svg *ngIf="pillar.iconType === 'wine'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M12 15a7 7 0 0 0 7-7c0-2-1-4-3-5H8c-2 1-3 3-3 5a7 7 0 0 0 7 7z"/></svg>
+            <svg *ngIf="pillar.iconType === 'leaf'" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+          </div>
+          <span class="card-num">{{ pillar.number }}</span>
+        </div>
+
+        <h3 class="card-title">{{ pillar.title }}</h3>
+        <p class="card-body">{{ pillar.body }}</p>
+      </div>
+    </div>
+
+    <!-- Dots Indicator -->
+    <div class="dots-container">
+      <button
+        *ngFor="let pillar of pillars; let i = index"
+        (click)="scrollToCard(i)"
+        [class.active-dot]="i === active"
+        [attr.aria-label]="'Go to card ' + (i + 1)"
+        class="dot-btn"
+      ></button>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">Come and see for yourself.</h2>
+      <p class="cta-subtitle">
+        79–81 Mortimer Street, Fitzrovia. Mon–Sat 12–10pm · Sun 12–5pm.
+      </p>
+      <div class="cta-actions">
+        <a
+          href="https://www.sevenrooms.com/explore/pahlihill/reservations/create/search"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          Book a table
+        </a>
+        <a
+          href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary"
+        >
+          See the menu
+        </a>
+      </div>
+    </div>
+  </section>
 <app-footer></app-footer>

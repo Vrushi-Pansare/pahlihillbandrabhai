@@ -7,10 +7,11 @@
 /* Video Hero Section */
 .hires-hero-section {
   position: relative;
-  height: calc(88vh + 65px);
-  min-height: 625px;
+  height: 88vh;
+  min-height: 560px;
   width: 100%;
-  margin-top: -150px; /* Slide under the sticky header */
+  margin-top: -80px; /* Slide seamlessly under sticky header */
+  padding-top: 80px;
   overflow: hidden;
   background-color: var(--jungle-deep); /* #001206 */
   display: flex;
@@ -36,14 +37,14 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1.001);
+    -webkit-transform: translate3d(0, 0, 0) scale(1.001);
     will-change: transform;
     filter: brightness(1.05) contrast(1.06) saturate(1.05);
     image-rendering: -webkit-optimize-contrast;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-color: #1a2e1c; /* Dark fallback so no black flash on loop */
+    background-color: transparent; /* Seamless video load without background color flash */
 
     &::-webkit-media-controls,
     &::-webkit-media-controls-overlay-play-button,

@@ -29,24 +29,21 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     {
       name: 'Mahesh',
       role: 'Head Chef',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:23:52.215Z/Mahesh.jpg',
+      image: 'assets/team/mahesh.jpg',
       description:
         'A deeply experienced head chef known for warmth, craft and quiet excellence.',
     },
     {
       name: 'Nikhil',
       role: 'Restaurant Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:40:46.651Z/Nikhil.jpg',
+      image: 'assets/team/nikhil.jpg',
       description:
         'Energetic restaurant manager driven by resilience, momentum, people, and solutions.',
     },
     {
       name: 'Rose',
       role: 'Reservations Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:39:45.456Z/Rose.jpg',
+      image: 'assets/team/rose.jpg',
       description:
         'Ambitious FOH professional with warmth, drive, leadership, poise and acumen.',
     },
@@ -61,62 +58,54 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     {
       name: 'Yash',
       role: 'Bandra Bhai Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:37:23.670Z/Yash.jpg',
+      image: 'assets/team/yash.jpg',
       description:
         'Warm, grounded hospitality manager shaped by family, service, and ambition.',
     },
     {
       name: 'Dipak',
       role: 'Sous Chef',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:35:55.281Z/Dipak.jpg',
+      image: 'assets/team/dipak.jpg',
       description:
         'Skilled tandoori chef combining authenticity, creativity, discipline and business insight.',
     },
     {
       name: 'Sanam',
       role: 'Chef de Partie',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:26:53.828Z/Sanam.jpg',
+      image: 'assets/team/sanam.jpg',
       description:
         'A skilled chef known for consistency, focus and calm under pressure.',
     },
     {
       name: 'Baptista Barreto',
       role: 'Chef de Partie',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:34:17.089Z/BaptistaBarreto.jpg',
+      image: 'assets/team/Baptista Barreto.png',
       description: '',
     },
     {
       name: 'Anitha Roadrigas',
       role: 'Commi',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:36.573Z/AnithaRoadrigas.jpg',
+      image: 'assets/team/Anitha Roadrigas.png',
       description: '',
     },
     {
       name: 'Will',
       role: 'Porter',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:01.862Z/WillPorter.jpg',
+      image: 'assets/team/Will Porter.png',
       description:
         'I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions...',
     },
     {
       name: 'Vamos',
       role: 'Porter',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
+      image: 'assets/team/Vamos Porter.png',
       description:
         "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude. I was born in Côte d'Ivoire, more precisely in Abidjan.",
     },
     {
       name: 'Sameer',
       role: 'Director',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:52:51.525Z/Sameer.jpg',
+      image: 'assets/team/sameer.jpg',
       description: '',
     },
   ];

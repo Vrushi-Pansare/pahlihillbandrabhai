@@ -46,8 +46,7 @@ export class TeamComponent {
     {
       name: 'Mahesh',
       role: 'Head Chef',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:23:52.215Z/Mahesh.jpg',
+      image: 'assets/team/mahesh.jpg',
       description:
         'A deeply experienced head chef known for warmth, craft and quiet excellence.',
       bio: 'A deeply experienced head chef known for warmth, craft and quiet excellence.',
@@ -60,8 +59,7 @@ export class TeamComponent {
     {
       name: 'Nikhil',
       role: 'Restaurant Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:40:46.651Z/Nikhil.jpg',
+      image: 'assets/team/nikhil.jpg',
       description:
         'Energetic restaurant manager driven by resilience, momentum, people, and solutions.',
       bio: 'Energetic restaurant manager driven by resilience, momentum, people, and solutions.',
@@ -75,8 +73,7 @@ export class TeamComponent {
     {
       name: 'Rose',
       role: 'Reservations Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:39:45.456Z/Rose.jpg',
+      image: 'assets/team/rose.jpg',
       description:
         'Ambitious FOH professional with warmth, drive, leadership, poise and acumen.',
       bio: 'Ambitious FOH professional with warmth, drive, leadership, poise and acumen.',
@@ -105,8 +102,7 @@ export class TeamComponent {
     {
       name: 'Yash',
       role: 'Bandra Bhai Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:37:23.670Z/Yash.jpg',
+      image: 'assets/team/yash.jpg',
       description:
         'Warm, grounded hospitality manager shaped by family, service, and ambition.',
       bio: 'Warm, grounded hospitality manager shaped by family, service, and ambition.',
@@ -120,8 +116,7 @@ export class TeamComponent {
     {
       name: 'Dipak',
       role: 'Sous Chef',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:35:55.281Z/Dipak.jpg',
+      image: 'assets/team/dipak.jpg',
       description:
         'Skilled tandoori chef combining authenticity, creativity, discipline and business insight.\n\nPassionate chef bringing creativity, precision and strong leadership to every service.',
       bio: 'Skilled tandoori chef combining authenticity, creativity, discipline and business insight.\n\nPassionate chef bringing creativity, precision and strong leadership to every service.',
@@ -135,8 +130,7 @@ export class TeamComponent {
     {
       name: 'Sanam',
       role: 'Chef de Partie',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:26:53.828Z/Sanam.jpg',
+      image: 'assets/team/sanam.jpg',
       description:
         'A skilled chef known for consistency, focus and calm under pressure.',
       bio: 'A skilled chef known for consistency, focus and calm under pressure.',
@@ -150,8 +144,7 @@ export class TeamComponent {
     {
       name: 'Baptista Barreto',
       role: 'Chef de Partie',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:34:17.089Z/BaptistaBarreto.jpg',
+      image: 'assets/team/Baptista Barreto.png',
       description: '',
       bio: '',
       experience: '',
@@ -161,8 +154,7 @@ export class TeamComponent {
     {
       name: 'Anitha Roadrigas',
       role: 'Commi',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:36.573Z/AnithaRoadrigas.jpg',
+      image: 'assets/team/Anitha Roadrigas.png',
       description: '',
       bio: '',
       experience: '',
@@ -172,8 +164,7 @@ export class TeamComponent {
     {
       name: 'Will',
       role: 'Porter',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:01.862Z/WillPorter.jpg',
+      image: 'assets/team/Will Porter.png',
       description:
         "I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don't regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.",
       bio: "I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don't regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.",
@@ -184,8 +175,7 @@ export class TeamComponent {
     {
       name: 'Vamos',
       role: 'Porter',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
+      image: 'assets/team/Vamos Porter.png',
       description:
         "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d'Ivoire, more precisely in Abidjan.",
       bio: "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d'Ivoire, more precisely in Abidjan.",
@@ -198,8 +188,7 @@ export class TeamComponent {
     {
       name: 'Sameer',
       role: 'Director',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:52:51.525Z/Sameer.jpg',
+      image: 'assets/team/sameer.jpg',
       description: '',
       bio: '',
       experience: '',

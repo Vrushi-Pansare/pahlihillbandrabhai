@@ -6,10 +6,11 @@
 
 .speakeasy-hero-section {
   position: relative;
-  height: 585px;
-  min-height: 525px;
+  height: 80vh;
+  min-height: 580px;
   width: 100%;
-  margin-top: -100px; /* Slide under header comfortably */
+  margin-top: -80px; /* Slide seamlessly under sticky header */
+  padding-top: 80px;
   overflow: hidden;
   background-color: var(--jungle-deep);
   display: flex;
@@ -18,12 +19,12 @@
   z-index: 1;
 
   @media (min-width: 768px) {
-    height: 625px;
+    height: 85vh;
     min-height: 625px;
   }
 
   @media (min-width: 1024px) {
-    height: 655px;
+    height: 88vh;
     min-height: 655px;
   }
 
@@ -53,7 +54,7 @@
     image-rendering: crisp-edges;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    background-color: #1a2e1c;
+    background-color: transparent;
 
     &::-webkit-media-controls,
     &::-webkit-media-controls-overlay-play-button,

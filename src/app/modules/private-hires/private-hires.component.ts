@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -11,7 +11,8 @@ import { APP_CONFIG } from '../../configs/constants';
   templateUrl: './private-hires.component.html',
   styleUrl: './private-hires.component.scss',
 })
-export class PrivateHiresComponent {
+export class PrivateHiresComponent implements AfterViewInit {
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   interiorLandscapeUrl = APP_CONFIG.interiorLandscapeUrl;
   privateHireVideoUrl = APP_CONFIG.privateHirePosterUrl;
   privateHireDesktopVideoUrl = APP_CONFIG.privateHireVideoUrl;
@@ -21,6 +22,13 @@ export class PrivateHiresComponent {
     'assets/Home/Pahli Hill Bandra Bhai Private Hire Upto 60 Guests.mp4';
   hireBarVideoUrl = 'assets/bb-private-hire-bu569bel-vuceqfi6_9QMrqgoo.mp4';
   heroVideoUrl = 'assets/Home/Interior-Landscape (1).mp4';
+
+  ngAfterViewInit() {
+    if (this.heroVideo?.nativeElement) {
+      this.heroVideo.nativeElement.muted = true;
+      this.heroVideo.nativeElement.play().catch(() => {});
+    }
+  }
 
   // Event enquiry recipient email (Currently set to reservations@pahlihillbandrabhai.com; switch to reservations@pahlihillbandrabhai.com for production)
   enquiryEmail = 'reservations@pahlihillbandrabhai.com';
