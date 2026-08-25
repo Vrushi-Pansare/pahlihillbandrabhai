@@ -1,14 +1,27 @@
 <app-header></app-header>
 
 <section class="hero-section">
+  <!-- Fallback Poster Image -->
+  <img
+    src="assets/Home/space.jpg"
+    alt=""
+    aria-hidden="true"
+    class="hero-poster"
+  />
+
   <!-- Background Video -->
   <video
+    #heroVideo
     class="hero-video"
+    poster="assets/Home/space.jpg"
     autoplay
     loop
     muted
     [muted]="true"
     playsinline
+    webkit-playsinline="true"
+    x5-playsinline="true"
+    disablepictureinpicture=""
     preload="auto"
   >
     <!-- Desktop / PC Video -->
@@ -153,7 +166,7 @@
           </svg>
         </a>
         <a
-          href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
+          href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
           target="_blank"
           rel="noopener noreferrer"
           class="btn"
@@ -165,11 +178,11 @@
   </div>
 
   <!-- Right Side Vertical Indicator -->
-  <div class="right-vertical-indicator">
+  <!-- <div class="right-vertical-indicator">
     <div class="vertical-line"></div>
     <span class="indicator-text">NOW PLAYING · TONIGHT'S KITCHEN</span>
     <div class="vertical-line"></div>
-  </div>
+  </div> -->
 
   <div class="scallop-divider">
     <svg
@@ -417,7 +430,7 @@
         <div class="card-media-wrapper">
           <video
             src="https://pahlihillbandrabhai.com/__l5e/assets-v1/226b217c-a761-4a77-8b24-8a1d82ca6500/interior-landscape.mp4"
-            poster="https://pahlihillbandrabhai.com/images/optimized/bandra-bhai-downstairs-card.jpg"
+            poster="assets/Home/Bandra bhai.png"
             autoplay
             muted
             [muted]="true"

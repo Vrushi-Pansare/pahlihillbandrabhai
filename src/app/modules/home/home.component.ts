@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -11,25 +11,26 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   // Carousel data
   activeSlide = 0;
   slides = [
     {
       name: 'Sweet Potato Chaat',
-      img: 'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T13:57:49.491Z/sweet-potato-chaat-1784657263829.jpg',
+      img: 'assets/Home/sweet-potato-chaat.jpg',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/a05a2844-62dc-4020-9fb5-783e931ea0c8/chicory-chaat.mp4',
     },
     {
       name: 'Chilli Cheese Dosa',
-      img: 'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T13:58:46.625Z/chilli-cheese-dosa.jpg',
+      img: 'assets/Home/chilli-cheese-dosa.jpg',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/06fad0b4-cdea-4191-b07a-27a714532c0a/chilli-cheese-dosa.mp4',
     },
     {
       name: 'Lamb Kothu Roti',
-      img: 'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T13:59:43.848Z/lamb-kothu-roti.jpg',
+      img: 'assets/Home/lamb-kothu-roti.jpg',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/4cb3b530-eb52-4754-abda-d8dfeea0668e/lamb-kothu-roti.mp4',
     },
@@ -56,6 +57,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.startCarousel();
+  }
+
+  ngAfterViewInit() {
+    if (this.heroVideo?.nativeElement) {
+      this.heroVideo.nativeElement.muted = true;
+      this.heroVideo.nativeElement.play().catch(() => {});
+    }
   }
 
   ngOnDestroy() {

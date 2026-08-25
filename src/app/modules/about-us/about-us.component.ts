@@ -22,8 +22,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
     {
       name: 'Shourrya',
       role: 'General Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:30:34.016Z/Shourrya.jpg',
+      image: 'assets/team/shourrya.jpg',
       description:
         '"The Guest gets what the guest wants" - Entrepreneurial general manager blending strategy, operations, leadership and guest-focused and employee morale hospitality. "JACK OF ALL TRADES MASTER OF MANY"',
     },
@@ -111,7 +110,7 @@ export class AboutUsComponent implements OnInit, OnDestroy {
       image:
         'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
       description:
-        'Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude. I was born in Côte d\'Ivoire, more precisely in Abidjan.',
+        "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude. I was born in Côte d'Ivoire, more precisely in Abidjan.",
     },
     {
       name: 'Sameer',

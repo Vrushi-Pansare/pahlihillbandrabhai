@@ -32,15 +32,14 @@ export class TeamComponent {
     {
       name: 'Shourrya',
       role: 'General Manager',
-      image:
-        'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:30:34.016Z/Shourrya.jpg',
+      image: 'assets/team/shourrya.jpg',
       description:
         '"The Guest gets what the guest wants" - Entrepreneurial general manager blending strategy, operations, leadership and guest-focused and employee morale hospitality. "JACK OF ALL TRADES MASTER OF MANY"',
       bio: '"The Guest gets what the guest wants" - Entrepreneurial general manager blending strategy, operations, leadership and guest-focused and employee morale hospitality.\n\n"JACK OF ALL TRADES MASTER OF MANY"',
       experience:
         '13 years of Leadership and other role experiences across India, London BiBi, Pahli Hill, Hoppers, Tendril and Cafe Petiole Somerset house, plus founding and scaling a dessert based brand called Crepe-fe in Delhi from 2017, he brings expertise in menu building, operations, finance, compliance, team motivation and guest experience.',
       whatGotThemIn:
-        'Coming from an entrepreneurial family, he was drawn more to hi mother\'s kitchen than his father\'s office. It was hi mother who recognised early on that hospitality was the natural path for him.',
+        "Coming from an entrepreneurial family, he was drawn more to hi mother's kitchen than his father's office. It was hi mother who recognised early on that hospitality was the natural path for him.",
       funFact:
         'Used to fix potholes in new delhi during weekends with team members. Been an entrepenuer my whole career of 12 years this is the first time an employee.',
     },
@@ -176,9 +175,8 @@ export class TeamComponent {
       image:
         'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:32:01.862Z/WillPorter.jpg',
       description:
-        'I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don\'t regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.',
-      bio:
-        'I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don\'t regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.',
+        "I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don't regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.",
+      bio: "I am Wil, I come from Ivory Coast. I work with the agency 7 to 7. Indeed, thanks to the flexibility of agency work, I was able to discover several restaurants, several working methods and hold several positions. That being said, I have several strings to my bow: k.P., cleaner, waiter and commis chef. Why did you choose the restaurant industry ? I like to eat, I really like to eat. This love My experience with food allowed me to embrace cooking and kitchens with respect and to learn quickly. Did I make the right choice? In any case, I don't regret it because health and life are found on the plate. So why not take great care of the plate? Today, I am in PAHLI for a new adventure.",
       experience: '',
       whatGotThemIn: '',
       funFact: '',
@@ -189,9 +187,8 @@ export class TeamComponent {
       image:
         'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T12:31:27.589Z/VamosPorter.jpg',
       description:
-        'Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d\'Ivoire, more precisely in Abidjan.',
-      bio:
-        'Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d\'Ivoire, more precisely in Abidjan.',
+        "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d'Ivoire, more precisely in Abidjan.",
+      bio: "Hello, I am Vamos, a kitchen porter recognized for my good humor and positive attitude.\nI was born in Côte d'Ivoire, more precisely in Abidjan.",
       experience:
         'I have been practicing this profession since 2022 and now have 4 years of experience. I have worked at several prominent establishments in the area, including:\n• Maison François • Kanada Ya • Santo Remedio • Azteca • Ve Kitchen • Beaufort House',
       whatGotThemIn:

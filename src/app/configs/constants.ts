@@ -54,10 +54,8 @@ export const APP_CONFIG: AppConfig = {
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:09:47.970Z/pahli-bird-logo-BQsHFrab.jpg',
   bananaLeafUrl:
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:22:41.936Z/banana-leaf-CgIYXsLF.jpg',
-  restaurantSketchUrl:
-    'https://pahlihillbandrabhai.com/assets/restaurant-sketch-DPOGIhtR.png',
-  teamPhotoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-21T13:17:14.933Z/AhaConvert_IMG_5466.jpg',
+  restaurantSketchUrl: 'assets/footer/restaurant-sketch.png',
+  teamPhotoUrl: 'assets/team/AhaConvert_IMG_5466.jpg',
   factAwardLogoUrl:
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:25:20.830Z/fact-award-2025-cIcUktKr.jpg',
   interiorLandscapeUrl:

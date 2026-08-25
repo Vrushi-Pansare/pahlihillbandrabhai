@@ -13,7 +13,7 @@
     padding: calc(2.5rem + 25px) 23px 1.5rem 23px;
   }
 
-  .hero-video {
+  .hero-poster {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,12 +21,22 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
     pointer-events: none;
-    background-color: #0b2114; /* Prevents black flash on loading or loop restart */
+    background-color: transparent;
     filter: brightness(1.15) contrast(1.05);
 
     /* Force Hardware Acceleration for smooth HD quality rendering */
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) scale(1.001);
     will-change: transform;
     backface-visibility: hidden;
   }
@@ -488,7 +498,7 @@
 .recognition-section {
   position: relative;
   background-color: #050e09; /* 1% blacker, rich dark jungle background */
-  padding: calc(4rem - 10px) 2rem 75px 2rem;
+  padding: 26px 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -496,13 +506,17 @@
   z-index: 5;
   width: 100%;
 
+  @media (max-width: 640px) {
+    padding: 20px 1.25rem;
+  }
+
   .recognition-header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     color: var(--ochre);
-    margin-bottom: 3.5rem;
+    margin-bottom: 1.25rem;
 
     .lucide-award {
       color: var(--ochre);
@@ -1059,7 +1073,8 @@
         gap: 0.5rem;
 
         li {
-          font-family: "Displace", "Playfair Display", Georgia, serif !important;
+          font-family:
+            "Displace", "Playfair Display", Georgia, serif !important;
           font-size: 0.85rem;
           color: rgba(11, 33, 20, 0.75);
           display: flex;

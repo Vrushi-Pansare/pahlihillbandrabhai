@@ -7,7 +7,7 @@ import { APP_CONFIG } from '../../configs/constants';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
   logoUrl = APP_CONFIG.logoUrl;
