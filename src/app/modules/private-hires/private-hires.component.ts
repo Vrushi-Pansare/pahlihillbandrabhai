@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { APP_CONFIG } from '../../configs/constants';
+import {
+  PrivateHireEnquiriesApi,
+  type PrivateHireEnquiryPayload,
+} from './private-hire-enquiries.api';
 
 @Component({
   selector: 'app-private-hires',
@@ -12,6 +16,10 @@ import { APP_CONFIG } from '../../configs/constants';
   styleUrl: './private-hires.component.scss',
 })
 export class PrivateHiresComponent implements AfterViewInit {
+  private readonly enquiriesApi = new PrivateHireEnquiriesApi(
+    APP_CONFIG.privateHireEnquiriesApiUrl,
+  );
+
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   interiorLandscapeUrl = APP_CONFIG.interiorLandscapeUrl;
   privateHireVideoUrl = APP_CONFIG.privateHirePosterUrl;
@@ -30,9 +38,6 @@ export class PrivateHiresComponent implements AfterViewInit {
     }
   }
 
-  // Event enquiry recipient email (Currently set to reservations@pahlihillbandrabhai.com; switch to reservations@pahlihillbandrabhai.com for production)
-  enquiryEmail = 'reservations@pahlihillbandrabhai.com';
-
   isSubmitting = false;
   submitSuccess = false;
   submitError = false;
@@ -46,51 +51,26 @@ export class PrivateHiresComponent implements AfterViewInit {
     this.submitSuccess = false;
     this.submitError = false;
 
-    const name = formData.get('name') || '';
-    const email = formData.get('email') || '';
-    const phone = formData.get('phone') || '';
-    const eventDate = formData.get('event_date') || '';
-    const partySize = formData.get('party_size') || '';
-    const space = formData.get('space') || '';
-    const message = formData.get('message') || '';
-
-    const fullEnquiryDetails = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Event Date: ${eventDate}
-Party Size: ${partySize}
-Space: ${space}
-Message: ${message}
-    `.trim();
+    const optionalString = (key: string): string | undefined => {
+      const value = String(formData.get(key) ?? '').trim();
+      return value || undefined;
+    };
+    const partySize = optionalString('party_size');
+    const payload: PrivateHireEnquiryPayload = {
+      name: String(formData.get('name') ?? '').trim(),
+      email: String(formData.get('email') ?? '').trim(),
+      phone: optionalString('phone'),
+      eventDate: optionalString('event_date'),
+      partySize: partySize ? Number(partySize) : undefined,
+      space: optionalString('space') as PrivateHireEnquiryPayload['space'],
+      message: optionalString('message'),
+    };
 
     try {
-      const response = await fetch(
-        `https://formsubmit.co/ajax/${this.enquiryEmail}`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            _subject: `Private hire enquiry — ${name} (${eventDate})`,
-            _captcha: 'false',
-            _template: 'box',
-            _autoresponse:
-              'Thank you for reaching out to Pahli Hill Bandra Bhai! We have received your private hire enquiry and our team will get back to you shortly.',
-            'Private Hire Enquiry Details': fullEnquiryDetails,
-          }),
-        },
-      );
-
-      if (response.ok) {
-        this.submitSuccess = true;
-        form.reset();
-      } else {
-        this.submitError = true;
-      }
-    } catch (err) {
+      await this.enquiriesApi.submit(payload);
+      this.submitSuccess = true;
+      form.reset();
+    } catch {
       this.submitError = true;
     } finally {
       this.isSubmitting = false;

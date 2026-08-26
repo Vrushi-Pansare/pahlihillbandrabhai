@@ -7,6 +7,7 @@ export interface AppConfig {
   interiorLandscapeUrl: string;
   privateHireVideoUrl: string;
   privateHirePosterUrl: string;
+  privateHireEnquiriesApiUrl: string;
   speakeasyPosterUrl?: string;
   speakeasyMobileVideoUrl?: string;
   speakeasyDesktopVideoUrl?: string;
@@ -64,6 +65,8 @@ export const APP_CONFIG: AppConfig = {
     'https://pahlihillbandrabhai.com/video/optimized/interior-landscape-fast.mp4',
   privateHirePosterUrl:
     'https://pahlihillbandrabhai.com/video/private-hire.mp4',
+  privateHireEnquiriesApiUrl:
+    'https://netraax.com/api/v1/public/pahli-hill/enquiries',
   speakeasyPosterUrl:
     'https://pahlihillbandrabhai.com/video/optimized/drinks-landscape-fast.jpg',
   speakeasyMobileVideoUrl: 'https://pahlihillbandrabhai.com/video/bar-menu.mp4',
