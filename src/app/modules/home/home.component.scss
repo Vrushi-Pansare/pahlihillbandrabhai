@@ -33,11 +33,9 @@
     z-index: 1;
     pointer-events: none;
     background-color: transparent;
-    filter: brightness(1.15) contrast(1.05);
 
-    /* Force Hardware Acceleration for smooth HD quality rendering */
-    transform: translate3d(0, 0, 0) scale(1.001);
-    will-change: transform;
+    /* Force Direct Hardware Acceleration for smooth HD quality rendering */
+    transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
   }
 

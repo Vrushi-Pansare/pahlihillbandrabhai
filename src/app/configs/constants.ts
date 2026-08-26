@@ -8,9 +8,15 @@ export interface AppConfig {
   privateHireVideoUrl: string;
   privateHirePosterUrl: string;
   privateHireEnquiriesApiUrl: string;
+  bbPrivateHireVideoUrl?: string;
+  hireRestaurantVideoUrl?: string;
   speakeasyPosterUrl?: string;
   speakeasyMobileVideoUrl?: string;
   speakeasyDesktopVideoUrl?: string;
+  homeMobileVideoUrl?: string;
+  homeDesktopVideoUrl?: string;
+  foodMobileVideoUrl?: string;
+  foodDesktopVideoUrl?: string;
   cocktailBgArtUrl?: string;
   pahliBlueLogoUrl?: string;
   allergenMilkUrl?: string;
@@ -60,18 +66,31 @@ export const APP_CONFIG: AppConfig = {
   factAwardLogoUrl:
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:25:20.830Z/fact-award-2025-cIcUktKr.jpg',
   interiorLandscapeUrl:
-    'https://pahlihillbandrabhai.com/video/optimized/interior-landscape-fast.jpg',
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:48:27.028Z/Interior-Landscape(1).mp4',
   privateHireVideoUrl:
-    'https://pahlihillbandrabhai.com/video/optimized/interior-landscape-fast.mp4',
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:48:27.028Z/Interior-Landscape(1).mp4',
   privateHirePosterUrl:
     'https://pahlihillbandrabhai.com/video/private-hire.mp4',
   privateHireEnquiriesApiUrl:
     'https://netraax.com/api/v1/public/pahli-hill/enquiries',
+  bbPrivateHireVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:30:09.486Z/bb-private-hire-bu569bel-vuceqfi6_9QMrqgoo.mp4',
+  hireRestaurantVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:00:29.363Z/PahliHillBandraBhaiPrivateHireUpto60.mp4',
   speakeasyPosterUrl:
     'https://pahlihillbandrabhai.com/video/optimized/drinks-landscape-fast.jpg',
-  speakeasyMobileVideoUrl: 'https://pahlihillbandrabhai.com/video/bar-menu.mp4',
+  speakeasyMobileVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:50:23.938Z/Drinks-Final(1).mp4',
   speakeasyDesktopVideoUrl:
-    'https://pahlihillbandrabhai.com/video/optimized/drinks-landscape-fast.mp4',
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:00:43.463Z/Drinks-Landscape(1).mp4',
+  homeMobileVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:17:24.753Z/Mix-Final.mp4',
+  homeDesktopVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:27:56.140Z/Mix-Landscape(1).mp4',
+  foodMobileVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:07:23.474Z/Food-FinalFIle(1).mp4',
+  foodDesktopVideoUrl:
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:26:55.707Z/Food-Landscape.mp4',
   cocktailBgArtUrl:
     'https://pahlihillbandrabhai.com/assets/cocktail-hero-CcdYPt7j.jpg',
   pahliBlueLogoUrl:

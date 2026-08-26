@@ -16,13 +16,36 @@ export class SpeakeasyComponent implements AfterViewInit {
 
   config = APP_CONFIG;
   posterUrl = APP_CONFIG.speakeasyPosterUrl;
-  mobileVideoUrl = 'assets/Home/Drinks - Final (1).mp4';
-  desktopVideoUrl = 'assets/Home/Drinks-Landscape (1).mp4';
+  mobileVideoUrl =
+    APP_CONFIG.speakeasyMobileVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:50:23.938Z/Drinks-Final(1).mp4';
+  desktopVideoUrl =
+    APP_CONFIG.speakeasyDesktopVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:00:43.463Z/Drinks-Landscape(1).mp4';
 
   ngAfterViewInit() {
     if (this.heroVideo?.nativeElement) {
-      this.heroVideo.nativeElement.muted = true;
-      this.heroVideo.nativeElement.play().catch(() => {});
+      const video = this.heroVideo.nativeElement;
+      video.muted = true;
+
+      if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                video.muted = true;
+                video.play().catch(() => {});
+              } else {
+                video.pause();
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+        observer.observe(video);
+      } else {
+        video.play().catch(() => {});
+      }
     }
   }
 }

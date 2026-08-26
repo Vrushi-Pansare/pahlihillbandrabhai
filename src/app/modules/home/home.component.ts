@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
+import { APP_CONFIG } from '../../configs/constants';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,19 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('foodVideo') foodVideo!: ElementRef<HTMLVideoElement>;
+  mobileVideoUrl =
+    APP_CONFIG.homeMobileVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:17:24.753Z/Mix-Final.mp4';
+  desktopVideoUrl =
+    APP_CONFIG.homeDesktopVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:27:56.140Z/Mix-Landscape(1).mp4';
+  foodMobileVideoUrl =
+    APP_CONFIG.foodMobileVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:07:23.474Z/Food-FinalFIle(1).mp4';
+  foodDesktopVideoUrl =
+    APP_CONFIG.foodDesktopVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:26:55.707Z/Food-Landscape.mp4';
   // Carousel data
   activeSlide = 0;
   slides = [
@@ -60,9 +74,35 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (this.heroVideo?.nativeElement) {
-      this.heroVideo.nativeElement.muted = true;
-      this.heroVideo.nativeElement.play().catch(() => {});
+    const videos = [
+      this.heroVideo?.nativeElement,
+      this.foodVideo?.nativeElement,
+    ].filter((v): v is HTMLVideoElement => Boolean(v));
+
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target as HTMLVideoElement;
+            if (entry.isIntersecting) {
+              video.muted = true;
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      videos.forEach((video) => {
+        video.muted = true;
+        observer.observe(video);
+      });
+    } else {
+      videos.forEach((video) => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
     }
   }
 

@@ -21,20 +21,57 @@ export class PrivateHiresComponent implements AfterViewInit {
   );
 
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('hireRestaurantVideo') hireRestaurantVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('hireBarVideo') hireBarVideo!: ElementRef<HTMLVideoElement>;
+
   interiorLandscapeUrl = APP_CONFIG.interiorLandscapeUrl;
+  speakeasyPosterUrl = APP_CONFIG.speakeasyPosterUrl;
   privateHireVideoUrl = APP_CONFIG.privateHirePosterUrl;
   privateHireDesktopVideoUrl = APP_CONFIG.privateHireVideoUrl;
   semiPrivateHireImgUrl =
     'assets/Home/Transform_this_restaurant_interior_into_a_landscap-1779458775636.png';
   hireRestaurantVideoUrl =
-    'assets/Home/Pahli Hill Bandra Bhai Private Hire Upto 60 Guests.mp4';
-  hireBarVideoUrl = 'assets/bb-private-hire-bu569bel-vuceqfi6_9QMrqgoo.mp4';
-  heroVideoUrl = 'assets/Home/Interior-Landscape (1).mp4';
+    APP_CONFIG.hireRestaurantVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:00:29.363Z/PahliHillBandraBhaiPrivateHireUpto60.mp4';
+  hireBarVideoUrl =
+    APP_CONFIG.bbPrivateHireVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:30:09.486Z/bb-private-hire-bu569bel-vuceqfi6_9QMrqgoo.mp4';
+  heroVideoUrl =
+    APP_CONFIG.privateHireVideoUrl ||
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:48:27.028Z/Interior-Landscape(1).mp4';
 
   ngAfterViewInit() {
-    if (this.heroVideo?.nativeElement) {
-      this.heroVideo.nativeElement.muted = true;
-      this.heroVideo.nativeElement.play().catch(() => {});
+    const videos = [
+      this.heroVideo?.nativeElement,
+      this.hireRestaurantVideo?.nativeElement,
+      this.hireBarVideo?.nativeElement,
+    ].filter((v): v is HTMLVideoElement => Boolean(v));
+
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target as HTMLVideoElement;
+            if (entry.isIntersecting) {
+              video.muted = true;
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      videos.forEach((video) => {
+        video.muted = true;
+        observer.observe(video);
+      });
+    } else {
+      videos.forEach((video) => {
+        video.muted = true;
+        video.play().catch(() => {});
+      });
     }
   }
 

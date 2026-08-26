@@ -26,12 +26,12 @@
   >
     <!-- Desktop / PC Video -->
     <source
-      src="assets/Home/Mix-Landscape (1).mp4"
+      [src]="desktopVideoUrl"
       type="video/mp4"
       media="(min-width: 768px)"
     />
     <!-- Mobile / Phone Video -->
-    <source src="assets/Home/Mix - Final.mp4" type="video/mp4" />
+    <source [src]="mobileVideoUrl" type="video/mp4" />
   </video>
 
   <!-- Dark Overlay -->
@@ -475,24 +475,27 @@
       <div class="latest-card card-cinema" style="cursor: default">
         <div class="card-media-wrapper">
           <video
+            #foodVideo
             autoplay
             muted
             [muted]="true"
             loop
             playsinline
-            disablePictureInPicture
-            preload="auto"
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            disablepictureinpicture=""
+            preload="metadata"
             class="card-video"
           >
             <!-- Desktop / PC Video -->
             <source
-              src="assets/Home/Food-Landscape.mp4"
+              [src]="foodDesktopVideoUrl"
               type="video/mp4"
               media="(min-width: 768px)"
             />
             <!-- Mobile / Phone Video -->
             <source
-              src="assets/Home/Food -Final FIle (1).mp4"
+              [src]="foodMobileVideoUrl"
               type="video/mp4"
             />
           </video>

@@ -21,7 +21,6 @@
       x5-playsinline="true"
       disablepictureinpicture=""
       preload="auto"
-      decoding="async"
       aria-hidden="true"
       class="hero-video"
       muted
@@ -72,7 +71,8 @@
         <div class="hire-card">
           <div class="hire-card-media">
             <video
-              [src]="hireRestaurantVideoUrl"
+              #hireRestaurantVideo
+              [poster]="interiorLandscapeUrl"
               autoplay
               loop
               playsinline
@@ -80,12 +80,13 @@
               x5-playsinline="true"
               disablepictureinpicture=""
               preload="auto"
-              decoding="async"
               muted
               [muted]="true"
               aria-label="Hire the Restaurant"
               class="hire-card-video"
-            ></video>
+            >
+              <source [src]="hireRestaurantVideoUrl" type="video/mp4" />
+            </video>
           </div>
           <div class="hire-card-body">
             <h3 class="hire-card-title">Hire the Restaurant</h3>
@@ -199,8 +200,8 @@
         <div class="hire-card">
           <div class="hire-card-media">
             <video
-              [src]="hireBarVideoUrl"
-              poster="/video/optimized/hire-bar-card-fast.jpg"
+              #hireBarVideo
+              [poster]="speakeasyPosterUrl || interiorLandscapeUrl"
               autoplay
               loop
               playsinline
@@ -208,12 +209,13 @@
               x5-playsinline="true"
               disablepictureinpicture=""
               preload="auto"
-              decoding="async"
               muted
               [muted]="true"
               aria-label="Hire the Bar"
               class="hire-card-video w-full h-full object-cover"
-            ></video>
+            >
+              <source [src]="hireBarVideoUrl" type="video/mp4" />
+            </video>
           </div>
           <div class="hire-card-body">
             <h3 class="hire-card-title">Hire the Bar</h3>

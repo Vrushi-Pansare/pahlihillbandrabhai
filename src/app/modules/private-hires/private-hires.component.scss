@@ -37,11 +37,8 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    transform: translate3d(0, 0, 0) scale(1.001);
-    -webkit-transform: translate3d(0, 0, 0) scale(1.001);
-    will-change: transform;
-    filter: brightness(1.05) contrast(1.06) saturate(1.05);
-    image-rendering: -webkit-optimize-contrast;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: transparent; /* Seamless video load without background color flash */
@@ -265,9 +262,6 @@
       display: block;
       transform: translate3d(0, 0, 0);
       -webkit-transform: translate3d(0, 0, 0);
-      will-change: transform;
-      filter: brightness(1.04) contrast(1.05) saturate(1.04);
-      image-rendering: -webkit-optimize-contrast;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
     }
