@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ViewChildren, ElementRef, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
@@ -15,18 +15,20 @@ import { APP_CONFIG } from '../../configs/constants';
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('heroVideo') heroVideo!: ElementRef<HTMLVideoElement>;
   @ViewChild('foodVideo') foodVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('speakeasyVideo') speakeasyVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChildren('carouselVideo') carouselVideos!: QueryList<ElementRef<HTMLVideoElement>>;
   mobileVideoUrl =
     APP_CONFIG.homeMobileVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:17:24.753Z/Mix-Final.mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:28:59.859Z/Mix-Final.mp4';
   desktopVideoUrl =
     APP_CONFIG.homeDesktopVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:27:56.140Z/Mix-Landscape(1).mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:21:45.277Z/Mix-Landscape(1).mp4';
   foodMobileVideoUrl =
     APP_CONFIG.foodMobileVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:07:23.474Z/Food-FinalFIle(1).mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:43:03.080Z/Food-Finalfile(1).mp4';
   foodDesktopVideoUrl =
     APP_CONFIG.foodDesktopVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:26:55.707Z/Food-Landscape.mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T09:00:36.524Z/Food-Landscape.mp4';
   // Carousel data
   activeSlide = 0;
   slides = [
@@ -77,6 +79,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     const videos = [
       this.heroVideo?.nativeElement,
       this.foodVideo?.nativeElement,
+      this.speakeasyVideo?.nativeElement,
     ].filter((v): v is HTMLVideoElement => Boolean(v));
 
     if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
@@ -111,9 +114,26 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   startCarousel() {
+    setTimeout(() => this.updateCarouselPlayback(), 100);
+
     this.carouselInterval = setInterval(() => {
       this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+      this.updateCarouselPlayback();
     }, 4000);
+  }
+
+  updateCarouselPlayback() {
+    if (!this.carouselVideos) return;
+    const vids = this.carouselVideos.toArray();
+    vids.forEach((vidRef, index) => {
+      const video = vidRef.nativeElement;
+      if (index === this.activeSlide) {
+        video.muted = true;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
   }
 
   stopCarousel() {
