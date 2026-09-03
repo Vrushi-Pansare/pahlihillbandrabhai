@@ -20,7 +20,7 @@
       webkit-playsinline="true"
       x5-playsinline="true"
       disablepictureinpicture=""
-      preload="auto"
+      preload="metadata"
       aria-hidden="true"
       class="hero-video"
       muted
@@ -73,13 +73,12 @@
             <video
               #hireRestaurantVideo
               [poster]="interiorLandscapeUrl"
-              autoplay
               loop
               playsinline
               webkit-playsinline="true"
               x5-playsinline="true"
               disablepictureinpicture=""
-              preload="auto"
+              preload="none"
               muted
               [muted]="true"
               aria-label="Hire the Restaurant"
@@ -202,13 +201,12 @@
             <video
               #hireBarVideo
               [poster]="speakeasyPosterUrl || interiorLandscapeUrl"
-              autoplay
               loop
               playsinline
               webkit-playsinline="true"
               x5-playsinline="true"
               disablepictureinpicture=""
-              preload="auto"
+              preload="none"
               muted
               [muted]="true"
               aria-label="Hire the Bar"

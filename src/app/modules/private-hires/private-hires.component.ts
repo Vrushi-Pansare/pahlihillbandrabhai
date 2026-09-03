@@ -32,13 +32,13 @@ export class PrivateHiresComponent implements AfterViewInit {
     'assets/Home/Transform_this_restaurant_interior_into_a_landscap-1779458775636.png';
   hireRestaurantVideoUrl =
     APP_CONFIG.hireRestaurantVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T12:00:29.363Z/PahliHillBandraBhaiPrivateHireUpto60.mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:06:41.574Z/Pahlihillbandrabhaiprivatehireupto60.mp4';
   hireBarVideoUrl =
     APP_CONFIG.bbPrivateHireVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:30:09.486Z/bb-private-hire-bu569bel-vuceqfi6_9QMrqgoo.mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:08:30.007Z/Bb-Private-Hire-Bu569bel-Vuceqfi69Qmrqgoo.mp4';
   heroVideoUrl =
     APP_CONFIG.privateHireVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:48:27.028Z/Interior-Landscape(1).mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T09:38:38.901Z/Interior-Landscape(1).mp4';
 
   ngAfterViewInit() {
     const videos = [

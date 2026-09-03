@@ -18,10 +18,10 @@ export class SpeakeasyComponent implements AfterViewInit {
   posterUrl = APP_CONFIG.speakeasyPosterUrl;
   mobileVideoUrl =
     APP_CONFIG.speakeasyMobileVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T10:50:23.938Z/Drinks-Final(1).mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:21:04.112Z/Drinks-Final(1).mp4';
   desktopVideoUrl =
     APP_CONFIG.speakeasyDesktopVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:00:43.463Z/Drinks-Landscape(1).mp4';
+    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:19:47.595Z/Drinks-Landscape(1).mp4';
 
   ngAfterViewInit() {
     if (this.heroVideo?.nativeElement) {

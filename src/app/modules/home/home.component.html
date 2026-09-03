@@ -22,7 +22,7 @@
     webkit-playsinline="true"
     x5-playsinline="true"
     disablepictureinpicture=""
-    preload="auto"
+    preload="metadata"
   >
     <!-- Desktop / PC Video -->
     <source
@@ -359,21 +359,20 @@
               class="card-carousel-img"
               [style.opacity]="activeSlide === idx ? 1 : 0"
             />
-            @if (activeSlide === idx) {
-              <video
-                [src]="slide.video"
-                [poster]="slide.img"
-                autoplay
-                muted
-                [muted]="true"
-                loop
-                playsinline
-                disablePictureInPicture
-                preload="auto"
-                class="card-carousel-video"
-                [style.opacity]="activeSlide === idx ? 1 : 0"
-              ></video>
-            }
+            <video
+              #carouselVideo
+              [src]="slide.video"
+              [poster]="slide.img"
+              muted
+              [muted]="true"
+              loop
+              playsinline
+              disablePictureInPicture
+              preload="none"
+              class="card-carousel-video"
+              [style.opacity]="activeSlide === idx ? 1 : 0"
+              [style.pointer-events]="activeSlide === idx ? 'auto' : 'none'"
+            ></video>
           }
           <!-- Indicator dots -->
           <div class="carousel-dots">
@@ -429,15 +428,15 @@
       <a routerLink="/speakeasy" class="latest-card card-speakeasy">
         <div class="card-media-wrapper">
           <video
+            #speakeasyVideo
             src="https://pahlihillbandrabhai.com/__l5e/assets-v1/226b217c-a761-4a77-8b24-8a1d82ca6500/interior-landscape.mp4"
             poster="assets/Home/Bandra bhai.png"
-            autoplay
             muted
             [muted]="true"
             loop
             playsinline
             disablePictureInPicture
-            preload="auto"
+            preload="none"
             class="card-video"
           ></video>
         </div>
@@ -476,7 +475,6 @@
         <div class="card-media-wrapper">
           <video
             #foodVideo
-            autoplay
             muted
             [muted]="true"
             loop
@@ -484,7 +482,7 @@
             webkit-playsinline="true"
             x5-playsinline="true"
             disablepictureinpicture=""
-            preload="metadata"
+            preload="none"
             class="card-video"
           >
             <!-- Desktop / PC Video -->
