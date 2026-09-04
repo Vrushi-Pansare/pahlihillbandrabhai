@@ -18,17 +18,13 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('speakeasyVideo') speakeasyVideo!: ElementRef<HTMLVideoElement>;
   @ViewChildren('carouselVideo') carouselVideos!: QueryList<ElementRef<HTMLVideoElement>>;
   mobileVideoUrl =
-    APP_CONFIG.homeMobileVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:28:59.859Z/Mix-Final.mp4';
+    APP_CONFIG.homeMobileVideoUrl || 'assets/Home/hero-mix-mobile.mp4';
   desktopVideoUrl =
-    APP_CONFIG.homeDesktopVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:21:45.277Z/Mix-Landscape(1).mp4';
+    APP_CONFIG.homeDesktopVideoUrl || 'assets/Home/hero-mix-desktop.mp4';
   foodMobileVideoUrl =
-    APP_CONFIG.foodMobileVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:43:03.080Z/Food-Finalfile(1).mp4';
+    APP_CONFIG.foodMobileVideoUrl || 'assets/Home/food-mobile.mp4';
   foodDesktopVideoUrl =
-    APP_CONFIG.foodDesktopVideoUrl ||
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T09:00:36.524Z/Food-Landscape.mp4';
+    APP_CONFIG.foodDesktopVideoUrl || 'assets/Home/food-desktop.mp4';
   // Carousel data
   activeSlide = 0;
   slides = [

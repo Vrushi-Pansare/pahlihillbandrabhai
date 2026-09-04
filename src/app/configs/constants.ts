@@ -65,32 +65,23 @@ export const APP_CONFIG: AppConfig = {
   teamPhotoUrl: 'assets/team/AhaConvert_IMG_5466.jpg',
   factAwardLogoUrl:
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T12:25:20.830Z/fact-award-2025-cIcUktKr.jpg',
-  interiorLandscapeUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-26T11:48:27.028Z/Interior-Landscape(1).mp4',
-  privateHireVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T09:38:38.901Z/Interior-Landscape(1).mp4',
-  privateHirePosterUrl:
-    'https://pahlihillbandrabhai.com/video/private-hire.mp4',
+  // Used as an image poster (was a 33 MB video misused as a poster).
+  interiorLandscapeUrl: 'assets/private-hires/hero-poster.jpg',
+  privateHireVideoUrl: 'assets/private-hires/hero-desktop.mp4',
+  privateHirePosterUrl: 'assets/private-hires/hero-poster.jpg',
   privateHireEnquiriesApiUrl:
     'https://netraax.com/api/v1/public/pahli-hill/enquiries',
-  bbPrivateHireVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:08:30.007Z/Bb-Private-Hire-Bu569bel-Vuceqfi69Qmrqgoo.mp4',
-  hireRestaurantVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:06:41.574Z/Pahlihillbandrabhaiprivatehireupto60.mp4',
-  speakeasyPosterUrl:
-    'https://pahlihillbandrabhai.com/video/optimized/drinks-landscape-fast.jpg',
-  speakeasyMobileVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:21:04.112Z/Drinks-Final(1).mp4',
-  speakeasyDesktopVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T10:19:47.595Z/Drinks-Landscape(1).mp4',
-  homeMobileVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:28:59.859Z/Mix-Final.mp4',
-  homeDesktopVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:21:45.277Z/Mix-Landscape(1).mp4',
-  foodMobileVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T08:43:03.080Z/Food-Finalfile(1).mp4',
-  foodDesktopVideoUrl:
-    'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-09-03T09:00:36.524Z/Food-Landscape.mp4',
+  bbPrivateHireVideoUrl: 'assets/private-hires/hire-bar.mp4',
+  hireRestaurantVideoUrl: 'assets/private-hires/hire-restaurant.mp4',
+  speakeasyPosterUrl: 'assets/speakeasy/speakeasy-poster.jpg',
+  speakeasyMobileVideoUrl: 'assets/speakeasy/speakeasy-mobile.mp4',
+  speakeasyDesktopVideoUrl: 'assets/speakeasy/speakeasy-desktop.mp4',
+  // Optimized H.264 encodes bundled locally (served via CDN). Original S3
+  // files were VP9-in-MP4, which iOS Safari (iPhone/iPad) cannot decode.
+  homeMobileVideoUrl: 'assets/Home/hero-mix-mobile.mp4',
+  homeDesktopVideoUrl: 'assets/Home/hero-mix-desktop.mp4',
+  foodMobileVideoUrl: 'assets/Home/food-mobile.mp4',
+  foodDesktopVideoUrl: 'assets/Home/food-desktop.mp4',
   cocktailBgArtUrl:
     'https://pahlihillbandrabhai.com/assets/cocktail-hero-CcdYPt7j.jpg',
   pahliBlueLogoUrl:

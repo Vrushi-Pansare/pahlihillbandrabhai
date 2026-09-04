@@ -6,3 +6,10 @@
   NODE_VERSION = "22.22.0"
   NETLIFY_SKIP_ANGULAR_PLUGIN = "true"
 
+# Long-lived immutable caching for media assets so repeat visits don't
+# re-download the hero videos/images.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
