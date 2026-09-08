@@ -30,19 +30,19 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   slides = [
     {
       name: 'Sweet Potato Chaat',
-      img: 'assets/Home/sweet-potato-chaat.jpg',
+      img: 'assets/Home/sweet-potato-chaat.webp',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/a05a2844-62dc-4020-9fb5-783e931ea0c8/chicory-chaat.mp4',
     },
     {
       name: 'Chilli Cheese Dosa',
-      img: 'assets/Home/chilli-cheese-dosa.jpg',
+      img: 'assets/Home/chilli-cheese-dosa.webp',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/06fad0b4-cdea-4191-b07a-27a714532c0a/chilli-cheese-dosa.mp4',
     },
     {
       name: 'Lamb Kothu Roti',
-      img: 'assets/Home/lamb-kothu-roti.jpg',
+      img: 'assets/Home/lamb-kothu-roti.webp',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/4cb3b530-eb52-4754-abda-d8dfeea0668e/lamb-kothu-roti.mp4',
     },

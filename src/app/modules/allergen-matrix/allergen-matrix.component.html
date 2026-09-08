@@ -1,0 +1,181 @@
+<app-header></app-header>
+
+<main class="allergen-page">
+  <section class="allergen-hero">
+    <div class="allergen-hero-overlay"></div>
+    <div class="allergen-hero-content">
+      <span class="sub-title">✦ ALLERGENS &amp; DIETARY ✦</span>
+      <h1 class="main-title">Allergen Matrix</h1>
+      <p class="intro">
+        Every dish and drink, with its allergens. Tick what you need to avoid and
+        the list hides anything that carries it. Always confirm with your server —
+        we cannot guarantee any dish is allergen-free.
+      </p>
+    </div>
+  </section>
+
+  <div class="allergen-toolbar">
+    <div class="toolbar-inner">
+      <div class="search-field">
+        <svg
+          class="search-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input
+          #searchBox
+          type="search"
+          class="search-input"
+          placeholder="Search a dish or drink…"
+          autocomplete="off"
+          [value]="query()"
+          (input)="onSearch(searchBox.value)"
+          aria-label="Search the allergen matrix"
+        />
+      </div>
+      <a
+        class="pdf-link"
+        [href]="pdfUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download PDF
+      </a>
+    </div>
+
+    <div class="filter-block">
+      <span class="filter-label">Avoid</span>
+      <div class="allergen-chips">
+        @for (a of allergens; track a) {
+          <button
+            type="button"
+            class="chip"
+            [class.on]="isExcluded(a)"
+            [attr.aria-pressed]="isExcluded(a)"
+            (click)="toggleAllergen(a)"
+          >
+            {{ a }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="filter-block">
+      <span class="filter-label">Diet</span>
+      <div class="allergen-chips">
+        <button
+          type="button"
+          class="chip"
+          [class.on]="diet() === 'vegetarian'"
+          [attr.aria-pressed]="diet() === 'vegetarian'"
+          (click)="toggleDiet('vegetarian')"
+        >
+          Vegetarian
+        </button>
+        <button
+          type="button"
+          class="chip"
+          [class.on]="diet() === 'vegan'"
+          [attr.aria-pressed]="diet() === 'vegan'"
+          (click)="toggleDiet('vegan')"
+        >
+          Vegan option
+        </button>
+      </div>
+    </div>
+
+    @if (hasFilters()) {
+      <p class="result-line" role="status">
+        {{ resultCount() }} {{ resultCount() === 1 ? "item" : "items" }} shown
+        <button type="button" class="reset-link" (click)="clearAll()">
+          Reset
+        </button>
+      </p>
+    }
+  </div>
+
+  <div class="allergen-body">
+    @for (cat of filtered(); track cat.id) {
+      <section class="allergen-category">
+        <h2 class="category-title">{{ cat.title }}</h2>
+        <ul class="dish-list">
+          @for (dish of cat.dishes; track dish.name + (dish.options || '')) {
+            <li class="dish-row">
+              <div class="dish-head">
+                <h3 class="dish-name">
+                  {{ dish.name }}
+                  @if (dish.options) {
+                    <span class="dish-options">{{ dish.options }}</span>
+                  }
+                </h3>
+                <div class="diet-marks">
+                  @if (dish.vegetarian) {
+                    <span class="diet-mark veg" title="Vegetarian">VEG</span>
+                  }
+                  @if (dish.veganOption) {
+                    <span class="diet-mark vegan" title="Vegan or vegan on request"
+                      >VG</span
+                    >
+                  }
+                </div>
+              </div>
+
+              @if (dish.contains.length || dish.mayContain?.length) {
+                <div class="allergen-tags">
+                  @for (a of dish.contains; track a) {
+                    <span class="atag contains">{{ a }}</span>
+                  }
+                  @for (a of dish.mayContain || []; track a) {
+                    <span class="atag may">{{ a }} (may contain)</span>
+                  }
+                </div>
+              } @else {
+                <div class="allergen-tags">
+                  <span class="atag free">No listed allergens</span>
+                </div>
+              }
+
+              @if (dish.note) {
+                <p class="dish-note">{{ dish.note }}</p>
+              }
+            </li>
+          }
+        </ul>
+      </section>
+    }
+
+    @if (resultCount() === 0) {
+      <div class="no-results">
+        <p>No items match those filters.</p>
+        <button type="button" class="reset-btn" (click)="clearAll()">
+          Reset filters
+        </button>
+      </div>
+    }
+
+    <div class="allergen-footnotes">
+      <p>
+        This page mirrors our kitchen allergen sheet (June 2026). Recipes and
+        suppliers change — your server has the current information.
+      </p>
+      <p>
+        We handle all 14 statutory allergens in one kitchen and cannot guarantee
+        any dish or drink is free from traces. Please tell us about any allergy
+        or intolerance before you order.
+      </p>
+      <p class="back-link"><a routerLink="/menu/a-la-carte">View the à la carte menu</a></p>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

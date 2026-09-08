@@ -501,7 +501,8 @@
       margin-top: 1rem;
       text-align: center;
 
-      .tel-link {
+      .tel-link,
+      .email-link {
         color: var(--ochre);
         text-decoration: none;
         transition: color 0.3s ease;
@@ -509,6 +510,11 @@
         &:hover {
           color: var(--ivory);
         }
+      }
+
+      .email-link {
+        text-transform: none;
+        letter-spacing: 0.08em;
       }
     }
   }
@@ -540,11 +546,6 @@
       .credits-link {
         color: rgba(246, 230, 203, 0.55);
         text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: var(--ochre);
-        }
       }
     }
 

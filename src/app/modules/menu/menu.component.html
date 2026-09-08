@@ -1,0 +1,195 @@
+<app-header></app-header>
+
+<main class="menu-page">
+  <!-- Hero -->
+  <section class="menu-hero">
+    <div class="menu-hero-overlay"></div>
+    <div class="menu-hero-content">
+      <span class="sub-title">✦ THE MENU ✦</span>
+      <h1 class="main-title">{{ menu.title }}</h1>
+      @if (menu.priceBanner) {
+        <p class="price-banner">{{ menu.priceBanner }}</p>
+      }
+      <p class="intro">{{ menu.intro }}</p>
+    </div>
+  </section>
+
+  <!-- Search + tools -->
+  <div class="menu-toolbar">
+    <div class="toolbar-inner">
+      <div class="search-field">
+        <svg
+          class="search-icon"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input
+          #searchBox
+          type="search"
+          class="search-input"
+          placeholder="Search dishes, drinks or ingredients…"
+          autocomplete="off"
+          [value]="query()"
+          (input)="onSearch(searchBox.value)"
+          aria-label="Search the menu"
+        />
+        @if (isSearching()) {
+          <button
+            type="button"
+            class="clear-btn"
+            (click)="clearSearch(); searchBox.focus()"
+            aria-label="Clear search"
+          >
+            &times;
+          </button>
+        }
+      </div>
+
+      <a
+        class="pdf-link"
+        [href]="menu.pdfUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download PDF
+      </a>
+    </div>
+
+    @if (isSearching()) {
+      <p class="result-count" role="status">
+        {{ resultCount() }}
+        {{ resultCount() === 1 ? "match" : "matches" }} for
+        “{{ query().trim() }}”
+      </p>
+    } @else {
+      <nav class="category-chips" aria-label="Jump to a section">
+        @for (group of menu.groups; track group.id) {
+          @for (section of group.sections; track section.id) {
+            <button
+              type="button"
+              class="chip"
+              (click)="scrollTo(section.id)"
+            >
+              {{ section.title }}
+            </button>
+          }
+        }
+      </nav>
+    }
+  </div>
+
+  <!-- Menu body -->
+  <div class="menu-body">
+    @for (group of filteredGroups(); track group.id) {
+      <section class="menu-group">
+        <h2 class="group-title">{{ group.title }}</h2>
+
+        @for (section of group.sections; track section.id) {
+          <section class="menu-section" [id]="'section-' + section.id">
+            <div class="section-head">
+              <h3 class="section-title">
+                <span class="section-rule"></span>
+                <span class="section-mark">&#10022;</span>
+                <span class="section-label">{{ section.title }}</span>
+                <span class="section-mark">&#10022;</span>
+                <span class="section-rule"></span>
+              </h3>
+              @if (section.caption) {
+                <span class="section-caption">{{ section.caption }}</span>
+              }
+            </div>
+
+            <ul class="item-list">
+              @for (item of section.items; track item.name) {
+                <li class="menu-item">
+                  <div class="item-main">
+                    <div class="item-headline">
+                      <h4 class="item-name">
+                        @for (p of parts(item.name); track $index) {
+                          <span [class.hl]="p.hit">{{ p.text }}</span>
+                        }
+                        @if (item.options) {
+                          <span class="item-options">
+                            @for (p of parts(item.options); track $index) {
+                              <span [class.hl]="p.hit">{{ p.text }}</span>
+                            }
+                          </span>
+                        }
+                      </h4>
+                      @if (item.price) {
+                        <span class="item-price">{{ item.price }}</span>
+                      }
+                    </div>
+
+                    @if (item.desc) {
+                      <p class="item-desc">
+                        @for (p of parts(item.desc); track $index) {
+                          <span [class.hl]="p.hit">{{ p.text }}</span>
+                        }
+                      </p>
+                    }
+                    @if (item.note) {
+                      <p class="item-note">
+                        @for (p of parts(item.note); track $index) {
+                          <span [class.hl]="p.hit">{{ p.text }}</span>
+                        }
+                      </p>
+                    }
+
+                    @if (item.tags?.length) {
+                      <div class="item-tags">
+                        @for (tag of item.tags; track tag) {
+                          <span class="tag" [class]="'tag--' + tag">{{
+                            tagLabels[tag]
+                          }}</span>
+                        }
+                      </div>
+                    }
+                  </div>
+                </li>
+              }
+            </ul>
+          </section>
+        }
+      </section>
+    }
+
+    @if (isSearching() && resultCount() === 0) {
+      <div class="no-results">
+        <p>Nothing on the menu matches “{{ query().trim() }}”.</p>
+        <button type="button" class="reset-btn" (click)="clearSearch()">
+          Clear search
+        </button>
+      </div>
+    }
+
+    <!-- Legend -->
+    <div class="menu-legend">
+      <span class="tag tag--new">New on menu</span>
+      <span class="tag tag--special">Special</span>
+      <span class="tag tag--vegan-option">Can be vegan</span>
+    </div>
+
+    <!-- Footnotes -->
+    <div class="menu-footnotes">
+      @for (note of menu.footnotes; track $index) {
+        <p>{{ note }}</p>
+      }
+      <p class="back-link">
+        <a routerLink="/">Back to home</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

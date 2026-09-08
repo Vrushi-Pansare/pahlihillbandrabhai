@@ -69,51 +69,33 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a routerLink="/menu/a-la-carte" routerLinkActive="active"
                 >A la Carte</a
               >
             </li>
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a routerLink="/menu/set-lunch" routerLinkActive="active"
                 >Set Lunch</a
               >
             </li>
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:25:57.280Z/SELECTMenus.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a routerLink="/menu/select-menu" routerLinkActive="active"
                 >Select Menu</a
               >
             </li>
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:37:34.449Z/Allergens28thJuly2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a routerLink="/menu/allergens" routerLinkActive="active"
                 >Allergen Matrix</a
               >
             </li>
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a routerLink="/menu/wine-list" routerLinkActive="active"
                 >Wine List</a
               >
             </li>
             <li>
-              <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:46:56.418Z/Grab&Go2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Grab & Go</a
+              <a routerLink="/menu/grab-and-go" routerLinkActive="active"
+                >Grab &amp; Go</a
               >
             </li>
             <li>
@@ -242,9 +224,7 @@
           <ul class="mobile-sub-menu">
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/a-la-carte"
                 [class.active]="activeClickedUrl === 'alacarte'"
                 (click)="closeMobileMenuDeferred('alacarte')"
               >
@@ -258,9 +238,7 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/set-lunch"
                 [class.active]="activeClickedUrl === 'setlunch'"
                 (click)="closeMobileMenuDeferred('setlunch')"
               >
@@ -274,9 +252,7 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/select-menu"
                 [class.active]="activeClickedUrl === 'selectmenu'"
                 (click)="closeMobileMenuDeferred('selectmenu')"
               >
@@ -290,9 +266,7 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:37:34.449Z/Allergens28thJuly2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/allergens"
                 [class.active]="activeClickedUrl === 'allergen'"
                 (click)="closeMobileMenuDeferred('allergen')"
               >
@@ -306,9 +280,7 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/wine-list"
                 [class.active]="activeClickedUrl === 'winelist'"
                 (click)="closeMobileMenuDeferred('winelist')"
               >
@@ -322,9 +294,7 @@
             </li>
             <li>
               <a
-                href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:46:56.418Z/Grab&Go2026.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                routerLink="/menu/grab-and-go"
                 [class.active]="activeClickedUrl === 'grabgo'"
                 (click)="closeMobileMenuDeferred('grabgo')"
               >
@@ -333,7 +303,7 @@
                   <span class="arrow-cross"></span>
                   <span class="arrow-wing"></span>
                 </div>
-                <span>GRAB & GO</span>
+                <span>GRAB &amp; GO</span>
               </a>
             </li>
             <li>

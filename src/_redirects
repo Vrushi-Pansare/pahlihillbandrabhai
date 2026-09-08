@@ -1,1 +1,51 @@
+# 301s: old WordPress URLs -> new Angular routes.
+# Applies on Netlify / Cloudflare Pages. The live nginx host uses
+# deploy/nginx/redirects.conf instead — keep the two in sync.
+
+/london-restaurant                 /about              301
+/london-restaurant/                /about              301
+/london-restaurant-menus           /menu/a-la-carte    301
+/london-restaurant-menus/          /menu/a-la-carte    301
+/bandra-bhai                       /speakeasy          301
+/bandra-bhai/                      /speakeasy          301
+/bandra-bhai-menu                  /menu/wine-list     301
+/bandra-bhai-menu/                 /menu/wine-list     301
+/reservation                       /                   301
+/reservation/                      /                   301
+
+/group-dining-location             /private-hires      301
+/group-dining-london-bar           /private-hires      301
+/group-dining-london-restaurant    /private-hires      301
+/whats-on/chefs-counter            /private-hires      301
+
+/the-pahli-hill-tasting-menu             /menu/select-menu   301
+/the-pahli-hill-tasting-menu/            /menu/select-menu   301
+/whats-on/the-pahli-hill-tasting-menu    /menu/select-menu   301
+/weekday-lunch-at-pahli-hill             /menu/set-lunch     301
+/weekday-lunch-at-pahli-hill/            /menu/set-lunch     301
+/whats-on/weekday-lunch-at-pahli-hill    /menu/set-lunch     301
+/whats-on/set-lunch-menu-pahli-hill      /menu/set-lunch     301
+/whats-on/saturday-lunch                 /menu/set-lunch     301
+/whats-on/new-years-day-lunch            /menu/set-lunch     301
+
+/wp-content/uploads/2025/11/Wine-and-Spirits-16.07.25.pdf    /menu/wine-list   301
+/wp-content/uploads/2025/12/*                                /menu/allergens   301
+
+/whats-on                          /                   301
+/whats-on/*                        /                   301
+/gifting-experiences               /                   301
+/gifting-experiences/              /                   301
+/careers                           /                   301
+/careers/                          /                   301
+/privacy-policy                    /                   301
+/privacy-policy/                   /                   301
+/category/*                        /                   301
+/author/*                          /                   301
+/tag/*                             /                   301
+/wp-admin/*                        /                   410
+/wp-includes/*                     /                   410
+/wp-json/*                         /                   410
+/xmlrpc.php                        /                   410
+
+# SPA fallback — must stay last
 /*    /index.html   200
