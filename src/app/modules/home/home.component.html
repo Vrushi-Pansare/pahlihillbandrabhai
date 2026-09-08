@@ -165,7 +165,14 @@
             <path d="m12 5 7 7-7 7"></path>
           </svg>
         </a>
-        <a routerLink="/menu/a-la-carte" class="btn"> See the Menu </a>
+        <a
+          href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+        >
+          See the Menu
+        </a>
       </div>
     </div>
   </div>
@@ -336,7 +343,12 @@
     <!-- Cards Grid -->
     <div class="latest-grid">
       <!-- Card 1: New on the Menu (Carousel) -->
-      <a routerLink="/menu/a-la-carte" class="latest-card card-menu">
+      <a
+        href="https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:50:51.580Z/PresentALaCarte.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="latest-card card-menu"
+      >
         <div class="card-media-wrapper">
           @for (slide of slides; track slide.name; let idx = $index) {
             <img
