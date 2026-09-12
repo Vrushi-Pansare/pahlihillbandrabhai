@@ -1,10 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-const SESSION_KEY = 'phbb-promo-dialog-dismissed';
 const SLIDE_DURATION_MS = 3200;
 const BOOKING_URL =
   'https://www.sevenrooms.com/explore/pahlihill/reservations/create/details/?details_id=ahNzfnNldmVucm9vbXMtc2VjdXJlcjALEg9uaWdodGxvb3BfVmVudWUYgID45MSUiAkMCxIKRXhwZXJpZW5jZRi3-onaJww&details_type=EXPERIENCE&searchTab=experiences';
+
+// Module-scoped (not sessionStorage): resets on a real page load/refresh,
+// but survives SPA navigation away from and back to the home page.
+let hasShownPromoDialog = false;
 
 @Component({
   selector: 'app-promo-dialog',
@@ -30,8 +33,8 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     if (typeof window === 'undefined') return;
 
-    const alreadyDismissed = window.sessionStorage.getItem(SESSION_KEY);
-    if (!alreadyDismissed) {
+    if (!hasShownPromoDialog) {
+      hasShownPromoDialog = true;
       this.visible = true;
       this.startSlider();
     }
@@ -57,9 +60,6 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   close(): void {
     this.closing = true;
     this.stopSlider();
-    if (typeof window !== 'undefined') {
-      window.sessionStorage.setItem(SESSION_KEY, '1');
-    }
     setTimeout(() => (this.visible = false), 220);
   }
 
