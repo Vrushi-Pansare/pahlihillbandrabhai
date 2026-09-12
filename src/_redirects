@@ -17,20 +17,20 @@
 /whats-on/chefs-counter            /private-hires   301
 
 # Old menu pages -> current menu PDFs
-/bandra-bhai-menu                        https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf   301
-/bandra-bhai-menu/                       https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf   301
-/the-pahli-hill-tasting-menu             https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:25:57.280Z/SELECTMenus.pdf     301
-/the-pahli-hill-tasting-menu/            https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:25:57.280Z/SELECTMenus.pdf     301
-/whats-on/the-pahli-hill-tasting-menu    https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-20T11:25:57.280Z/SELECTMenus.pdf     301
-/weekday-lunch-at-pahli-hill             https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
-/weekday-lunch-at-pahli-hill/            https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
-/whats-on/weekday-lunch-at-pahli-hill    https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
-/whats-on/set-lunch-menu-pahli-hill      https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
-/whats-on/saturday-lunch                 https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
-/whats-on/new-years-day-lunch            https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:49:05.873Z/LunchMenu.pdf        301
+/bandra-bhai-menu                        /assets/menus/wine-list.pdf     301
+/bandra-bhai-menu/                       /assets/menus/wine-list.pdf     301
+/the-pahli-hill-tasting-menu             /assets/menus/select-menu.pdf   301
+/the-pahli-hill-tasting-menu/            /assets/menus/select-menu.pdf   301
+/whats-on/the-pahli-hill-tasting-menu    /assets/menus/select-menu.pdf   301
+/weekday-lunch-at-pahli-hill             /assets/menus/set-lunch-menu.pdf   301
+/weekday-lunch-at-pahli-hill/            /assets/menus/set-lunch-menu.pdf   301
+/whats-on/weekday-lunch-at-pahli-hill    /assets/menus/set-lunch-menu.pdf   301
+/whats-on/set-lunch-menu-pahli-hill      /assets/menus/set-lunch-menu.pdf   301
+/whats-on/saturday-lunch                 /assets/menus/set-lunch-menu.pdf   301
+/whats-on/new-years-day-lunch            /assets/menus/set-lunch-menu.pdf   301
 
-/wp-content/uploads/2025/11/Wine-and-Spirits-16.07.25.pdf    https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:57:12.464Z/WineandSpirit.pdf          301
-/wp-content/uploads/2025/12/*                                https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-19T14:37:34.449Z/Allergens28thJuly2026.pdf   301
+/wp-content/uploads/2025/11/Wine-and-Spirits-16.07.25.pdf    /assets/menus/wine-list.pdf        301
+/wp-content/uploads/2025/12/*                                /assets/menus/allergen-matrix.pdf  301
 
 /whats-on                          /   301
 /whats-on/*                        /   301
