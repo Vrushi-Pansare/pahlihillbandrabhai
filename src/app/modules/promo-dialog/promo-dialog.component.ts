@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 const SLIDE_DURATION_MS = 3200;
-const LONG_PRESS_MS = 3000;
+const LONG_PRESS_MS = 2000;
 const BOOKING_URL =
   'https://www.sevenrooms.com/explore/pahlihill/reservations/create/details/?details_id=ahNzfnNldmVucm9vbXMtc2VjdXJlcjALEg9uaWdodGxvb3BfVmVudWUYgID45MSUiAkMCxIKRXhwZXJpZW5jZRi3-onaJww&details_type=EXPERIENCE&searchTab=experiences';
 
