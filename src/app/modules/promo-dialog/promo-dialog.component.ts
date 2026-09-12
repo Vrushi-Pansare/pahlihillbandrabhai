@@ -21,6 +21,7 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   closing = false;
   activeIndex = 0;
   slideDurationMs = SLIDE_DURATION_MS;
+  paused = false;
 
   images = [
     'assets/Home/promo/promo-1.png',
@@ -28,7 +29,9 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
     'assets/Home/promo/promo-3.png',
   ];
 
-  private slideInterval: any;
+  private slideTimeout: any;
+  private remainingMs = SLIDE_DURATION_MS;
+  private slideStartedAt = 0;
 
   ngOnInit(): void {
     if (typeof window === 'undefined') return;
@@ -57,6 +60,20 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
     this.close();
   }
 
+  onHoldStart(): void {
+    if (this.paused || !this.slideTimeout) return;
+    this.paused = true;
+    this.remainingMs -= Date.now() - this.slideStartedAt;
+    clearTimeout(this.slideTimeout);
+    this.slideTimeout = null;
+  }
+
+  onHoldEnd(): void {
+    if (!this.paused) return;
+    this.paused = false;
+    this.runSlider(Math.max(this.remainingMs, 0));
+  }
+
   close(): void {
     this.closing = true;
     this.stopSlider();
@@ -64,20 +81,29 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   }
 
   private startSlider(): void {
-    this.slideInterval = setInterval(() => {
+    this.remainingMs = this.slideDurationMs;
+    this.runSlider(this.remainingMs);
+  }
+
+  private runSlider(delay: number): void {
+    this.slideStartedAt = Date.now();
+    this.slideTimeout = setTimeout(() => {
       this.activeIndex = (this.activeIndex + 1) % this.images.length;
-    }, this.slideDurationMs);
+      this.remainingMs = this.slideDurationMs;
+      this.runSlider(this.remainingMs);
+    }, delay);
   }
 
   private restartSlider(): void {
     this.stopSlider();
+    this.paused = false;
     this.startSlider();
   }
 
   private stopSlider(): void {
-    if (this.slideInterval) {
-      clearInterval(this.slideInterval);
-      this.slideInterval = null;
+    if (this.slideTimeout) {
+      clearTimeout(this.slideTimeout);
+      this.slideTimeout = null;
     }
   }
 }

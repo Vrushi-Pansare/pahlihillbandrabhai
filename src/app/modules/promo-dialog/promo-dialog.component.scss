@@ -98,6 +98,10 @@
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
+
+  &.paused {
+    animation-play-state: paused;
+  }
 }
 
 .promo-slider {

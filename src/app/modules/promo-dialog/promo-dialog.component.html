@@ -44,6 +44,7 @@
               class="progress-fill"
               [class.filled]="idx < activeIndex"
               [class.active]="idx === activeIndex"
+              [class.paused]="paused"
               [style.animation-duration.ms]="slideDurationMs"
             ></span>
           </button>
@@ -55,6 +56,12 @@
         class="promo-slider"
         aria-label="Book a table"
         (click)="openBooking()"
+        (mousedown)="onHoldStart()"
+        (mouseup)="onHoldEnd()"
+        (mouseleave)="onHoldEnd()"
+        (touchstart)="onHoldStart()"
+        (touchend)="onHoldEnd()"
+        (touchcancel)="onHoldEnd()"
       >
         @for (img of images; track img; let idx = $index) {
           <img
