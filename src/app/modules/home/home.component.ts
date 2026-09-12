@@ -36,6 +36,12 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   activeSlide = 0;
   slides = [
     {
+      name: 'Lamb Kothu Roti',
+      img: 'assets/Home/lamb-kothu-roti.webp',
+      video:
+        'https://pahlihillbandrabhai.com/__l5e/assets-v1/4cb3b530-eb52-4754-abda-d8dfeea0668e/lamb-kothu-roti.mp4',
+    },
+    {
       name: 'Sweet Potato Chaat',
       img: 'assets/Home/sweet-potato-chaat.webp',
       video:
@@ -46,12 +52,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       img: 'assets/Home/chilli-cheese-dosa.webp',
       video:
         'https://pahlihillbandrabhai.com/__l5e/assets-v1/06fad0b4-cdea-4191-b07a-27a714532c0a/chilli-cheese-dosa.mp4',
-    },
-    {
-      name: 'Lamb Kothu Roti',
-      img: 'assets/Home/lamb-kothu-roti.webp',
-      video:
-        'https://pahlihillbandrabhai.com/__l5e/assets-v1/4cb3b530-eb52-4754-abda-d8dfeea0668e/lamb-kothu-roti.mp4',
     },
     // {
     //   name: 'Rabdi Tres Leches',
@@ -122,7 +122,7 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
     this.carouselInterval = setInterval(() => {
       this.activeSlide = (this.activeSlide + 1) % this.slides.length;
       this.updateCarouselPlayback();
-    }, 4000);
+    }, 5000);
   }
 
   updateCarouselPlayback() {
