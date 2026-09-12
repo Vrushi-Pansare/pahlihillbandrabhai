@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 const SLIDE_DURATION_MS = 3200;
+const LONG_PRESS_MS = 3000;
 const BOOKING_URL =
   'https://www.sevenrooms.com/explore/pahlihill/reservations/create/details/?details_id=ahNzfnNldmVucm9vbXMtc2VjdXJlcjALEg9uaWdodGxvb3BfVmVudWUYgID45MSUiAkMCxIKRXhwZXJpZW5jZRi3-onaJww&details_type=EXPERIENCE&searchTab=experiences';
 
@@ -32,6 +33,8 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   private slideTimeout: any;
   private remainingMs = SLIDE_DURATION_MS;
   private slideStartedAt = 0;
+  private holdStartedAt = 0;
+  private wasLongPress = false;
 
   ngOnInit(): void {
     if (typeof window === 'undefined') return;
@@ -54,6 +57,10 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   }
 
   openBooking(): void {
+    if (this.wasLongPress) {
+      this.wasLongPress = false;
+      return;
+    }
     if (typeof window !== 'undefined') {
       window.open(BOOKING_URL, '_blank', 'noopener,noreferrer');
     }
@@ -61,16 +68,20 @@ export class PromoDialogComponent implements OnInit, OnDestroy {
   }
 
   onHoldStart(): void {
-    if (this.paused || !this.slideTimeout) return;
+    if (this.paused) return;
+    this.holdStartedAt = Date.now();
+    if (this.slideTimeout) {
+      this.remainingMs -= Date.now() - this.slideStartedAt;
+      clearTimeout(this.slideTimeout);
+      this.slideTimeout = null;
+    }
     this.paused = true;
-    this.remainingMs -= Date.now() - this.slideStartedAt;
-    clearTimeout(this.slideTimeout);
-    this.slideTimeout = null;
   }
 
   onHoldEnd(): void {
     if (!this.paused) return;
     this.paused = false;
+    this.wasLongPress = Date.now() - this.holdStartedAt >= LONG_PRESS_MS;
     this.runSlider(Math.max(this.remainingMs, 0));
   }
 
