@@ -94,6 +94,14 @@
             </li>
             <li>
               <a
+                href="assets/menus/dessert-menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Dessert Menu</a
+              >
+            </li>
+            <li>
+              <a
                 href="assets/menus/allergen-matrix.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -122,14 +130,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 >Events & Group Menus</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/dessert-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Dessert Menu</a
               >
             </li>
           </ul>
@@ -298,6 +298,22 @@
             </li>
             <li>
               <a
+                href="assets/menus/dessert-menu.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                [class.active]="activeClickedUrl === 'dessertmenu'"
+                (click)="closeMobileMenuDeferred('dessertmenu')"
+              >
+                <div class="custom-arrow">
+                  <span class="arrow-body"></span>
+                  <span class="arrow-cross"></span>
+                  <span class="arrow-wing"></span>
+                </div>
+                <span>DESSERT MENU</span>
+              </a>
+            </li>
+            <li>
+              <a
                 href="assets/menus/allergen-matrix.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -358,22 +374,6 @@
                   <span class="arrow-wing"></span>
                 </div>
                 <span>EVENTS & GROUP MENUS</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/dessert-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'dessertmenu'"
-                (click)="closeMobileMenuDeferred('dessertmenu')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>DESSERT MENU</span>
               </a>
             </li>
           </ul>
