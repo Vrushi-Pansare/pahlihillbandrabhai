@@ -1,0 +1,177 @@
+.promo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(3, 33, 16, 0.55),
+    rgba(1, 15, 7, 0.85)
+  );
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  animation: promo-fade-in 0.35s ease-out;
+
+  &.closing {
+    animation: promo-fade-out 0.2s ease-in forwards;
+  }
+}
+
+.promo-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--jungle, #032110);
+  box-shadow:
+    0 30px 70px -15px rgba(3, 33, 16, 0.55),
+    0 0 0 1px rgba(228, 154, 0, 0.35);
+  animation: promo-pop-in 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.closing {
+    animation: promo-pop-out 0.2s ease-in forwards;
+  }
+}
+
+.promo-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(253, 242, 225, 0.35);
+  border-radius: 50%;
+  background: rgba(3, 33, 16, 0.4);
+  color: var(--ivory-warm, #fdf2e1);
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: rgba(3, 33, 16, 0.7);
+    border-color: rgba(228, 154, 0, 0.6);
+    transform: scale(1.06) rotate(90deg);
+  }
+}
+
+.promo-progress {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 52px;
+  z-index: 3;
+  display: flex;
+  gap: 5px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 3px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(253, 242, 225, 0.35);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--ochre, #e49a00);
+  border-radius: 999px;
+
+  &.filled {
+    width: 100%;
+  }
+
+  &.active {
+    animation-name: promo-progress-run;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+.promo-slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: var(--jungle, #032110);
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.promo-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+@keyframes promo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes promo-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes promo-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes promo-pop-out {
+  to {
+    opacity: 0;
+    transform: scale(0.94) translateY(6px);
+  }
+}
+
+@keyframes promo-progress-run {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-dialog {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+}

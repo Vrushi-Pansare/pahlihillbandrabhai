@@ -1,0 +1,70 @@
+@if (visible) {
+  <div
+    class="promo-overlay"
+    [class.closing]="closing"
+    (click)="close()"
+  >
+    <div
+      class="promo-dialog"
+      [class.closing]="closing"
+      (click)="$event.stopPropagation()"
+    >
+      <button
+        type="button"
+        class="promo-close"
+        aria-label="Close"
+        (click)="close()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+
+      <!-- Progress bars -->
+      <div class="promo-progress">
+        @for (img of images; track img; let idx = $index) {
+          <button
+            type="button"
+            class="progress-track"
+            [attr.aria-label]="'Go to slide ' + (idx + 1)"
+            (click)="goTo(idx)"
+          >
+            <span
+              class="progress-fill"
+              [class.filled]="idx < activeIndex"
+              [class.active]="idx === activeIndex"
+              [style.animation-duration.ms]="slideDurationMs"
+            ></span>
+          </button>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="promo-slider"
+        aria-label="Book a table"
+        (click)="openBooking()"
+      >
+        @for (img of images; track img; let idx = $index) {
+          <img
+            [src]="img"
+            alt="Pahli Hill Bandra Bhai"
+            class="promo-slide"
+            [class.active]="activeIndex === idx"
+          />
+        }
+      </button>
+    </div>
+  </div>
+}
