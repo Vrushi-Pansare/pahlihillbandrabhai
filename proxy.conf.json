@@ -1,0 +1,8 @@
+{
+  "/al-chef-api": {
+    "target": "https://al-chef.netraax.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": { "^/al-chef-api": "/api/v1" }
+  }
+}

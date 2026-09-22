@@ -3,6 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { APP_CONFIG } from '../../configs/constants';
 
+export interface HeaderMenuItem {
+  code: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -12,6 +17,11 @@ import { APP_CONFIG } from '../../configs/constants';
 })
 export class HeaderComponent {
   logoUrl = APP_CONFIG.logoUrl;
+  menuItems: HeaderMenuItem[] = [
+    { code: 'full-menu', label: 'Full Menu' },
+    { code: 'allergen-menu', label: 'Allergen Menu' },
+    { code: 'order-delivery', label: 'Order Delivery' },
+  ];
   isMobileMenuOpen = false;
   isAboutSubOpen = false;
   isMenuSubOpen = false;

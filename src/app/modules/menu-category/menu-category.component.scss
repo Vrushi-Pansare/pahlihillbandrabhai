@@ -1,0 +1,266 @@
+.menu-page {
+  background-color: #efe0c2;
+  color: #0b2114;
+  font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  padding: 1.75rem 0 6rem;
+}
+
+.menu-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.menu-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .sub-heading {
+    display: block;
+    margin-top: 40px;
+    font-family: "Displace", ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--terracotta, #c75100);
+    margin-bottom: 0.75rem;
+  }
+
+  .main-heading {
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--jungle, #032110);
+    line-height: 1.15;
+    min-height: 1.15em;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .result-count {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #a08c6c;
+  }
+}
+
+.search-box {
+  max-width: 420px;
+  margin: -1rem auto 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #0b2114;
+  background: rgba(252, 244, 230, 0.6);
+  border: 1px solid rgba(200, 90, 23, 0.6);
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+
+  &::placeholder {
+    color: #a08c6c;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #c85a17;
+    background: #fcf4e6;
+    box-shadow: 0 0 0 2px rgba(200, 90, 23, 0.25);
+  }
+}
+
+.filter-block {
+  margin: 0 0 2.5rem;
+  text-align: center;
+}
+
+.filter-pills {
+  position: relative; // offsetParent for measuring pill rows
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &.collapsed {
+    overflow: hidden;
+  }
+}
+
+.pills-toggle {
+  margin-top: 0.9rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c85a17;
+  background: none;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 0.15rem;
+  cursor: pointer;
+
+  &:hover {
+    color: #0b2114;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c85a17;
+    outline-offset: 3px;
+  }
+}
+
+.pill {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0b2114;
+  background: transparent;
+  border: 1px solid rgba(200, 90, 23, 0.6);
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    border-color: #c85a17;
+    background: rgba(200, 90, 23, 0.12);
+  }
+
+  &.active {
+    background: #c85a17;
+    border-color: #c85a17;
+    color: #fcf4e6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #c85a17;
+    outline-offset: 2px;
+  }
+}
+
+.state-message {
+  text-align: center;
+  padding: 3rem 0;
+  color: #294b31;
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.dish-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dish {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(5, 56, 30, 0.2);
+
+  &:first-child {
+    border-top: 1px solid rgba(5, 56, 30, 0.2);
+  }
+}
+
+.dish-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.dish-name {
+  font-family: "Displace", "Playfair Display", Georgia, serif !important;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--jungle, #032110);
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 1.35rem;
+  }
+}
+
+.dish-price {
+  font-family: "Displace", "Playfair Display", Georgia, serif !important;
+  font-size: 1.1rem;
+  color: #c85a17;
+  white-space: nowrap;
+}
+
+.dish-description {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #294b31;
+  white-space: pre-line;
+}
+
+.dish-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.dish-tag {
+  padding: 0.15rem 0.6rem;
+  background: #c85a17;
+  color: #fcf4e6;
+}
+
+.dish-allergen {
+  padding: 0.15rem 0;
+  color: #a08c6c;
+}
+
+.page-btn {
+  display: inline-block;
+  font-family: "Displace", "Playfair Display", Georgia, serif !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0b2114;
+  background: transparent;
+  border: 1px solid #c85a17;
+  padding: 0.7rem 1.4rem;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+
+  &:hover:not(:disabled) {
+    background: #c85a17;
+    color: #fcf4e6;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}

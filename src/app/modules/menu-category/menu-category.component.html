@@ -1,0 +1,137 @@
+<app-header></app-header>
+
+<main class="menu-page">
+  <div class="menu-wrapper">
+    <div class="menu-heading">
+      <span class="sub-heading">✦ THE MENU ✦</span>
+      <h1 class="main-heading">
+        @if (categoryLabel()) {
+          {{ categoryLabel() }}
+        } @else if (notFound()) {
+          Category not found
+        } @else {
+          &nbsp;
+        }
+      </h1>
+      @if (!loading() && items().length) {
+        <p class="result-count">
+          {{ filteredItems().length }}
+          {{ filteredItems().length === 1 ? 'dish' : 'dishes' }}
+        </p>
+      }
+    </div>
+
+    @if (!notFound()) {
+      <div class="search-box" role="search">
+        <input
+          #search
+          type="search"
+          class="search-input"
+          placeholder="Search dishes"
+          aria-label="Search dishes"
+          autocomplete="off"
+          [value]="query()"
+          (input)="query.set(search.value)"
+        />
+      </div>
+    }
+
+    @if (allergens().length) {
+      <div class="filter-block">
+        <div
+          #pills
+          id="allergen-pills"
+          class="filter-pills"
+          [class.collapsed]="pillsOverflow() && !pillsExpanded()"
+          [style.max-height.px]="
+            pillsOverflow() && !pillsExpanded() ? pillsCollapsedHeight() : null
+          "
+          role="group"
+          aria-label="Filter by allergen"
+        >
+          <button
+            type="button"
+            class="pill"
+            [class.active]="!selectedAllergen()"
+            [attr.aria-pressed]="!selectedAllergen()"
+            (click)="selectAllergen(null)"
+          >
+            All
+          </button>
+          @for (allergen of allergens(); track allergen.code) {
+            <button
+              type="button"
+              class="pill"
+              [class.active]="selectedAllergen()?.code === allergen.code"
+              [attr.aria-pressed]="selectedAllergen()?.code === allergen.code"
+              (click)="selectAllergen(allergen)"
+            >
+              {{ allergen.label }}
+            </button>
+          }
+        </div>
+        @if (pillsOverflow()) {
+          <button
+            type="button"
+            class="pills-toggle"
+            aria-controls="allergen-pills"
+            [attr.aria-expanded]="pillsExpanded()"
+            (click)="togglePills()"
+          >
+            {{ pillsExpanded() ? 'See less' : 'See more' }}
+          </button>
+        }
+      </div>
+    }
+
+    @if (loading()) {
+      <p class="state-message" role="status">Loading menu…</p>
+    } @else if (error()) {
+      <div class="state-message" role="alert">
+        <p>We couldn't load the menu right now.</p>
+        <button type="button" class="page-btn" (click)="retry()">
+          Try again
+        </button>
+      </div>
+    } @else if (notFound()) {
+      <div class="state-message">
+        <p>We couldn't find that menu category.</p>
+        <a routerLink="/" class="page-btn">Back to home</a>
+      </div>
+    } @else if (items().length === 0) {
+      <p class="state-message">
+        @if (selectedAllergen(); as allergen) {
+          No dishes here are marked “{{ allergen.label }}”.
+        } @else {
+          Nothing on this menu yet.
+        }
+      </p>
+    } @else if (filteredItems().length === 0) {
+      <p class="state-message">No dishes match “{{ query().trim() }}”.</p>
+    } @else {
+      <ul class="dish-list">
+        @for (item of filteredItems(); track item.id) {
+          <li class="dish">
+            <div class="dish-top">
+              <h2 class="dish-name">{{ item.name }}</h2>
+              <span class="dish-price">{{ formatPrice(item.unitPrice) }}</span>
+            </div>
+            @if (item.description) {
+              <p class="dish-description">{{ item.description }}</p>
+            }
+            <div class="dish-meta">
+              @if (item.tags) {
+                <span class="dish-tag">{{ item.tags.label }}</span>
+              }
+              @if (item.allergen) {
+                <span class="dish-allergen">{{ item.allergen.label }}</span>
+              }
+            </div>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</main>
+
+<app-footer></app-footer>

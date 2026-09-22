@@ -68,70 +68,19 @@
             </svg>
           </a>
           <ul class="dropdown-menu">
-            <li>
-              <a
-                href="assets/menus/a-la-carte-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >A la Carte</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/set-lunch-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Set Lunch</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/select-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Select Menu</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/dessert-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Dessert Menu</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/allergen-matrix.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Allergen Matrix</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/wine-list.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Wine List</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/grab-and-go.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Grab & Go</a
-              >
-            </li>
-            <li>
-              <a
-                href="assets/menus/events-group-packages.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Events & Group Menus</a
-              >
-            </li>
+            @for (item of menuItems; track item.code) {
+              <li>
+                @if (item.code === 'full-menu') {
+                  <a routerLink="/full-menu" routerLinkActive="active">{{
+                    item.label
+                  }}</a>
+                } @else {
+                  <a href="#" (click)="$event.preventDefault()">{{
+                    item.label
+                  }}</a>
+                }
+              </li>
+            }
           </ul>
         </li>
         <li class="nav-item">
@@ -248,134 +197,40 @@
         </div>
         @if (isMenuSubOpen) {
           <ul class="mobile-sub-menu">
-            <li>
-              <a
-                href="assets/menus/a-la-carte-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'alacarte'"
-                (click)="closeMobileMenuDeferred('alacarte')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>A LA CARTE</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/set-lunch-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'setlunch'"
-                (click)="closeMobileMenuDeferred('setlunch')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>SET LUNCH</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/select-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'selectmenu'"
-                (click)="closeMobileMenuDeferred('selectmenu')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>SELECT MENU</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/dessert-menu.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'dessertmenu'"
-                (click)="closeMobileMenuDeferred('dessertmenu')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>DESSERT MENU</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/allergen-matrix.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'allergen'"
-                (click)="closeMobileMenuDeferred('allergen')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>ALLERGEN MATRIX</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/wine-list.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'winelist'"
-                (click)="closeMobileMenuDeferred('winelist')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>WINE LIST</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/grab-and-go.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'grabgo'"
-                (click)="closeMobileMenuDeferred('grabgo')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>GRAB & GO</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="assets/menus/events-group-packages.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                [class.active]="activeClickedUrl === 'events'"
-                (click)="closeMobileMenuDeferred('events')"
-              >
-                <div class="custom-arrow">
-                  <span class="arrow-body"></span>
-                  <span class="arrow-cross"></span>
-                  <span class="arrow-wing"></span>
-                </div>
-                <span>EVENTS & GROUP MENUS</span>
-              </a>
-            </li>
+            @for (item of menuItems; track item.code) {
+              <li>
+                @if (item.code === 'full-menu') {
+                  <a
+                    routerLink="/full-menu"
+                    [class.active]="activeClickedUrl === item.code"
+                    (click)="closeMobileMenuDeferred(item.code)"
+                  >
+                    <div class="custom-arrow">
+                      <span class="arrow-body"></span>
+                      <span class="arrow-cross"></span>
+                      <span class="arrow-wing"></span>
+                    </div>
+                    <span>{{ item.label | uppercase }}</span>
+                  </a>
+                } @else {
+                  <a
+                    href="#"
+                    [class.active]="activeClickedUrl === item.code"
+                    (click)="
+                      $event.preventDefault();
+                      closeMobileMenuDeferred(item.code)
+                    "
+                  >
+                    <div class="custom-arrow">
+                      <span class="arrow-body"></span>
+                      <span class="arrow-cross"></span>
+                      <span class="arrow-wing"></span>
+                    </div>
+                    <span>{{ item.label | uppercase }}</span>
+                  </a>
+                }
+              </li>
+            }
           </ul>
         }
       </li>

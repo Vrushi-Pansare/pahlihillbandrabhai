@@ -5,6 +5,8 @@ import { TeamComponent } from './modules/team/team.component';
 import { PrivateHiresComponent } from './modules/private-hires/private-hires.component';
 import { SpeakeasyComponent } from './modules/speakeasy/speakeasy.component';
 import { WhyUniqueComponent } from './modules/why-unique/why-unique.component';
+import { MenuCategoryComponent } from './modules/menu-category/menu-category.component';
+import { FullMenuComponent } from './modules/full-menu/full-menu.component';
 
 export const routes: Routes = [
   {
@@ -68,6 +70,24 @@ export const routes: Routes = [
     data: {
       description:
         'What makes Pahli Hill Bandra Bhai different: South Bombay supper-house flavours, radical hospitality and the tech to back it up, on Mortimer Street in Fitzrovia.',
+    },
+  },
+  {
+    path: 'full-menu',
+    component: FullMenuComponent,
+    title: 'Full Menu | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'The full Pahli Hill Bandra Bhai menu — Bombay supper-house small plates, tandoor, mains and more, served at Mortimer Street in Fitzrovia, London.',
+    },
+  },
+  {
+    path: 'menu/:code',
+    component: MenuCategoryComponent,
+    title: 'Menu | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'Browse the Pahli Hill Bandra Bhai menu — Bombay supper-house small plates, tandoor and more, served at Mortimer Street in Fitzrovia, London.',
     },
   },
   { path: '**', redirectTo: '' },

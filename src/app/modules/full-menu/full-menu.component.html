@@ -1,0 +1,478 @@
+<app-header></app-header>
+
+<ng-template #allergenIconTpl let-code>
+  <svg viewBox="0 0 16 16" fill="none">
+    @switch (code) {
+      @case ('dairy') {
+        <path
+          d="M6 1.5h4l.5 2-1 1.5v7a1 1 0 0 1-1 1H7.5a1 1 0 0 1-1-1v-7l-1-1.5.5-2z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M5.5 8.5h5" stroke="currentColor" stroke-width="1.1" />
+      }
+      @case ('gluten') {
+        <path
+          d="M8 1.5v13M8 4l-2-1.2M8 4l2-1.2M8 7l-2-1.2M8 7l2-1.2M8 10l-2-1.2M8 10l2-1.2"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+        />
+      }
+      @case ('nuts') {
+        <path
+          d="M8 2c2.5 0 3.8 2.4 3.5 5-.3 2.6-1.8 5.5-3.5 5.5S4.8 9.6 4.5 7C4.2 4.4 5.5 2 8 2z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M6.2 3.6h3.6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+      }
+      @case ('sulphites') {
+        <path
+          d="M6.5 1.5h3v4l2.3 5.7A1 1 0 0 1 10.9 12.7H5.1a1 1 0 0 1-.9-1.5L6.5 5.5v-4z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('egg') {
+        <path
+          d="M8 1.8C5.8 4.5 4.5 7.4 4.5 9.6a3.5 3.5 0 1 0 7 0c0-2.2-1.3-5.1-3.5-7.8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('fish') {
+        <path
+          d="M2 8c2-3 6-4 8-2.5 1.2.9 1.6 1.7 2 2.5-.4.8-.8 1.6-2 2.5C8 12.5 4 11.5 2 8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M2 8l-1.3-1.5M2 8l-1.3 1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+      }
+      @case ('mustard') {
+        <path
+          d="M6.3 2h3.4l.6 1.7H5.7L6.3 2z"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5.5 3.7h5l.7 8a1 1 0 0 1-1 1.1H5.8a1 1 0 0 1-1-1.1l.7-8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('alcohol') {
+        <path
+          d="M4.5 2h7L10 7.5v5.5m-4 0h4m-2-5.5V13"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      }
+      @default {
+        <circle cx="8" cy="8" r="2.5" fill="currentColor" />
+      }
+    }
+  </svg>
+</ng-template>
+
+<main class="full-menu-main">
+  <div class="full-menu-wrapper">
+    <div class="full-menu-heading">
+      <span class="sub-heading">&bull; THE FULL MENU &bull;</span>
+      <h1 class="main-heading">
+        Tonight&rsquo;s <em class="accent">table.</em>
+      </h1>
+      <p class="description">
+        Every Pahli Hill Bandra Bhai menu in one place &mdash; A La Carte,
+        Lunch Set, Select, Mango Specials, drinks, desserts and digestives.
+      </p>
+    </div>
+  </div>
+
+  <div class="fsa-banner-wrapper">
+    <div class="fsa-banner">
+      <div class="fsa-info">
+        <span class="fsa-dot" aria-hidden="true"></span>
+        <div class="fsa-copy">
+          <span class="fsa-label">FSA &middot; FOOD STANDARDS AGENCY</span>
+          <p class="fsa-desc">
+            All 14 UK regulated allergens are declared on every dish &mdash;
+            icons appear directly on each plate, or filter the menu by what
+            you avoid.
+          </p>
+        </div>
+      </div>
+      <button type="button" class="fsa-filter-btn">
+        FILTER <span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+
+    <div class="brand-tabs">
+      <button
+        type="button"
+        class="brand-tab"
+        [class.active]="selectedBrand() === null"
+        (click)="selectBrand(null)"
+      >
+        All
+      </button>
+      @for (brand of brands(); track brand) {
+        <button
+          type="button"
+          class="brand-tab"
+          [class.active]="selectedBrand() === brand"
+          (click)="selectBrand(brand)"
+        >
+          {{ brand }}
+        </button>
+      }
+    </div>
+
+    <div class="category-pills">
+      @for (
+        cat of categories();
+        track cat;
+        let isFirst = $first
+      ) {
+        <button
+          type="button"
+          class="category-pill"
+          [class.active]="
+            selectedCategory() === cat || (!selectedCategory() && isFirst)
+          "
+          (click)="selectCategory(cat)"
+        >
+          {{ cat }}
+        </button>
+      }
+    </div>
+
+    <div class="tags-filter">
+      <span class="tags-filter-label">Filter</span>
+      <div class="tag-pills">
+        @for (tag of tags(); track tag.code) {
+          <button
+            type="button"
+            class="tag-pill"
+            [class.active]="selectedTags().has(tag.code)"
+            (click)="toggleTag(tag.code)"
+          >
+            <span class="tag-icon" aria-hidden="true">
+              @switch (tag.code) {
+                @case ('chef_s_special') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 1.5l1.85 3.9 4.15.62-3 3 .7 4.23L8 11.2l-3.7 2.05.7-4.23-3-3 4.15-.62L8 1.5z"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                }
+                @case ('new_on_menu') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 1.5c.55 2.6 1.4 3.45 4 4-2.6.55-3.45 1.4-4 4-.55-2.6-1.4-3.45-4-4 2.6-.55 3.45-1.4 4-4z"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                }
+                @case ('vegetarian') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M13 3c-6 0-10 4-10 10 6 0 10-4 10-10z"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M4 12L12 4"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                }
+                @case ('non_vegetarian') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M8 1.5c2 2.3 4 4.2 4 7a4 4 0 1 1-8 0c0-1.4.9-2.4.9-2.4 0 1.4.9 1.9.9 1.9C5.5 4.9 8 4.1 8 1.5z"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                }
+                @case ('cocktail') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M2.5 2.5h11L8 8.5v5m-3 0h6"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                }
+                @case ('wine') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M5.2 2h5.6l-.9 5.2a3.4 3.4 0 0 1-3.8 0L5.2 2z"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8 9v5m-2.5 0h5"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                }
+                @case ('summer_special') {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <circle
+                      cx="8"
+                      cy="8"
+                      r="2.6"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                    />
+                    <path
+                      d="M8 1.5v1.6M8 12.9v1.6M14.5 8h-1.6M3.1 8H1.5M12.6 3.4l-1.1 1.1M4.5 11.5l-1.1 1.1M12.6 12.6l-1.1-1.1M4.5 4.5 3.4 3.4"
+                      stroke="currentColor"
+                      stroke-width="1.1"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                }
+                @default {
+                  <svg viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="2.5" fill="currentColor" />
+                  </svg>
+                }
+              }
+            </span>
+            {{ tag.label }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <svg
+        class="search-icon"
+        viewBox="0 0 16 16"
+        fill="none"
+        aria-hidden="true"
+      >
+        <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.3" />
+        <path
+          d="M11 11l3.5 3.5"
+          stroke="currentColor"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+      </svg>
+      <input
+        #searchInput
+        type="search"
+        class="search-input"
+        placeholder="Search dishes &mdash; name, ingredient or category.."
+        aria-label="Search dishes"
+        autocomplete="off"
+        [value]="searchQuery()"
+        (input)="searchQuery.set(searchInput.value)"
+      />
+    </div>
+
+    <div class="category-content-panel">
+      <div class="category-panel">
+        @if (groups().length) {
+          <div class="group-pills">
+            @for (group of groups(); track group.code) {
+              <button
+                type="button"
+                class="group-pill"
+                [class.active]="selectedGroups().has(group.code)"
+                (click)="toggleGroup(group.code)"
+              >
+                {{ group.label }}
+              </button>
+            }
+          </div>
+        }
+        <div class="category-panel-heading">
+          <h2 class="category-panel-title">{{ activeCategory() }}</h2>
+          <p class="category-panel-subtitle">
+            {{ filteredItems().length }}
+            {{ filteredItems().length === 1 ? 'DISH' : 'DISHES' }}
+            &middot; {{ activeCategory() | uppercase }}
+          </p>
+        </div>
+      </div>
+
+      @for (section of groupSections(); track section.code) {
+        <div class="group-section">
+          <div class="group-section-header">
+            <h3 class="group-section-title">
+              {{ section.label }}
+              <span class="group-section-count">{{ section.items.length }}</span>
+            </h3>
+            <span class="group-section-swipe"
+              >SWIPE <span aria-hidden="true">&rsaquo;</span></span
+            >
+          </div>
+          <div class="group-section-scroll">
+            @for (item of section.items; track item.id) {
+              <div class="item-card">
+                <div class="item-image-wrap">
+                  @if (item.productImages && item.productImages.length) {
+                    <img
+                      [src]="item.productImages[0]"
+                      [alt]="item.name"
+                      class="item-image"
+                      loading="lazy"
+                    />
+                  } @else {
+                    <div class="item-image-placeholder">
+                      <div class="placeholder-badge">
+                        <img [src]="logoUrl" alt="" class="placeholder-logo" />
+                      </div>
+                    </div>
+                  }
+                </div>
+                <div class="item-body">
+                  <h3 class="item-name">{{ item.name }}</h3>
+                  @if (item.description) {
+                    <p class="item-description">{{ item.description }}</p>
+                  }
+                  @if (item.tags) {
+                    <div class="item-meta">
+                      <span class="item-badge tag">{{ item.tags.label }}</span>
+                    </div>
+                  }
+                  <div class="item-allergen-row">
+                    @for (icon of allergenIcons(item); track icon) {
+                      <span
+                        class="allergen-icon"
+                        [attr.title]="allergenLabel(icon)"
+                      >
+                        <ng-container
+                          *ngTemplateOutlet="
+                            allergenIconTpl;
+                            context: { $implicit: icon }
+                          "
+                        ></ng-container>
+                      </span>
+                    }
+                    <button
+                      type="button"
+                      class="allergen-info-btn"
+                      (click)="openAllergenInfo(item)"
+                    >
+                      <span aria-hidden="true">&#9888;</span> Allergen Info
+                    </button>
+                  </div>
+                  @if (item.unitPrice != null) {
+                    <div class="item-price">
+                      {{ formatPrice(item.unitPrice) }}
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      } @empty {
+        <p class="items-empty">No dishes match your filters just yet.</p>
+      }
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>
+
+@if (allergenInfoItem(); as item) {
+  <div
+    class="allergen-dialog-backdrop"
+    (click)="closeAllergenInfo()"
+    role="presentation"
+  >
+    <div
+      class="allergen-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="allergenDialogTitle"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="allergen-dialog-header">
+        <h2 id="allergenDialogTitle" class="allergen-dialog-title">
+          Allergen Info
+        </h2>
+        <button
+          type="button"
+          class="allergen-dialog-close"
+          aria-label="Close"
+          (click)="closeAllergenInfo()"
+        >
+          &times;
+        </button>
+      </div>
+
+      <p class="allergen-dialog-dish">{{ item.name | uppercase }}</p>
+      <p class="allergen-dialog-intro">Statutory allergens in this dish:</p>
+
+      @if (allergenIcons(item).length) {
+        <div class="allergen-dialog-grid">
+          @for (icon of allergenIcons(item); track icon) {
+            <div class="allergen-chip">
+              <span
+                class="allergen-chip-icon"
+                [style.background]="allergenColor(icon)"
+              >
+                <ng-container
+                  *ngTemplateOutlet="allergenIconTpl; context: { $implicit: icon }"
+                ></ng-container>
+              </span>
+              <span class="allergen-chip-label">{{ allergenLabel(icon) }}</span>
+            </div>
+          }
+        </div>
+      } @else {
+        <p class="allergen-dialog-none">
+          No declared allergens for this dish.
+        </p>
+      }
+
+      <div class="allergen-dialog-shared">
+        <span class="allergen-dialog-shared-title"
+          >May Contain (Shared Kitchen)</span
+        >
+        <p class="allergen-dialog-shared-text">
+          Prepared in a kitchen that also handles gluten, dairy, tree nuts,
+          peanuts, sesame, mustard, egg, fish, crustaceans &amp; soybeans.
+          Traces are possible in every dish.
+        </p>
+      </div>
+
+      <p class="allergen-dialog-footnote">
+        <span aria-hidden="true">&#9888;</span> Cross-contamination possible
+        &mdash; all dishes are prepared in a shared kitchen. Please let your
+        server know on arrival.
+      </p>
+    </div>
+  </div>
+}

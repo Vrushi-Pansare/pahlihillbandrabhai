@@ -1,0 +1,795 @@
+.full-menu-main {
+  background-color: #efe0c2;
+  color: #0b2114;
+  font-family: "Inter", sans-serif;
+  min-height: 60vh;
+  padding: 1.5rem 0 6rem;
+}
+
+.full-menu-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.full-menu-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .sub-heading {
+    display: block;
+    font-family: "Displace", ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--terracotta, #c75100);
+    margin-bottom: 0.75rem;
+  }
+
+  .main-heading {
+    font-family: "Displace", "Playfair Display", Georgia, serif !important;
+    font-size: 1.85rem;
+    font-weight: 400;
+    color: var(--jungle, #032110);
+    line-height: 1.15;
+
+    .accent {
+      color: var(--terracotta, #c75100);
+      font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .description {
+    font-family: "Displace", "Playfair Display", Georgia, serif;
+    font-weight: 300;
+    margin: 1rem auto 0;
+    max-width: 560px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(3, 33, 16, 0.65);
+
+    @media (min-width: 768px) {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+.fsa-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+.fsa-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: left;
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(199, 81, 0, 0.25);
+  border-radius: 1.25rem;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow:
+    0 2px 0 #03211014,
+    0 12px 28px -16px #03211040;
+
+  .fsa-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex: 1 1 320px;
+  }
+
+  .fsa-dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 0.4rem;
+    border-radius: 50%;
+    background: var(--terracotta, #c75100);
+    flex-shrink: 0;
+  }
+
+  .fsa-label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-family: "Displace", ui-monospace, monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--terracotta, #c75100);
+  }
+
+  .fsa-desc {
+    margin: 0;
+    font-family: "Displace", "Playfair Display", Georgia, serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(3, 33, 16, 0.75);
+  }
+
+  .fsa-filter-btn {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: 999px;
+    background: var(--terracotta, #c75100);
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: var(--terracotta-deep, #882600);
+    }
+  }
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .fsa-filter-btn {
+      align-self: flex-start;
+    }
+  }
+}
+
+.brand-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(199, 81, 0, 0.18);
+  border-radius: 999px;
+  padding: 0.3rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.brand-tab {
+  flex-shrink: 0;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.55);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &.active {
+    background: var(--terracotta, #c75100);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    color: var(--jungle, #032110);
+  }
+}
+
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.category-pill {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--jungle, #032110);
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(3, 33, 16, 0.25);
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &.active {
+    background: var(--jungle, #032110);
+    border-color: var(--jungle, #032110);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    border-color: var(--jungle, #032110);
+  }
+}
+
+.tags-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.tags-filter-label {
+  flex-shrink: 0;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.55);
+}
+
+.tag-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.65);
+  background: transparent;
+  border: 1px solid rgba(3, 33, 16, 0.2);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  .tag-icon {
+    display: inline-flex;
+    width: 13px;
+    height: 13px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.active {
+    background: var(--terracotta, #c75100);
+    border-color: var(--terracotta, #c75100);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    border-color: var(--terracotta, #c75100);
+    color: var(--terracotta, #c75100);
+  }
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 680px;
+  margin: 1.5rem auto 0;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.5rem;
+  width: 16px;
+  height: 16px;
+  color: rgba(3, 33, 16, 0.45);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1rem;
+  color: var(--jungle, #032110);
+  background: transparent;
+  border: 1px solid rgba(199, 81, 0, 0.35);
+  border-radius: 999px;
+  padding: 0.9rem 1.5rem 0.9rem 3rem;
+
+  &::placeholder {
+    font-family: "Displace", "Playfair Display", Georgia, serif;
+    font-style: italic;
+    color: rgba(3, 33, 16, 0.45);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--terracotta, #c75100);
+    box-shadow: 0 0 0 2px rgba(199, 81, 0, 0.15);
+  }
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}
+
+.category-content-panel {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid rgba(199, 81, 0, 0.25);
+  border-radius: 1.5rem;
+  background: var(--ivory-warm, #fdf2e1);
+}
+
+.category-panel {
+  margin: -2rem -2rem 0;
+  overflow: hidden;
+}
+
+.group-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+
+.group-pill {
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.55);
+  background: transparent;
+  border: 1px solid rgba(3, 33, 16, 0.2);
+  border-radius: 999px;
+  padding: 0.45rem 1.25rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &.active {
+    background: var(--jungle, #032110);
+    border-color: var(--jungle, #032110);
+    color: #fff;
+  }
+
+  &:hover:not(.active) {
+    border-color: var(--jungle, #032110);
+  }
+}
+
+.category-panel-heading {
+  text-align: center;
+  border-top: 1px solid rgba(199, 81, 0, 0.2);
+  padding: 1.75rem 2rem 2.25rem;
+}
+
+.category-panel-title {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.25rem;
+  color: var(--jungle, #032110);
+  line-height: 1.1;
+  text-transform: capitalize;
+}
+
+.category-panel-subtitle {
+  margin-top: 0.6rem;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--terracotta, #c75100);
+}
+
+.group-section {
+  margin-top: 1.75rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(199, 81, 0, 0.2);
+  border-radius: 1.25rem;
+  background: #fff7e9;
+}
+
+.group-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(199, 81, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.group-section-title {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--terracotta, #c75100);
+}
+
+.group-section-count {
+  margin-left: 0.4rem;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: rgba(3, 33, 16, 0.4);
+}
+
+.group-section-swipe {
+  flex-shrink: 0;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.4);
+}
+
+.group-section-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x proximity;
+}
+
+.items-empty {
+  text-align: center;
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  color: rgba(3, 33, 16, 0.55);
+  padding: 2rem 0;
+}
+
+.item-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: #fffdf9;
+  border: 1px solid rgba(199, 81, 0, 0.2);
+  border-radius: 1.1rem;
+  overflow: hidden;
+  box-shadow:
+    0 2px 0 #03211014,
+    0 12px 28px -18px #03211040;
+}
+
+.item-image-wrap {
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #efe0c2 0%, #e4d3ac 100%);
+}
+
+.placeholder-badge {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.item-name {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--jungle, #032110);
+  margin-bottom: 0.5rem;
+}
+
+.item-description {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(3, 33, 16, 0.75);
+  margin-bottom: 1rem;
+}
+
+.item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.item-badge {
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+
+  &.tag {
+    background: rgba(199, 81, 0, 0.12);
+    color: var(--terracotta, #c75100);
+  }
+}
+
+.item-allergen-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.allergen-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(3, 33, 16, 0.06);
+  color: rgba(3, 33, 16, 0.6);
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.allergen-info-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+  background: rgba(199, 81, 0, 0.08);
+  border: 1px solid rgba(199, 81, 0, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: default;
+}
+
+.item-price {
+  margin-top: auto;
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--jungle, #032110);
+}
+
+.allergen-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(3, 33, 16, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.allergen-dialog {
+  width: 100%;
+  max-width: 440px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(199, 81, 0, 0.25);
+  border-radius: 1.5rem;
+  padding: 1.75rem 2rem 2rem;
+  box-shadow: 0 30px 80px -20px rgba(3, 33, 16, 0.35);
+}
+
+.allergen-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.allergen-dialog-title {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--jungle, #032110);
+}
+
+.allergen-dialog-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: rgba(3, 33, 16, 0.5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--jungle, #032110);
+  }
+}
+
+.allergen-dialog-dish {
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--terracotta, #c75100);
+  margin-bottom: 0.9rem;
+}
+
+.allergen-dialog-intro {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: rgba(3, 33, 16, 0.8);
+  margin-bottom: 1rem;
+}
+
+.allergen-dialog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.allergen-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fffdf9;
+  border: 1px solid rgba(199, 81, 0, 0.15);
+  border-radius: 0.9rem;
+  padding: 0.6rem 0.85rem;
+}
+
+.allergen-chip-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.allergen-chip-label {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--jungle, #032110);
+}
+
+.allergen-dialog-none {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: rgba(3, 33, 16, 0.55);
+  margin-bottom: 1.25rem;
+}
+
+.allergen-dialog-shared {
+  background: rgba(228, 154, 0, 0.12);
+  border: 1px solid rgba(228, 154, 0, 0.3);
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.allergen-dialog-shared-title {
+  display: block;
+  font-family: "Displace", ui-monospace, monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ochre-deep, #c26f00);
+  margin-bottom: 0.5rem;
+}
+
+.allergen-dialog-shared-text {
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(3, 33, 16, 0.75);
+}
+
+.allergen-dialog-footnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-family: "Displace", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(3, 33, 16, 0.6);
+}

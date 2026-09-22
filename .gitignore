@@ -47,3 +47,4 @@ Thumbs.db
 # Local production deployment files
 /deploy.sh
 /*.pem
+/deploy-preview.sh
