@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild, ViewChildren, E
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
-import { PromoDialogComponent } from '../promo-dialog/promo-dialog.component';
 import { RouterModule } from '@angular/router';
 import { APP_CONFIG } from '../../configs/constants';
 
@@ -13,7 +12,6 @@ import { APP_CONFIG } from '../../configs/constants';
     CommonModule,
     FooterComponent,
     HeaderComponent,
-    PromoDialogComponent,
     RouterModule,
   ],
   templateUrl: './home.component.html',
