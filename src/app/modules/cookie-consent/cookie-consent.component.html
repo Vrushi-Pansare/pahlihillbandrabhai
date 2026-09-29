@@ -1,0 +1,26 @@
+@if (visible) {
+  <div
+    class="cookie-banner"
+    [class.closing]="closing"
+    role="dialog"
+    aria-live="polite"
+    aria-label="Cookie consent"
+  >
+    <div class="cookie-text">
+      <p class="cookie-title">A quick word on cookies</p>
+      <p class="cookie-desc">
+        We use cookies to keep the site running smoothly and, with your say-so,
+        to measure our ads and understand how guests find us. You can accept
+        or decline the optional ones.
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="cookie-btn cookie-btn-ghost" (click)="reject()">
+        Reject non-essential
+      </button>
+      <button type="button" class="cookie-btn cookie-btn-primary" (click)="accept()">
+        Accept all
+      </button>
+    </div>
+  </div>
+}

@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { filter, map, skip } from 'rxjs/operators';
+import { CookieConsentComponent } from './modules/cookie-consent/cookie-consent.component';
 
 declare let fbq: Function;
 
@@ -13,7 +14,7 @@ const DEFAULT_DESCRIPTION =
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CookieConsentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
