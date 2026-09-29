@@ -2,31 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Cookie consent bootstrap: read the visitor's saved choice (set by
-         CookieConsentComponent, key "phbb_cookie_consent") before any tracker
-         loads. No choice yet = denied until they accept in the banner. -->
-    <script>
-      window.__phbbConsent = (function () {
-        try {
-          var raw = localStorage.getItem('phbb_cookie_consent');
-          return raw && JSON.parse(raw).choice === 'granted' ? 'granted' : 'denied';
-        } catch (e) {
-          return 'denied';
-        }
-      })();
-    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11025006545"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      // Google Consent Mode v2 — must be set before 'config'.
-      gtag('consent', 'default', {
-        ad_storage: window.__phbbConsent,
-        ad_user_data: window.__phbbConsent,
-        ad_personalization: window.__phbbConsent,
-        analytics_storage: window.__phbbConsent
-      });
       gtag('js', new Date());
 
       gtag('config', 'AW-11025006545');
@@ -157,11 +137,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    // Hold the pixel until consent; CookieConsentComponent grants it and
-    // fires the first PageView when the visitor accepts.
-    if (window.__phbbConsent !== 'granted') fbq('consent', 'revoke');
     fbq('init', '3514326108667922');
-    if (window.__phbbConsent === 'granted') fbq('track', 'PageView');
+    fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none" alt=""
     src="https://www.facebook.com/tr?id=3514326108667922&ev=PageView&noscript=1"
