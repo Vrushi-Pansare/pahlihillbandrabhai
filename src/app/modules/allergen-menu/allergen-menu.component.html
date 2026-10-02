@@ -1,0 +1,368 @@
+<app-header></app-header>
+
+<!-- Same inline-SVG approach as full-menu: the CMS-hosted allergen images
+     404 on the live site. -->
+<ng-template #allergenIconTpl let-code>
+  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    @switch (code) {
+      @case ('dairy') {
+        <path
+          d="M6 1.5h4l.5 2-1 1.5v7a1 1 0 0 1-1 1H7.5a1 1 0 0 1-1-1v-7l-1-1.5.5-2z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M5.5 8.5h5" stroke="currentColor" stroke-width="1.1" />
+      }
+      @case ('gluten') {
+        <path
+          d="M8 1.5v13M8 4l-2-1.2M8 4l2-1.2M8 7l-2-1.2M8 7l2-1.2M8 10l-2-1.2M8 10l2-1.2"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+        />
+      }
+      @case ('nuts') {
+        <path
+          d="M8 2c2.5 0 3.8 2.4 3.5 5-.3 2.6-1.8 5.5-3.5 5.5S4.8 9.6 4.5 7C4.2 4.4 5.5 2 8 2z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M6.2 3.6h3.6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" />
+      }
+      @case ('peanuts') {
+        <path
+          d="M8 1.8c1.7 0 2.8 1.2 2.8 2.7 0 1-.6 1.6-.6 2.5s.6 1.5.6 2.5c0 1.5-1.1 2.7-2.8 2.7S5.2 11 5.2 9.5c0-1 .6-1.6.6-2.5s-.6-1.5-.6-2.5C5.2 3 6.3 1.8 8 1.8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M6.6 4.6h.01M9.2 4.2h.01M7.8 10h.01M6.8 11.2h.01" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+      }
+      @case ('sulphites') {
+        <path
+          d="M6.5 1.5h3v4l2.3 5.7A1 1 0 0 1 10.9 12.7H5.1a1 1 0 0 1-.9-1.5L6.5 5.5v-4z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('egg') {
+        <path
+          d="M8 1.8C5.8 4.5 4.5 7.4 4.5 9.6a3.5 3.5 0 1 0 7 0c0-2.2-1.3-5.1-3.5-7.8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('fish') {
+        <path
+          d="M2 8c2-3 6-4 8-2.5 1.2.9 1.6 1.7 2 2.5-.4.8-.8 1.6-2 2.5C8 12.5 4 11.5 2 8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M2 8l-1.3-1.5M2 8l-1.3 1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+      }
+      @case ('crustaceans') {
+        <ellipse cx="8" cy="9.5" rx="3.3" ry="2.4" stroke="currentColor" stroke-width="1.1" />
+        <path
+          d="M5 8.2 3 6.2m0 0L2.2 4m.8 2.2L4.8 5M11 8.2l2-2m0 0 .8-2.2m-.8 2.2L11.2 5M5.2 11.2l-1.6 1.3M10.8 11.2l1.6 1.3M6.8 7.3 6.4 5.8M9.2 7.3l.4-1.5"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('molluscs') {
+        <path
+          d="M8 13 2.3 6.6A6.5 6.5 0 0 1 13.7 6.6L8 13z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <path d="M8 13V3.4M8 13 5.2 4M8 13l2.8-9" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+      }
+      @case ('mustard') {
+        <path
+          d="M6.3 2h3.4l.6 1.7H5.7L6.3 2z"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M5.5 3.7h5l.7 8a1 1 0 0 1-1 1.1H5.8a1 1 0 0 1-1-1.1l.7-8z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+      }
+      @case ('sesame') {
+        <path d="M5 2.5c1.2.9 1.2 3 0 3.9-1.2-.9-1.2-3 0-3.9z" stroke="currentColor" stroke-width="1" stroke-linejoin="round" />
+        <path d="M10.8 4c1.2.9 1.2 3 0 3.9-1.2-.9-1.2-3 0-3.9z" stroke="currentColor" stroke-width="1" stroke-linejoin="round" />
+        <path d="M7.4 8.6c1.2.9 1.2 3 0 3.9-1.2-.9-1.2-3 0-3.9z" stroke="currentColor" stroke-width="1" stroke-linejoin="round" />
+      }
+      @case ('soya') {
+        <path
+          d="M3 12.5C2 10 3.5 7.6 6 6.3s4.6-3 5.3-4.8c1.8 2.2 1.4 6-1.3 8.4S4.4 13.7 3 12.5z"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linejoin="round"
+        />
+        <circle cx="5.4" cy="10.4" r="1" fill="currentColor" />
+        <circle cx="7.8" cy="8.6" r="1" fill="currentColor" />
+        <circle cx="10" cy="6.2" r="1" fill="currentColor" />
+      }
+      @case ('celery') {
+        <path
+          d="M6 14.5V7M8 14.5V6M10 14.5V7M6 7 4.4 4.2M6 7l.6-3.3M8 6V2.2M8 6l1.5-2.8M10 7l1.6-2.8"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+        />
+      }
+      @case ('lupin') {
+        <path d="M8 14.5V7.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+        <path
+          d="M8 2.2c.9 0 1.5.6 1.5 1.3S8.9 4.8 8 4.8 6.5 4.2 6.5 3.5 7.1 2.2 8 2.2zM6.2 5.5c.9 0 1.5.6 1.5 1.3S7.1 8 6.2 8 4.7 7.5 4.7 6.8s.6-1.3 1.5-1.3zM9.8 5.5c.9 0 1.5.6 1.5 1.3S10.7 8 9.8 8s-1.5-.5-1.5-1.2.6-1.3 1.5-1.3z"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linejoin="round"
+        />
+        <path d="M8 11.5 5.5 10M8 11.5l2.5-1.5" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+      }
+      @case ('alcohol') {
+        <path
+          d="M4.5 2h7L10 7.5v5.5m-4 0h4m-2-5.5V13"
+          stroke="currentColor"
+          stroke-width="1.1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      }
+      @default {
+        <circle cx="8" cy="8" r="2.5" fill="currentColor" />
+      }
+    }
+  </svg>
+</ng-template>
+
+<main class="allergen-main">
+  <div class="allergen-toolbar">
+    <a routerLink="/full-menu" class="back-link">
+      <span aria-hidden="true">&larr;</span> Back to menu
+    </a>
+  </div>
+
+  <!-- a) Static intro -->
+  <section class="allergen-hero">
+    <span class="eyebrow">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.3" />
+        <path d="M3.8 12.2 12.2 3.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+      </svg>
+      The Safe Plate
+    </span>
+    <h1 class="hero-title">
+      Eat without <span class="hero-highlight">worry</span>.
+    </h1>
+    <p class="hero-subtitle">
+      Tap what you avoid. We&rsquo;ll show what you can eat.
+    </p>
+
+    <div class="fsa-card">
+      <span class="fsa-label">
+        <span class="fsa-dot" aria-hidden="true"></span>
+        FSA &middot; Food Standards Agency
+      </span>
+      <p class="fsa-text">
+        We declare all 14 UK FSA regulated allergens on every dish &mdash; the
+        legal standard for UK restaurants. Your safety comes before our menu.
+        Always tell our team before you order if you have an allergy or
+        intolerance.
+      </p>
+    </div>
+
+    <a routerLink="/full-menu" class="cinema-btn">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <rect x="2" y="2.5" width="12" height="11" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+        <path d="M5 2.5v11M11 2.5v11M2 6h3M2 10h3M11 6h3M11 10h3" stroke="currentColor" stroke-width="1.1" />
+      </svg>
+      Check out the cinema menu
+    </a>
+  </section>
+
+  <!-- b + c) Brand switch and allergen exclusion filter -->
+  <section class="filter-card">
+    <div class="filter-heading">
+      <span class="filter-heading-text">FSA 14 &middot; Tap to avoid</span>
+    </div>
+
+    <div class="allergen-grid">
+        @for (code of allergens(); track code) {
+          <button
+            type="button"
+            class="allergen-tile"
+            [class.excluded]="excludedAllergens().has(code)"
+            [attr.aria-pressed]="excludedAllergens().has(code)"
+            [attr.aria-label]="'Avoid ' + allergenLabel(code)"
+            [style.--allergen]="allergenColor(code)"
+            (click)="toggleAllergen(code)"
+          >
+            <span class="tile-icon">
+              <ng-container
+                *ngTemplateOutlet="allergenIconTpl; context: { $implicit: code }"
+              ></ng-container>
+            </span>
+            <span class="tile-label">{{ allergenLabel(code) }}</span>
+          </button>
+        }
+    </div>
+
+    <!-- Food / Bar filter: each counter toggles its half of the menu. -->
+    <div class="safe-counts">
+      <button
+        type="button"
+        class="safe-count"
+        [class.active]="selectedBrands().has('food')"
+        [attr.aria-pressed]="selectedBrands().has('food')"
+        (click)="toggleBrand('food')"
+      >
+        <span class="safe-count-number">{{ safeDishCount() }}</span>
+        <span class="safe-count-label">
+          Dishes
+          @if (selectedBrands().has('food')) {
+            <span class="safe-count-check" aria-hidden="true">&#10003;</span>
+          }
+        </span>
+      </button>
+      <button
+        type="button"
+        class="safe-count"
+        [class.active]="selectedBrands().has('bar')"
+        [attr.aria-pressed]="selectedBrands().has('bar')"
+        (click)="toggleBrand('bar')"
+      >
+        <span class="safe-count-number">{{ safeDrinkCount() }}</span>
+        <span class="safe-count-label">
+          Drinks
+          @if (selectedBrands().has('bar')) {
+            <span class="safe-count-check" aria-hidden="true">&#10003;</span>
+          }
+        </span>
+      </button>
+    </div>
+
+    @if (excludedAllergens().size) {
+      <button type="button" class="clear-btn" (click)="clearAllergens()">
+        Clear {{ excludedAllergens().size }} avoided
+      </button>
+    }
+  </section>
+
+  <!-- d) What's left after the filter -->
+  <div class="category-pills">
+    @for (cat of categories(); track cat.label) {
+      <button
+        type="button"
+        class="category-pill"
+        [class.active]="activeCategory() === cat.label"
+        [disabled]="cat.count === 0"
+        (click)="selectCategory(cat.label)"
+      >
+        {{ cat.label | titlecase }} <span class="category-pill-count">{{ cat.count }}</span>
+      </button>
+    }
+  </div>
+
+  @if (activeItems().length) {
+    <section class="category-section">
+      <div class="category-section-header">
+        <div>
+          <h2 class="category-section-title">{{ activeCategory() | titlecase }}</h2>
+          <p class="category-section-subtitle">
+            {{ activeItems().length }}
+            @if (activeIsBar()) {
+              {{ activeItems().length === 1 ? 'drink' : 'drinks' }} you can have
+            } @else {
+              {{ activeItems().length === 1 ? 'dish' : 'dishes' }} you can eat
+            }
+          </p>
+        </div>
+        <span class="category-section-swipe">
+          Swipe <span aria-hidden="true">&rsaquo;</span>
+        </span>
+      </div>
+
+      <div class="item-scroll">
+        @for (item of activeItems(); track item.id) {
+          <article class="item-card">
+            <div class="item-image-wrap">
+              @if (item.productImages && item.productImages.length) {
+                <img
+                  [src]="item.productImages[0]"
+                  [alt]="item.name"
+                  class="item-image"
+                  loading="lazy"
+                />
+              } @else {
+                <div class="item-image-placeholder">
+                  <img [src]="logoUrl" alt="" class="placeholder-logo" />
+                </div>
+              }
+            </div>
+            <div class="item-body">
+              <div class="item-title-row">
+                <h3 class="item-name">{{ item.name }}</h3>
+                @if (item.tags) {
+                  <span class="item-tag">{{ item.tags.label }}</span>
+                }
+              </div>
+              @if (item.description) {
+                <p class="item-description">{{ item.description }}</p>
+              }
+              @if (allergenCodes(item).length) {
+                <div class="item-allergens">
+                  @for (code of allergenCodes(item); track code) {
+                    <span
+                      class="item-allergen"
+                      [style.--allergen]="allergenColor(code)"
+                      [attr.title]="allergenLabel(code)"
+                    >
+                      <ng-container
+                        *ngTemplateOutlet="allergenIconTpl; context: { $implicit: code }"
+                      ></ng-container>
+                    </span>
+                  }
+                </div>
+              }
+              @if (item.unitPrice != null) {
+                <div class="item-price">{{ formatPrice(item.unitPrice) }}</div>
+              }
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+  } @else if (loading()) {
+    <p class="items-empty">Loading the menu&hellip;</p>
+  } @else if (items().length) {
+    <p class="items-empty">
+      Nothing on this menu is free of everything you&rsquo;ve selected. Please
+      ask our team &mdash; we may be able to adapt a dish.
+    </p>
+  } @else {
+    <p class="items-empty">The menu couldn&rsquo;t be loaded. Please try again shortly.</p>
+  }
+
+  <p class="allergen-disclaimer">
+    <span class="allergen-disclaimer-mark" aria-hidden="true">*</span>
+    Allergen information is provided as a guide, in line with FSA guidance.
+    Our kitchen handles all 14 FSA-listed allergens and cross-contact cannot
+    be fully excluded. Please speak to a member of the team on arrival about
+    any allergy or intolerance &mdash; we&rsquo;ll always do our best to adapt.
+  </p>
+</main>
+
+<app-footer></app-footer>

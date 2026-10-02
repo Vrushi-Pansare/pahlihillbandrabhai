@@ -6,6 +6,8 @@ import { APP_CONFIG } from '../../configs/constants';
 export interface HeaderMenuItem {
   code: string;
   label: string;
+  // In-site page for this entry; items without one are not wired up yet.
+  route?: string;
 }
 
 @Component({
@@ -18,8 +20,8 @@ export interface HeaderMenuItem {
 export class HeaderComponent {
   logoUrl = APP_CONFIG.logoUrl;
   menuItems: HeaderMenuItem[] = [
-    { code: 'full-menu', label: 'Full Menu' },
-    { code: 'allergen-menu', label: 'Allergen Menu' },
+    { code: 'full-menu', label: 'Full Menu', route: '/full-menu' },
+    { code: 'allergen-menu', label: 'Allergen Menu', route: '/allergen-menu' },
     { code: 'order-delivery', label: 'Order Delivery' },
   ];
   isMobileMenuOpen = false;

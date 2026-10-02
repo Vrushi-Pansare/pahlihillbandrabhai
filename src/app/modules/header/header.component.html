@@ -70,8 +70,8 @@
           <ul class="dropdown-menu">
             @for (item of menuItems; track item.code) {
               <li>
-                @if (item.code === 'full-menu') {
-                  <a routerLink="/full-menu" routerLinkActive="active">{{
+                @if (item.route) {
+                  <a [routerLink]="item.route" routerLinkActive="active">{{
                     item.label
                   }}</a>
                 } @else {
@@ -199,9 +199,9 @@
           <ul class="mobile-sub-menu">
             @for (item of menuItems; track item.code) {
               <li>
-                @if (item.code === 'full-menu') {
+                @if (item.route) {
                   <a
-                    routerLink="/full-menu"
+                    [routerLink]="item.route"
                     [class.active]="activeClickedUrl === item.code"
                     (click)="closeMobileMenuDeferred(item.code)"
                   >

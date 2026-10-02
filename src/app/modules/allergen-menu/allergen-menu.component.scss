@@ -1,0 +1,794 @@
+$display: "Displace", "Playfair Display", Georgia, serif;
+$label: "Displace", ui-monospace, monospace;
+
+// Section widths follow the viewport (as in the reference design) rather
+// than fixed pixel caps, so wide screens don't end up with big empty
+// gutters. Below the breakpoint everything runs edge to edge with a 1rem
+// gutter instead.
+$wide: 992px;
+$filter-width: min(75vw, 1240px);
+$listing-width: min(82vw, 1440px);
+
+.allergen-main {
+  background-color: #efe0c2;
+  // Faint graph-paper texture behind the whole page.
+  background-image:
+    linear-gradient(rgba(3, 33, 16, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 33, 16, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  color: var(--jungle, #032110);
+  font-family: "Inter", sans-serif;
+  min-height: 60vh;
+  padding: 0 0 6rem;
+  overflow-x: hidden;
+}
+
+.allergen-toolbar {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(199, 81, 0, 0.15);
+
+  @media (min-width: 768px) {
+    padding: 0.7rem 1.5rem;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: $label;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--jungle, #032110);
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(3, 33, 16, 0.15);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: var(--terracotta, #c75100);
+  }
+}
+
+/* ---------- a) Hero ---------- */
+
+.allergen-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.25rem 1rem 0;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: $label;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero-title {
+  margin-top: 0.9rem;
+  font-family: $display !important;
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  color: var(--jungle, #032110);
+
+  @media (min-width: 768px) {
+    font-size: clamp(3.5rem, 4.4vw, 5rem);
+  }
+}
+
+// Marker-pen stroke behind the lower half of the word.
+.hero-highlight {
+  padding: 0 0.08em;
+  background: linear-gradient(
+    to bottom,
+    transparent 52%,
+    var(--terracotta, #c75100) 52%,
+    #e07b00 92%,
+    transparent 92%
+  );
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 1rem;
+  color: rgba(3, 33, 16, 0.7);
+
+  @media (min-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.fsa-card {
+  max-width: max(620px, 46vw);
+  margin: 1.5rem auto 0;
+  text-align: left;
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(199, 81, 0, 0.35);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.25rem 1rem;
+  box-shadow:
+    0 2px 0 #03211014,
+    0 12px 28px -16px #03211040;
+}
+
+.fsa-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-family: $label;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+}
+
+.fsa-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta, #c75100);
+}
+
+.fsa-text {
+  margin: 0;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(3, 33, 16, 0.8);
+}
+
+.cinema-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.75rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: var(--jungle, #032110);
+  color: var(--ivory, #f8ebd3);
+  font-family: $label;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  &:hover {
+    background: var(--leaf, #005e25);
+  }
+}
+
+/* ---------- b + c) Filter card ---------- */
+
+.filter-card {
+  margin: 2.5rem 1rem 0;
+  padding: 1.5rem 1rem 1.75rem;
+  text-align: center;
+  background: #fbf0dc;
+  border-radius: 1.25rem;
+  box-shadow:
+    0 2px 0 #03211010,
+    0 24px 48px -28px #03211055;
+
+  @media (min-width: 768px) {
+    padding: 1.75rem 2rem 2rem;
+  }
+
+  @media (min-width: $wide) {
+    width: $filter-width;
+    margin: 2.5rem auto 0;
+  }
+}
+
+.filter-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  max-width: 260px;
+  margin: 0 auto 1.25rem;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(199, 81, 0, 0.35);
+  }
+}
+
+.filter-heading-text {
+  flex-shrink: 0;
+  font-family: $label;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+}
+
+.allergen-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+
+  @media (min-width: 480px) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.55rem 0.6rem;
+  }
+}
+
+.allergen-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 0.85rem 0.3rem 0.7rem;
+  min-height: 72px;
+
+  // Tiles grow with the card on wide screens; keeping the reference's
+  // 3:2 shape stops them turning into wide, empty bars.
+  // min-height: auto lets a narrow tile grow past 3:2 instead of squashing
+  // its label.
+  @media (min-width: $wide) {
+    aspect-ratio: 3 / 2;
+    min-height: auto;
+    gap: 0.6rem;
+  }
+
+  > * {
+    flex-shrink: 0;
+  }
+  background: #f3e2c4;
+  border: 1px solid rgba(3, 33, 16, 0.14);
+  border-radius: 0.6rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+
+  @media (max-width: 479px) {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+
+  &:hover {
+    border-color: var(--allergen, #c75100);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--terracotta, #c75100);
+    outline-offset: 2px;
+  }
+
+  // Avoided: the tile reads as "struck off" rather than "selected".
+  &.excluded {
+    background: #fffaf1;
+    border-color: var(--terracotta, #c75100);
+    box-shadow: 0 0 0 1px var(--terracotta, #c75100);
+
+    .tile-icon {
+      background: rgba(3, 33, 16, 0.25);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -2px;
+        bottom: -2px;
+        width: 2px;
+        background: var(--terracotta, #c75100);
+        transform: translateX(-50%) rotate(45deg);
+        border-radius: 1px;
+      }
+    }
+
+    .tile-label {
+      color: var(--terracotta, #c75100);
+      text-decoration: line-through;
+    }
+  }
+}
+
+.tile-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--allergen, #c75100);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(3, 33, 16, 0.25);
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  @media (min-width: $wide) {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.tile-label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: $label;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.7);
+
+  @media (min-width: $wide) {
+    font-size: 0.6rem;
+  }
+
+  // Four tiles a row on phones is too narrow for "Crustaceans" at desktop
+  // tracking, so let labels wrap and tighten them instead of truncating.
+  @media (max-width: 479px) {
+    white-space: normal;
+    text-overflow: clip;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+  }
+}
+
+.safe-counts {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.safe-count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s ease;
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:hover:not(.active) {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--terracotta, #c75100);
+    outline-offset: 2px;
+  }
+}
+
+.safe-count-number {
+  font-family: $display;
+  font-weight: 300;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--terracotta, #c75100);
+
+  @media (min-width: $wide) {
+    font-size: 3.75rem;
+  }
+}
+
+.safe-count-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: $label;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.5);
+}
+
+.safe-count-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--leaf-bright, #399e43);
+  color: var(--leaf-bright, #399e43);
+  font-size: 0.45rem;
+  letter-spacing: 0;
+}
+
+.clear-btn {
+  margin-top: 1.1rem;
+  font-family: $label;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 0.1rem;
+  cursor: pointer;
+}
+
+/* ---------- d) Results ---------- */
+
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 0.5rem;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+
+  @media (min-width: $wide) {
+    width: $listing-width;
+    padding: 0;
+  }
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  font-family: $display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: var(--jungle, #032110);
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(199, 81, 0, 0.35);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+
+  @media (min-width: $wide) {
+    font-size: 1.05rem;
+    padding: 0.45rem 1.15rem;
+  }
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &.active {
+    background: var(--terracotta, #c75100);
+    border-color: var(--terracotta, #c75100);
+    color: #fff;
+
+    .category-pill-count {
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+
+  &:hover:not(.active):not(:disabled) {
+    border-color: var(--terracotta, #c75100);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.category-pill-count {
+  font-family: $label;
+  font-style: normal;
+  font-size: 0.55rem;
+  color: rgba(3, 33, 16, 0.45);
+}
+
+.category-section {
+  margin: 1.75rem 1rem 0;
+  padding: 1rem 0 1.1rem 1rem;
+  background: #fbf0dc;
+  border: 1px solid rgba(199, 81, 0, 0.3);
+  border-radius: 0.9rem;
+
+  @media (min-width: $wide) {
+    width: $listing-width;
+    margin: 1.75rem auto 0;
+    padding: 1.1rem 0 1.25rem 1.25rem;
+  }
+}
+
+.category-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.category-section-title {
+  font-family: $display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  color: var(--terracotta, #c75100);
+
+  @media (min-width: $wide) {
+    font-size: 1.85rem;
+  }
+}
+
+.category-section-subtitle {
+  margin-top: 0.15rem;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: rgba(3, 33, 16, 0.6);
+}
+
+.category-section-swipe {
+  flex-shrink: 0;
+  font-family: $label;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta, #c75100);
+}
+
+.item-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0 1rem 0.5rem 0;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.item-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: #fdf3e2;
+  border: 1px solid rgba(199, 81, 0, 0.2);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px -16px #03211066;
+
+  // About 3.6 cards visible across the listing, as in the reference; the
+  // partly cut-off last card signals that the row scrolls.
+  @media (min-width: 768px) {
+    flex-basis: clamp(240px, 21vw, 360px);
+  }
+}
+
+.item-image-wrap {
+  aspect-ratio: 16 / 9;
+  background: #fff;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.item-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #efe0c2 0%, #e4d3ac 100%);
+}
+
+.placeholder-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.item-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.8rem 0.75rem 0.85rem;
+  text-align: left;
+}
+
+.item-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.item-name {
+  min-width: 0;
+  font-family: $display;
+  font-weight: 400;
+  font-size: 0.98rem;
+  line-height: 1.25;
+  color: var(--jungle, #032110);
+}
+
+.item-tag {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  font-family: $label;
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ochre-deep, #c26f00);
+  background: rgba(228, 154, 0, 0.18);
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.item-description {
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: rgba(3, 33, 16, 0.65);
+  margin-bottom: 0.6rem;
+}
+
+.item-allergens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.item-allergen {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--allergen, #c75100) 22%, #fff);
+  border: 1px solid color-mix(in srgb, var(--allergen, #c75100) 45%, transparent);
+  color: var(--allergen, #c75100);
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.item-price {
+  margin-top: auto;
+  font-family: $display;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--terracotta, #c75100);
+}
+
+.items-empty {
+  max-width: 560px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+  text-align: center;
+  font-family: $display;
+  font-style: italic;
+  color: rgba(3, 33, 16, 0.55);
+}
+
+// Closing note under the listing; the hairline above it spans the same
+// width as the category section.
+.allergen-disclaimer {
+  margin: 3rem 1rem 0;
+  padding: 2rem 0 0;
+  border-top: 1px solid rgba(199, 81, 0, 0.15);
+  text-align: center;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.72rem;
+  line-height: 1.75;
+  color: rgba(3, 33, 16, 0.6);
+
+  @media (min-width: 768px) {
+    padding-left: 22%;
+    padding-right: 22%;
+  }
+
+  @media (min-width: $wide) {
+    width: $listing-width;
+    margin: 3rem auto 0;
+    font-size: 0.8rem;
+  }
+}
+
+.allergen-disclaimer-mark {
+  color: var(--terracotta, #c75100);
+}
+
+// Card text steps up with the wider cards on large screens.
+@media (min-width: $wide) {
+  .item-body {
+    padding: 0.95rem 0.95rem 1rem;
+  }
+
+  .item-name {
+    font-size: 1.1rem;
+  }
+
+  .item-description {
+    font-size: 0.82rem;
+  }
+
+  .item-allergen {
+    width: 24px;
+    height: 24px;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .item-price {
+    font-size: 0.9rem;
+  }
+}
