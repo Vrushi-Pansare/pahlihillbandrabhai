@@ -5,6 +5,7 @@ import { TeamComponent } from './modules/team/team.component';
 import { PrivateHiresComponent } from './modules/private-hires/private-hires.component';
 import { SpeakeasyComponent } from './modules/speakeasy/speakeasy.component';
 import { WhyUniqueComponent } from './modules/why-unique/why-unique.component';
+import { FaqComponent } from './modules/faq/faq.component';
 
 export const routes: Routes = [
   {
@@ -68,6 +69,15 @@ export const routes: Routes = [
     data: {
       description:
         'What makes Pahli Hill Bandra Bhai different: South Bombay supper-house flavours, radical hospitality and the tech to back it up, on Mortimer Street in Fitzrovia.',
+    },
+  },
+  {
+    path: 'faq',
+    component: FaqComponent,
+    title: 'FAQ | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'Answers to common questions about Pahli Hill Bandra Bhai — bookings, walk-ins, allergens, Halal meat, private dining, accessibility, opening hours and corkage in Fitzrovia, London.',
     },
   },
   { path: '**', redirectTo: '' },
