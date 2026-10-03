@@ -8,6 +8,7 @@ import { WhyUniqueComponent } from './modules/why-unique/why-unique.component';
 import { MenuCategoryComponent } from './modules/menu-category/menu-category.component';
 import { FullMenuComponent } from './modules/full-menu/full-menu.component';
 import { AllergenMenuComponent } from './modules/allergen-menu/allergen-menu.component';
+import { FaqComponent } from './modules/faq/faq.component';
 
 export const routes: Routes = [
   {
@@ -89,6 +90,15 @@ export const routes: Routes = [
     data: {
       description:
         'Filter the Pahli Hill Bandra Bhai menu by the 14 UK FSA allergens — tap what you avoid and see every dish and drink you can safely order in Fitzrovia, London.',
+    },
+  },
+  {
+    path: 'faq',
+    component: FaqComponent,
+    title: 'FAQ | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'Answers to common questions about Pahli Hill Bandra Bhai — bookings, walk-ins, allergens, Halal meat, private dining, accessibility, opening hours and corkage in Fitzrovia, London.',
     },
   },
   {
