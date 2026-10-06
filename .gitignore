@@ -48,3 +48,7 @@ Thumbs.db
 /deploy.sh
 /*.pem
 /deploy-preview.sh
+
+# Secrets: Gemini key lives in .env and is baked into this generated file
+.env
+/src/app/configs/gemini-key.generated.ts

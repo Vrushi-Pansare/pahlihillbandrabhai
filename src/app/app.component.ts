@@ -4,6 +4,7 @@ import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/ro
 import { Meta } from '@angular/platform-browser';
 import { filter, map, skip } from 'rxjs/operators';
 import { CookieConsentComponent } from './modules/cookie-consent/cookie-consent.component';
+import { ConciergeKnowledgeService } from './modules/ai-concierge/concierge-knowledge.service';
 
 declare let fbq: Function;
 
@@ -22,6 +23,7 @@ export class AppComponent implements OnInit {
   title = 'pahlihillbandrabhai';
 
   private readonly doc = inject(DOCUMENT);
+  private readonly conciergeKnowledge = inject(ConciergeKnowledgeService);
 
   constructor(
     private router: Router,
@@ -30,6 +32,10 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // Load menu + house data once, up front, so the AI Concierge answers
+    // instantly on any page. Failures are retried when the concierge opens.
+    this.conciergeKnowledge.preload().catch(() => undefined);
+
     // Keep description, social tags and canonical in sync with the active route.
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),

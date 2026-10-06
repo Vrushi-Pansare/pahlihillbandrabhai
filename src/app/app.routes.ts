@@ -102,6 +102,19 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'ai-concierge',
+    // Lazy: only the knowledge service is needed at startup (AppComponent).
+    loadComponent: () =>
+      import('./modules/ai-concierge/ai-concierge.component').then(
+        (m) => m.AiConciergeComponent,
+      ),
+    title: 'AI Concierge | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'Ask the Pahli Hill AI Concierge anything — dishes, allergens, opening hours, private hires and what to order tonight at our Indian restaurant in Fitzrovia, London.',
+    },
+  },
+  {
     path: 'menu/:code',
     component: MenuCategoryComponent,
     title: 'Menu | Pahli Hill Bandra Bhai – Fitzrovia',
