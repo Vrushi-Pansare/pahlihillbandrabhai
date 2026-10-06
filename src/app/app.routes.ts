@@ -80,5 +80,18 @@ export const routes: Routes = [
         'Answers to common questions about Pahli Hill Bandra Bhai — bookings, walk-ins, allergens, Halal meat, private dining, accessibility, opening hours and corkage in Fitzrovia, London.',
     },
   },
+  {
+    path: 'ai-concierge',
+    // Lazy: only the knowledge service is needed at startup (AppComponent).
+    loadComponent: () =>
+      import('./modules/ai-concierge/ai-concierge.component').then(
+        (m) => m.AiConciergeComponent,
+      ),
+    title: 'AI Concierge | Pahli Hill Bandra Bhai – Fitzrovia',
+    data: {
+      description:
+        'Ask the Pahli Hill AI Concierge anything — dishes, allergens, opening hours, private hires and what to order tonight at our Indian restaurant in Fitzrovia, London.',
+    },
+  },
   { path: '**', redirectTo: '' },
 ];

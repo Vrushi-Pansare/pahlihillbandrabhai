@@ -1,0 +1,650 @@
+// Fonts, eyebrow and pill conventions follow faq.component.scss /
+// allergen-menu.component.scss so the info pages read as one set.
+$display: "Displace", "Playfair Display", Georgia, serif;
+$label: "Displace", ui-monospace, monospace;
+$terracotta: var(--terracotta, #c75100);
+$jungle: var(--jungle, #032110);
+$card-bg: #fbecd6;
+$panel-bg: #f6e5c9;
+
+.concierge-main {
+  background-color: #efe0c2;
+  color: $jungle;
+  font-family: "Inter", sans-serif;
+  padding: 0 0 5rem;
+  overflow-x: hidden;
+}
+
+/* ---------- Hero ---------- */
+
+.concierge-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 0;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: $label;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $terracotta;
+}
+
+.hero-title {
+  margin-top: 0.7rem;
+  font-family: $display !important;
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+
+  @media (min-width: 768px) {
+    font-size: clamp(3.25rem, 4.4vw, 4.6rem);
+  }
+}
+
+.hero-accent {
+  font-style: italic;
+  color: $terracotta;
+}
+
+.hero-subtitle {
+  max-width: 34rem;
+  margin: 1.1rem auto 0;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(3, 33, 16, 0.7);
+
+  @media (min-width: 768px) {
+    font-size: 1.05rem;
+  }
+}
+
+/* ---------- Layout ---------- */
+
+.concierge-layout {
+  max-width: 1140px;
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1.4rem;
+  align-items: start;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 282px minmax(0, 1fr);
+  }
+}
+
+.concierge-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  // Phones: the chat is the point of the page, so it comes first.
+  order: 2;
+
+  @media (min-width: 900px) {
+    order: 0;
+  }
+}
+
+/* ---------- Side cards ---------- */
+
+.info-card {
+  background: $card-bg;
+  border: 1px solid rgba(3, 33, 16, 0.06);
+  border-radius: 0.9rem;
+  box-shadow: 0 2px 0 #0321100d, 0 12px 28px -18px #03211040;
+  padding: 1.15rem 1.1rem 1.1rem;
+}
+
+.card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.85rem;
+  font-family: $label;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: $terracotta;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+}
+
+.hours-list {
+  margin: 0;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.3rem 0;
+
+  dt {
+    font-family: $label;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(3, 33, 16, 0.6);
+  }
+
+  dd {
+    margin: 0;
+    font-family: $display;
+    font-size: 0.92rem;
+  }
+}
+
+.card-note {
+  margin: 0.7rem 0 0;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(3, 33, 16, 0.1);
+  font-family: $label;
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.55);
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-family: $display;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.card-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  margin-top: 0.75rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: $label;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $terracotta;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  svg {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+.card-copy {
+  margin: 0 0 0.9rem;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.92rem;
+  color: rgba(3, 33, 16, 0.8);
+}
+
+.reserve-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: $terracotta;
+  color: var(--ivory, #f8ebd3);
+  font-family: $label;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--terracotta-deep, #882600);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--terracotta-deep, #882600);
+  }
+}
+
+/* ---------- Chat panel ---------- */
+
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: $panel-bg;
+  border: 1px solid rgba(3, 33, 16, 0.08);
+  border-radius: 1.1rem;
+  box-shadow: var(--shadow-paper);
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.05rem 1.4rem;
+  background: var(--jungle, #032110);
+  color: var(--ivory, #f8ebd3);
+}
+
+.chat-spark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--ochre, #e49a00);
+}
+
+.chat-title-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.chat-title {
+  margin: 0;
+  font-family: $display !important;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 1.35rem;
+  }
+}
+
+.chat-subtitle {
+  margin-top: 0.2rem;
+  font-family: $label;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ochre, #e49a00);
+}
+
+.ai-pill {
+  flex-shrink: 0;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid rgba(228, 154, 0, 0.6);
+  border-radius: 999px;
+  background: rgba(228, 154, 0, 0.18);
+  font-family: $label;
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  color: var(--ochre, #e49a00);
+
+  &.is-off {
+    opacity: 0.4;
+  }
+}
+
+.chat-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  height: 60vh;
+  min-height: 360px;
+  max-height: 560px;
+  padding: 1.4rem 1rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+
+  @media (min-width: 768px) {
+    padding: 1.4rem 1.4rem;
+  }
+}
+
+.bubble {
+  max-width: 88%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+
+  @media (min-width: 768px) {
+    max-width: 82%;
+    font-size: 0.97rem;
+  }
+}
+
+.bubble-ai {
+  align-self: flex-start;
+  background: var(--ivory-warm, #fdf2e1);
+  border: 1px solid rgba(3, 33, 16, 0.06);
+  box-shadow: 0 1px 0 #0321100a;
+  color: $jungle;
+
+  &.is-notice {
+    background: transparent;
+    border-style: dashed;
+    border-color: rgba(199, 81, 0, 0.4);
+    color: rgba(3, 33, 16, 0.75);
+  }
+}
+
+.bubble-user {
+  align-self: flex-end;
+  background: $terracotta;
+  color: var(--ivory, #f8ebd3);
+  box-shadow: 0 2px 0 var(--terracotta-deep, #882600);
+}
+
+.typing {
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.95rem 1rem;
+
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(3, 33, 16, 0.4);
+    animation: typing-dot 1.1s infinite ease-in-out;
+
+    &:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+}
+
+@keyframes typing-dot {
+  0%,
+  80%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typing span {
+    animation: none;
+  }
+}
+
+/* ---------- Dish cards ---------- */
+
+.dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-self: stretch;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-width: 330px;
+}
+
+.dish-category {
+  font-family: $label;
+  font-size: 0.52rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(3, 33, 16, 0.5);
+}
+
+.dish-card {
+  padding: 0.8rem 0.75rem 0.75rem;
+  background: #fbeedb;
+  border: 1px solid rgba(199, 81, 0, 0.45);
+  border-radius: 0.45rem;
+}
+
+.dish-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.dish-name {
+  margin: 0;
+  font-family: $display !important;
+  font-weight: 400;
+  font-size: 1.02rem;
+  line-height: 1.3;
+}
+
+.dish-price {
+  flex-shrink: 0;
+  font-family: $label;
+  font-size: 0.72rem;
+  color: $terracotta;
+}
+
+.dish-desc {
+  margin: 0.3rem 0 0;
+  font-family: $display;
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(3, 33, 16, 0.7);
+}
+
+.dish-allergens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 0.12rem 0.35rem;
+    border: 1px solid rgba(199, 81, 0, 0.55);
+    border-radius: 0.15rem;
+    font-family: $label;
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+    color: $terracotta;
+  }
+}
+
+
+
+/* ---------- Suggestions + input ---------- */
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0 1rem 0.85rem;
+
+  @media (min-width: 768px) {
+    padding: 0 1.4rem 0.85rem;
+  }
+}
+
+.suggestion {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid rgba(199, 81, 0, 0.45);
+  border-radius: 999px;
+  background: transparent;
+  font-family: $display;
+  font-size: 0.82rem;
+  color: $terracotta;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: $terracotta;
+    color: var(--ivory, #f8ebd3);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem 1rem;
+  border-top: 1px solid rgba(3, 33, 16, 0.1);
+
+  @media (min-width: 768px) {
+    padding: 0.9rem 1.4rem 1.1rem;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.75rem 1.1rem;
+    border: 1px solid rgba(3, 33, 16, 0.18);
+    border-radius: 999px;
+    background: var(--ivory-warm, #fdf2e1);
+    font-family: $display;
+    font-size: 0.95rem;
+    color: $jungle;
+
+    &::placeholder {
+      color: rgba(3, 33, 16, 0.45);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $terracotta;
+      box-shadow: 0 0 0 3px rgba(199, 81, 0, 0.15);
+    }
+  }
+}
+
+.send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--jungle, #032110);
+  color: var(--ochre, #e49a00);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--leaf, #005e25);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+}
+
+/* ---------- Voice input ---------- */
+
+// Same size as send, but outlined so send stays the primary action.
+.mic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border: 1px solid rgba(3, 33, 16, 0.25);
+  border-radius: 50%;
+  background: transparent;
+  color: $jungle;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    border-color: $terracotta;
+    color: $terracotta;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ochre, #e49a00);
+    outline-offset: 2px;
+  }
+
+  // Recording: filled terracotta with a soft pulse, and a stop square icon.
+  &.is-listening {
+    border-color: transparent;
+    background: $terracotta;
+    color: var(--ivory, #f8ebd3);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid rgba(199, 81, 0, 0.45);
+      animation: mic-pulse 1.4s ease-out infinite;
+    }
+  }
+}
+
+@keyframes mic-pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mic-btn.is-listening::after {
+    animation: none;
+  }
+}
+
+.chat-input input.is-listening {
+  border-color: $terracotta;
+  box-shadow: 0 0 0 3px rgba(199, 81, 0, 0.15);
+}

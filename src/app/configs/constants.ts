@@ -1,3 +1,5 @@
+import { isDevMode } from '@angular/core';
+
 export interface AppConfig {
   logoUrl: string;
   bananaLeafUrl: string;
@@ -8,6 +10,8 @@ export interface AppConfig {
   privateHireVideoUrl: string;
   privateHirePosterUrl: string;
   privateHireEnquiriesApiUrl: string;
+  dropdownValuesApiUrl: string;
+  listingApiUrl: string;
   bbPrivateHireVideoUrl?: string;
   hireRestaurantVideoUrl?: string;
   speakeasyPosterUrl?: string;
@@ -56,6 +60,16 @@ export interface AppConfig {
   meadBarhiUrl?: string;
 }
 
+// The API only allows CORS from the production origin, so `ng serve` and the
+// preview site reach it through a same-origin proxy (proxy.conf.json in dev,
+// the nginx preview vhost in preview) instead of calling it directly.
+const PREVIEW_HOST = 'preview.pahlihillbandrabhai.com';
+const AL_CHEF_API =
+  isDevMode() ||
+  (typeof window !== 'undefined' && window.location.hostname === PREVIEW_HOST)
+    ? '/al-chef-api'
+    : 'https://al-chef.netraax.com/api/v1';
+
 export const APP_CONFIG: AppConfig = {
   logoUrl:
     'https://cshare-leader-prod-new.s3.ap-south-1.amazonaws.com/2026-08-13T10:09:47.970Z/pahli-bird-logo-BQsHFrab.jpg',
@@ -71,6 +85,8 @@ export const APP_CONFIG: AppConfig = {
   privateHirePosterUrl: 'assets/private-hires/hero-poster.jpg',
   privateHireEnquiriesApiUrl:
     'https://netraax.com/api/v1/public/pahli-hill/enquiries',
+  dropdownValuesApiUrl: `${AL_CHEF_API}/public/listing/dropdown-values`,
+  listingApiUrl: `${AL_CHEF_API}/public/listing`,
   bbPrivateHireVideoUrl: 'assets/private-hires/hire-bar.mp4',
   hireRestaurantVideoUrl: 'assets/private-hires/hire-restaurant.mp4',
   speakeasyPosterUrl: 'assets/speakeasy/speakeasy-poster.jpg',

@@ -1,0 +1,202 @@
+<app-header></app-header>
+
+<main class="concierge-main">
+  <section class="concierge-hero">
+    <span class="eyebrow">• Welcome to the world's first •</span>
+    <h1 class="hero-title">
+      The world's first <em class="hero-accent">AI Concierge</em>
+    </h1>
+    <p class="hero-subtitle">
+      Welcome to the world's first Menu AI, world's first allergen menu, and
+      world's first cinema menu. Ask the house anything — hours, allergens, wine
+      pairings, private hires, what's good tonight.
+    </p>
+  </section>
+
+  <section class="concierge-layout">
+    <!-- Side cards: house facts, shown without asking the AI anything. -->
+    <aside class="concierge-aside">
+      <div class="info-card">
+        <h2 class="card-label">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.3" />
+            <path d="M8 4.6V8l2.3 1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+          </svg>
+          Opening hours
+        </h2>
+        <dl class="hours-list">
+          @for (row of info.hours; track row.days) {
+            <div class="hours-row">
+              <dt>{{ row.days }}</dt>
+              <dd>{{ row.opens }} – {{ row.closes }}</dd>
+            </div>
+          }
+        </dl>
+        <p class="card-note">Last orders 15 minutes before closing</p>
+      </div>
+
+      <div class="info-card">
+        <h2 class="card-label">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path
+              d="M8 14.5s4.6-4.3 4.6-8a4.6 4.6 0 1 0-9.2 0c0 3.7 4.6 8 4.6 8Z"
+              stroke="currentColor"
+              stroke-width="1.3"
+            />
+            <circle cx="8" cy="6.4" r="1.6" stroke="currentColor" stroke-width="1.3" />
+          </svg>
+          Find the restaurant
+        </h2>
+        <address class="address">
+          @for (line of info.addressLines; track line) {
+            <span>{{ line }}</span>
+          }
+        </address>
+        <div class="card-links">
+          <a [href]="info.mapsUrl" target="_blank" rel="noopener noreferrer">Open in maps ↗</a>
+          <a [href]="info.phoneHref">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="M5.6 2.5 4 2.3c-.8 0-1.6.7-1.5 1.6.4 5.1 4.5 9.2 9.6 9.6.9.1 1.6-.7 1.6-1.5l-.2-1.6a1 1 0 0 0-.8-.8l-2-.4a1 1 0 0 0-.9.3l-.8.8a8 8 0 0 1-3.2-3.2l.8-.8a1 1 0 0 0 .3-.9l-.4-2a1 1 0 0 0-.9-.9Z"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+            </svg>
+            {{ info.phoneDisplay }}
+          </a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h2 class="card-label">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="2.3" y="3.2" width="11.4" height="10.5" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+            <path d="M2.3 6.5h11.4M5.4 1.8v2.6M10.6 1.8v2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" />
+          </svg>
+          Book a table
+        </h2>
+        <p class="card-copy">Reserve directly with the team.</p>
+        <a class="reserve-btn" [href]="info.bookingUrl" target="_blank" rel="noopener noreferrer"
+          >Reserve <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </aside>
+
+    <!-- Chat panel -->
+    <div class="chat-panel">
+      <header class="chat-header">
+        <svg class="chat-spark" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path
+            d="M10 1.5c.5 4.2 2.2 6.4 6.5 7-4.3.6-6 2.8-6.5 7-.5-4.2-2.2-6.4-6.5-7 4.3-.6 6-2.8 6.5-7Z"
+            fill="currentColor"
+          />
+          <path d="M16 13.5c.2 1.6.9 2.4 2.5 2.6-1.6.2-2.3 1-2.5 2.6-.2-1.6-.9-2.4-2.5-2.6 1.6-.2 2.3-1 2.5-2.6Z" fill="currentColor" />
+        </svg>
+        <div class="chat-title-wrap">
+          <h2 class="chat-title">Pahli Hill AI Concierge</h2>
+          <span class="chat-subtitle">Always in · Ask anything</span>
+        </div>
+        <span class="ai-pill" [class.is-off]="!aiAvailable">AI</span>
+      </header>
+
+      <div class="chat-thread" #thread aria-live="polite">
+        @for (message of messages(); track $index) {
+          @if (message.role === 'user') {
+            <div class="bubble bubble-user">{{ message.text }}</div>
+          } @else {
+            <div class="bubble bubble-ai" [class.is-notice]="message.notice">
+              {{ message.text }}
+            </div>
+            @if (message.items?.length) {
+              <div class="dish-list">
+                @for (item of message.items; track item.id) {
+                  <div class="dish">
+                    @if (item.category?.label) {
+                      <span class="dish-category">{{ item.category?.label }}</span>
+                    }
+                    <article class="dish-card">
+                      <div class="dish-head">
+                        <h3 class="dish-name">{{ item.name }}</h3>
+                        <span class="dish-price">{{ formatPrice(item.unitPrice) }}</span>
+                      </div>
+                      @if (item.description) {
+                        <p class="dish-desc">{{ item.description }}</p>
+                      }
+                      @if (allergenChips(item).length) {
+                        <ul class="dish-allergens" aria-label="Declared allergens">
+                          @for (chip of allergenChips(item); track chip) {
+                            <li>{{ chip }}</li>
+                          }
+                        </ul>
+                      }
+                    </article>
+                  </div>
+                }
+              </div>
+            }
+          }
+        }
+        @if (sending()) {
+          <div class="bubble bubble-ai typing" aria-label="Concierge is typing">
+            <span></span><span></span><span></span>
+          </div>
+        }
+      </div>
+
+      @if (messages().length === 1) {
+        <div class="suggestions">
+          @for (s of suggestions; track s) {
+            <button type="button" class="suggestion" (click)="ask(s)" [disabled]="sending()">
+              {{ s }}
+            </button>
+          }
+        </div>
+      }
+
+      <form class="chat-input" (ngSubmit)="ask(draft)">
+        <input
+          type="text"
+          name="question"
+          [(ngModel)]="draft"
+          [maxlength]="maxLength"
+          [placeholder]="listening() ? 'Listening… pause to send, tap ■ to stop' : knowledgeReady() ? 'Ask the house anything…' : 'Loading tonight’s menu…'"
+          [class.is-listening]="listening()"
+          autocomplete="off"
+          aria-label="Ask the concierge"
+        />
+        <!-- Speech-to-text: fills the box live and sends after a 3s pause;
+             tapping it again stops without sending. Hidden in browsers without
+             speech recognition (e.g. Firefox). -->
+        @if (voiceSupported) {
+          <button
+            type="button"
+            class="mic-btn"
+            [class.is-listening]="listening()"
+            (click)="toggleVoice()"
+            [attr.aria-pressed]="listening()"
+            [attr.aria-label]="listening() ? 'Stop voice input' : 'Speak your question'"
+            [title]="listening() ? 'Stop listening' : 'Speak your question'"
+          >
+            @if (listening()) {
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="5.5" y="5.5" width="9" height="9" rx="1.5" fill="currentColor" />
+              </svg>
+            } @else {
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="7" y="2.5" width="6" height="10" rx="3" stroke="currentColor" stroke-width="1.6" />
+                <path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+              </svg>
+            }
+          </button>
+        }
+        <button type="submit" class="send-btn" [disabled]="sending() || !draft.trim()" aria-label="Send">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M3 10h13M11 4.5 16.5 10 11 15.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>
